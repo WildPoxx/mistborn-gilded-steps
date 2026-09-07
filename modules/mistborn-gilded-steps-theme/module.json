@@ -1,0 +1,30 @@
+{
+  "id": "mistborn-gilded-steps-theme",
+  "title": "Gilded Steps — theme for Cosmere RPG",
+  "description": "Visual theme of the Mistborn Gilded Steps campaign for the Cosmere RPG system. It redefines colour and ornament only, and marks the sheet with the character's metal. No rule, roll, template, permission or sheet structure is altered. Disabling the module restores the system's original appearance.",
+  "version": "0.4.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Mario Bastos"
+    }
+  ],
+  "styles": [
+    "styles/mistborn-gilded-steps-theme.css"
+  ],
+  "scripts": [],
+  "esmodules": [
+    "scripts/metal.mjs"
+  ],
+  "relationships": {
+    "requires": [],
+    "recommends": []
+  },
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

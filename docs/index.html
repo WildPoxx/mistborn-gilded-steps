@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mistborn Gilded Steps — Player Portal</title>
+  <meta name="description" content="Player portal for the Mistborn Gilded Steps campaign: Bilming, Scadrial, 343 PC. Urban industrial fantasy on the Cosmere RPG.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/portal.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="kicker">Bilming · 343 PC · Cosmere RPG · Player portal</p>
+      <h1>Mistborn<br>Gilded Steps</h1>
+      <p class="lead">
+        The city climbs in steps. Below, the quays, the warehouses, the rail yards and the houses
+        held on old rents. Above, the clubs, the offices, and the windows that look down at the
+        harbour the way a man looks at an inventory. This is the way in for players — and it keeps
+        no secret that has not yet been found at the table.
+      </p>
+      <nav class="actions" aria-label="Quick links">
+        <a class="button primary" href="../wiki/Home.md">Open the wiki</a>
+        <a class="button" href="../wiki/Start-Here.md">Start here</a>
+        <a class="button" href="constabulary-record.html">Constabulary Record</a>
+        <a class="button" href="../wiki/Metalborn-Lottery.md">Metalborn Lottery</a>
+        <a class="button" href="../wiki/Table-Rules.md">Table rules</a>
+      </nav>
+    </div>
+
+    <!-- Cross-section of Yomend Steps. Original drawing for this project:
+         water, quay, cranes, warehouses, the hillside cut into terraces, and
+         the tall houses on the ridge. Traces no third-party map or art. -->
+    <svg class="section-drawing" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice"
+         role="img" aria-labelledby="section-title">
+      <title id="section-title">Cross-section of Yomend Steps: water and quay below, warehouses and cranes along the low strip, the hillside rising in terraces, and the tall houses on the ridge.</title>
+      <defs>
+        <linearGradient id="mgs-mist" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="var(--mgs-fog)" stop-opacity="0"></stop>
+          <stop offset="55%"  stop-color="var(--mgs-fog)" stop-opacity="0.14"></stop>
+          <stop offset="100%" stop-color="var(--mgs-fog)" stop-opacity="0"></stop>
+        </linearGradient>
+        <linearGradient id="mgs-smoke" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%"   stop-color="var(--mgs-fog)" stop-opacity="0.10"></stop>
+          <stop offset="100%" stop-color="var(--mgs-fog)" stop-opacity="0"></stop>
+        </linearGradient>
+      </defs>
+
+      <!-- Water -->
+      <rect x="0" y="258" width="342" height="42" fill="var(--mgs-verdigris-deep)" opacity="0.32"></rect>
+      <g stroke="var(--mgs-fog)" stroke-opacity="0.10" stroke-width="1">
+        <line x1="0" y1="268" x2="338" y2="268"></line>
+        <line x1="0" y1="277" x2="300" y2="277"></line>
+        <line x1="40" y1="286" x2="338" y2="286"></line>
+      </g>
+
+      <!-- Distant plane: the ridge behind and the high houses -->
+      <path d="M340 300 L340 202 L560 184 L780 160 L980 126 L1440 102 L1440 300 Z"
+            fill="var(--mgs-iron-700)" opacity="0.34"></path>
+      <g fill="var(--mgs-iron-700)" opacity="0.62">
+        <rect x="1052" y="86"  width="44" height="46"></rect>
+        <rect x="1104" y="66"  width="30" height="66"></rect>
+        <rect x="1142" y="94"  width="52" height="38"></rect>
+        <rect x="1202" y="54"  width="26" height="78"></rect>
+        <rect x="1236" y="80"  width="46" height="52"></rect>
+        <rect x="1290" y="70"  width="34" height="62"></rect>
+        <rect x="1332" y="92"  width="58" height="40"></rect>
+        <rect x="1396" y="76"  width="28" height="56"></rect>
+      </g>
+      <!-- Lit windows on the ridge: capital watching the harbour -->
+      <g fill="var(--mgs-brass-bright)" opacity="0.55">
+        <rect x="1063" y="98"  width="5" height="7"></rect>
+        <rect x="1078" y="98"  width="5" height="7"></rect>
+        <rect x="1112" y="80"  width="5" height="7"></rect>
+        <rect x="1112" y="98"  width="5" height="7"></rect>
+        <rect x="1156" y="106" width="5" height="7"></rect>
+        <rect x="1174" y="106" width="5" height="7"></rect>
+        <rect x="1210" y="70"  width="5" height="7"></rect>
+        <rect x="1210" y="92"  width="5" height="7"></rect>
+        <rect x="1250" y="94"  width="5" height="7"></rect>
+        <rect x="1266" y="94"  width="5" height="7"></rect>
+        <rect x="1300" y="86"  width="5" height="7"></rect>
+        <rect x="1348" y="104" width="5" height="7"></rect>
+        <rect x="1366" y="104" width="5" height="7"></rect>
+        <rect x="1404" y="90"  width="5" height="7"></rect>
+      </g>
+
+      <!-- The hillside cut into terraces: the name of the place -->
+      <path d="M340 256 L416 256 L416 241 L492 241 L492 226 L568 226 L568 211 L644 211
+               L644 196 L720 196 L720 181 L796 181 L796 166 L872 166 L872 151 L948 151
+               L948 136 L1024 136 L1024 121 L1440 121 L1440 300 L340 300 Z"
+            fill="#131b1c"></path>
+
+      <!-- Chimneys on the slope, with drifting smoke -->
+      <g fill="#131b1c">
+        <rect x="466" y="96"  width="13" height="146"></rect>
+        <rect x="618" y="114" width="11" height="98"></rect>
+      </g>
+      <path d="M466 96 C 500 76, 540 88, 586 62 L 586 74 C 548 96, 508 88, 472 108 Z"
+            fill="url(#mgs-smoke)"></path>
+
+      <!-- Low mist: separates the high city from the quay -->
+      <rect x="0" y="176" width="1440" height="96" fill="url(#mgs-mist)"></rect>
+
+      <!-- Near plane: quay, warehouses and cranes -->
+      <g fill="#0a0f10">
+        <!-- deck and piles -->
+        <rect x="34" y="248" width="308" height="13"></rect>
+        <rect x="70" y="261" width="6" height="26"></rect>
+        <rect x="140" y="261" width="6" height="30"></rect>
+        <rect x="212" y="261" width="6" height="28"></rect>
+        <rect x="286" y="261" width="6" height="32"></rect>
+        <!-- warehouses with sawtooth roofs -->
+        <path d="M96 248 L96 216 L120 194 L120 216 L146 194 L146 216 L172 194 L172 216
+                 L198 194 L198 216 L224 194 L224 216 L250 194 L250 216 L276 194 L276 216
+                 L302 194 L302 216 L328 194 L328 248 Z"></path>
+        <!-- quay cranes -->
+        <rect x="64" y="146" width="7" height="104"></rect>
+        <path d="M67 152 L152 132 L152 140 L67 160 Z"></path>
+        <rect x="147" y="136" width="3" height="34"></rect>
+        <path d="M67 156 L40 176 L44 179 L70 162 Z"></path>
+        <rect x="196" y="162" width="6" height="88"></rect>
+        <path d="M199 168 L268 150 L268 157 L199 175 Z"></path>
+        <rect x="263" y="153" width="3" height="28"></rect>
+      </g>
+    </svg>
+  </header>
+
+  <main id="content">
+    <section class="section">
+      <div class="wrap two-col">
+        <div>
+          <h2><span class="step-mark" aria-hidden="true"></span>The city</h2>
+          <p>
+            Bilming prospers and does not share. New cranes, new rail, new façades — and on the
+            same block, contracts that shorten, rents that climb, and trades that vanish without
+            notice. Industrialisation did not unseat the aristocracy: it bought shares.
+          </p>
+          <p>
+            <strong>Yomend Steps</strong>, called simply <em>The Steps</em> by the people who live
+            there, is the low strip of the waterfront: dockhands, railway workers, workshops,
+            boarding houses, gambling rooms, and families who have been there for generations.
+            Above the slope, the high steps watch. What is decided up there arrives down here as
+            an eviction, as construction, as an offer that cannot be refused.
+          </p>
+          <p class="muted">
+            This campaign is not about saving the world. It is about what you do when the world
+            has an owner, and the price of staying where you are climbs every month.
+          </p>
+        </div>
+        <div>
+          <h2><span class="step-mark" aria-hidden="true"></span>The table</h2>
+          <table class="manifest">
+            <caption>Table record · Bilming</caption>
+            <tbody>
+              <tr><th scope="row">System</th><td>Cosmere RPG</td></tr>
+              <tr><th scope="row">Era</th><td>Second Era of Mistborn</td></tr>
+              <tr><th scope="row">Opening date</th><td>343 PC (<em>Post-Catacendre</em>)</td></tr>
+              <tr><th scope="row">City</th><td>Bilming, on the Yomend Sea</td></tr>
+              <tr><th scope="row">Opening district</th><td>Yomend Steps</td></tr>
+              <tr><th scope="row">Tone</th><td>Urban, industrial, grey; not epic</td></tr>
+              <tr><th scope="row">Spoiler line</th><td>The first two novels of the Second Era</td></tr>
+            </tbody>
+          </table>
+          <p><span class="stamp">Opened in 343 PC</span></p>
+          <p class="notice">
+            Nothing in this portal goes past the spoiler line above. If you have read further, keep
+            out of play what the characters would have no way of knowing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap"><div class="rule"><span class="step-mark" aria-hidden="true"></span></div></div>
+
+    <section class="section">
+      <div class="wrap">
+        <h2><span class="step-mark" aria-hidden="true"></span>Player material</h2>
+        <p class="muted">
+          The portal grows with the campaign. Pages marked <em>in preparation</em> have no cleared
+          content yet.
+        </p>
+        <div class="cards">
+          <a class="card" href="../wiki/Start-Here.md">
+            <strong>Start here</strong>
+            <span>What the campaign is, what the table expects, and where to read first.</span>
+          </a>
+          <a class="card" href="constabulary-record.html">
+            <strong>Constabulary Record</strong>
+            <span>The files the Bilming Constabulary keeps on each of you.</span>
+          </a>
+          <a class="card" href="../wiki/Metalborn-Lottery.md">
+            <strong>Metalborn Lottery</strong>
+            <span>The house rule for discovering the Metallic Arts.</span>
+          </a>
+          <a class="card" href="../wiki/Bilming.md">
+            <strong>Bilming</strong>
+            <span>The city as the characters know it. <span class="tag">In preparation</span></span>
+          </a>
+          <a class="card" href="../wiki/Yomend-Steps.md">
+            <strong>Yomend Steps</strong>
+            <span>The dockside district, step by step. <span class="tag">In preparation</span></span>
+          </a>
+          <a class="card" href="../wiki/Ashlar-Row.md">
+            <strong>Ashlar Row</strong>
+            <span>The Knightbridge row the redevelopment has not broken yet.</span>
+          </a>
+          <a class="card" href="../wiki/Table-Rules.md">
+            <strong>Table rules</strong>
+            <span>The play contract, safety, and how we run sessions. <span class="tag">In preparation</span></span>
+          </a>
+          <a class="card" href="../wiki/Chronicle.md">
+            <strong>Chronicle</strong>
+            <span>The campaign record, session by session. <span class="tag">In preparation</span></span>
+          </a>
+          <a class="card" href="../wiki/Glossary.md">
+            <strong>Glossary</strong>
+            <span>Terms from Scadrial and the city that come up in play. <span class="tag">In preparation</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="mist" aria-hidden="true"></div>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        <strong>Mistborn Gilded Steps</strong> — fan material, non-commercial, for private table
+        use.
+      </p>
+      <p>
+        <em>Mistborn</em>, the Cosmere and Scadrial belong to Brandon Sanderson and Dragonsteel
+        Entertainment. The <em>Cosmere RPG</em>, the <em>Mistborn Handbook</em> and the
+        <em>Mistborn World Guide</em> belong to Brotherwise Games and their rights holders. This
+        site distributes no books, whole rules, stat blocks, official maps or licensed art.
+        Yomend Steps, the Mendari and the house rules described here are original work of this
+        project.
+      </p>
+      <p>
+        <a href="../CONTENT_POLICY.md">Content policy</a> ·
+        <a href="../SPOILER_POLICY.md">Spoiler policy</a> ·
+        <a href="../VISUAL_IDENTITY.md">Visual identity</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

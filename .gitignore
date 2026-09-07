@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────
+# mistborn-gilded-steps — PUBLIC repository
+# This repo must never take in the private vault, commercial sources or
+# heavy binaries. Read CONTENT_POLICY.md before adding any exception.
+# ─────────────────────────────────────────────────────────────
+
+# Obsidian vault and sync residue (must not exist here)
+/.obsidian/
+.obsidian/
+.tmp.drivedownload/
+.tmp.driveupload/
+
+# Local drafts: use this folder for material not yet cleared
+/_private/
+/tmp/
+/output/
+/drafts/
+
+# Local assistant configuration
+/CLAUDE.md
+/.claude/
+/.codex/
+
+# Commercial sources, scans and third-party work
+*.pdf
+*.epub
+*.mobi
+*.azw3
+*.cbz
+*.cbr
+
+# Heavy working files
+*.psd
+*.ai
+*.indd
+*.afdesign
+*.afphoto
+*.xcf
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.zip
+*.7z
+*.rar
+
+# Google Drive and Windows shortcuts (they preserve no content)
+*.gdoc
+*.gsheet
+*.gslides
+*.lnk
+
+# System metadata
+desktop.ini
+**/desktop.ini
+Thumbs.db
+.DS_Store
+
+# Dependencies, should any automation appear later
+node_modules/
+.pnpm-store/

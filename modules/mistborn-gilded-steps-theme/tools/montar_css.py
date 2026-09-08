@@ -586,6 +586,114 @@ MAPA_CADMIO = """
   --cosmere-color-parchment: var(--mgs-cadmio-claro);"""
 
 
+# --------------------------------------------------- bendalloy e cromo
+
+TOK_BENDALLOY = """  /* --- Bendalloy — lilás. Liga de bismuto. Cristal de bismuto tem essa iridescência lilás-arroxeada, do filme de óxido na superfície — é a única cor do conjunto que não é cor de metal ao ar livre, e por isso a única que serve para marcar o que é investido em vez de industrial.
+         Sugestão de Mario, 2026-09-08. Mesma construção do Platina e do Cádmio.
+         Piso medido contra #c3b7dc, o painel mais escuro. --- */
+  --mgs-bendalloy-claro: #f6f3fb;
+  --mgs-bendalloy: #ece7f6;
+  --mgs-bendalloy-painel: #e3ddf0;
+  --mgs-bendalloy-sombra: #d7cfe8;
+  --mgs-bendalloy-fundo: #c3b7dc;
+
+  --mgs-bendalloy-linha: #50407a;
+  --mgs-bendalloy-linha-forte: #47376e;
+
+  --mgs-tinta: #2a1f46;
+  --mgs-tinta-sub: #453769;
+  --mgs-tinta-fraca: #4f4271;
+
+  --mgs-danger: #832c24;"""
+
+MAPA_BENDALLOY = """
+  --cosmere-color-sheet: var(--mgs-bendalloy);
+  --cosmere-color-base-1: var(--mgs-bendalloy-fundo);
+  --cosmere-color-base-2: var(--mgs-bendalloy-claro);
+  --cosmere-color-base-3: var(--mgs-bendalloy-painel);
+  --cosmere-color-base-4: var(--mgs-bendalloy-sombra);
+  --cosmere-color-base-5: var(--mgs-bendalloy-linha);
+  --cosmere-color-base-6: var(--mgs-bendalloy-linha-forte);
+  --cosmere-color-neutral: var(--mgs-bendalloy-sombra);
+
+  --cosmere-color-text-main: var(--mgs-tinta);
+  --cosmere-color-text-sub: var(--mgs-tinta-sub);
+  --cosmere-color-faded: var(--mgs-tinta-fraca);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: var(--mgs-bendalloy-linha);
+
+  --cosmere-color-health-front: #1f4f3f;
+  --cosmere-color-health-back: var(--mgs-bendalloy-sombra);
+  --cosmere-color-focus-front: #43405f;
+  --cosmere-color-focus-back: var(--mgs-bendalloy-sombra);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-bendalloy-sombra);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: var(--mgs-danger);
+  --cosmere-color-complication-background: #f0dcd8;
+  --cosmere-color-opportunity: #1c4f52;
+  --cosmere-color-opportunity-text: #1c4f52;
+  --cosmere-color-opportunity-background: #d9e3e2;
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-bendalloy-linha-forte);
+  --cosmere-color-parchment: var(--mgs-bendalloy-claro);"""
+
+TOK_CROMO = """  /* --- Cromo — verde-sálvia. Óxido de cromo, o pigmento verde-cromo de tinta industrial. Verde de composto metálico, não de corrosão: não colide com o Verdete, que é a pátina do bronze exposto ao ar do porto.
+         Sugestão de Mario, 2026-09-08. Mesma construção do Platina e do Cádmio.
+         Piso medido contra #bccbb4, o painel mais escuro. --- */
+  --mgs-cromo-claro: #f3f6f1;
+  --mgs-cromo: #e8eee4;
+  --mgs-cromo-painel: #dfe7da;
+  --mgs-cromo-sombra: #d3ddcc;
+  --mgs-cromo-fundo: #bccbb4;
+
+  --mgs-cromo-linha: #3f5636;
+  --mgs-cromo-linha-forte: #35492d;
+
+  --mgs-tinta: #1e2b1c;
+  --mgs-tinta-sub: #37472f;
+  --mgs-tinta-fraca: #44553b;
+
+  --mgs-danger: #8b2f26;"""
+
+MAPA_CROMO = """
+  --cosmere-color-sheet: var(--mgs-cromo);
+  --cosmere-color-base-1: var(--mgs-cromo-fundo);
+  --cosmere-color-base-2: var(--mgs-cromo-claro);
+  --cosmere-color-base-3: var(--mgs-cromo-painel);
+  --cosmere-color-base-4: var(--mgs-cromo-sombra);
+  --cosmere-color-base-5: var(--mgs-cromo-linha);
+  --cosmere-color-base-6: var(--mgs-cromo-linha-forte);
+  --cosmere-color-neutral: var(--mgs-cromo-sombra);
+
+  --cosmere-color-text-main: var(--mgs-tinta);
+  --cosmere-color-text-sub: var(--mgs-tinta-sub);
+  --cosmere-color-faded: var(--mgs-tinta-fraca);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: var(--mgs-cromo-linha);
+
+  --cosmere-color-health-front: #1f4f3f;
+  --cosmere-color-health-back: var(--mgs-cromo-sombra);
+  --cosmere-color-focus-front: #3b4f4a;
+  --cosmere-color-focus-back: var(--mgs-cromo-sombra);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-cromo-sombra);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: var(--mgs-danger);
+  --cosmere-color-complication-background: #f0dcd8;
+  --cosmere-color-opportunity: #1c4f52;
+  --cosmere-color-opportunity-text: #1c4f52;
+  --cosmere-color-opportunity-background: #d9e3e2;
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-cromo-linha-forte);
+  --cosmere-color-parchment: var(--mgs-cromo-claro);"""
+
 # ------------------------------------------------------------------- temas
 
 TEMAS = [
@@ -641,6 +749,18 @@ TEMAS = [
        vinheta='rgb(40 70 110 / 13%)', fuligem='fuligem-claro.uri',
        metais={'prata':('#2c557e','4,77 no pior painel'), 'ouro':('#615219','4,73'),
                'cobre':('#883d1b','4,73'), 'estanho':('#1f4a4a','6,04')}),
+  dict(id='mgs-bendalloy', nome='Bendalloy',
+       tokens=TOK_BENDALLOY, mapa=MAPA_BENDALLOY, var='bendalloy',
+       metal='#50407a', tinta_metal='8%',
+       vinheta='rgb(70 55 110 / 13%)', fuligem='fuligem-claro.uri',
+       metais={'prata':('#50407a','medido contra #c3b7dc'), 'ouro':('#564816','idem'),
+               'cobre':('#783618','idem'), 'estanho':('#1f4a4a','idem')}),
+  dict(id='mgs-cromo', nome='Cromo',
+       tokens=TOK_CROMO, mapa=MAPA_CROMO, var='cromo',
+       metal='#3f5636', tinta_metal='8%',
+       vinheta='rgb(55 75 45 / 13%)', fuligem='fuligem-claro.uri',
+       metais={'prata':('#3f5636','medido contra #bccbb4'), 'ouro':('#5e4f19','idem'),
+               'cobre':('#843b1a','idem'), 'estanho':('#1f4a4a','idem')}),
 ]
 
 

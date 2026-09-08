@@ -3,6 +3,29 @@
 The format follows semantic versioning. While the version is 0.x, nothing has been validated at
 runtime.
 
+## 0.9.0 — 2026-09-08
+
+- **Bendalloy and Cromo**, the tenth and eleventh themes, built like Platina and Cádmio and named
+  for what actually produces those colours. Bendalloy is a bismuth alloy, and a bismuth crystal
+  takes exactly that lilac iridescence from its own oxide film; Cromo is chrome-oxide green, the
+  industrial pigment — a green from a metal compound rather than from corrosion, which is what
+  keeps it clear of Verdete.
+- Bendalloy is the one colour in the set that is not a metal in open air. That was argued against
+  and kept deliberately: it is the only theme that can mark what is invested rather than
+  industrial.
+- Worst measured pair, on rendered pixels: 5.50:1.
+- **Every theme renamed after a metal**, at Mario's request: a player picks the sheet that looks
+  like their character's metal. Ferrugem became **Ferro**, Negativo **Latão**, Registro
+  **Electro**, Mínio **Cobre**, Verdete **Bronze** and Platina **Aço**; Peltre, Zinco, Cádmio,
+  Bendalloy and Cromo were already metals. Eleven of the sixteen allomantic metals are covered.
+- Only the **labels** changed. The ids did not, and that is deliberate: an id is what gets
+  stored — in each player's theme preference and, for the sheets, on the actor — so renaming one
+  would send every choice already made to something that no longer exists, and each sheet would
+  fall back to the default in silence. `mgs-ferrugem` is still `mgs-ferrugem`; it just reads
+  "Ferro".
+- Eleven themes bring the stylesheet to about 1.6 MB, ~300 KB gzipped. Each further theme costs
+  roughly 150 KB raw.
+
 ## 0.8.0 — 2026-09-08
 
 - **Platina and Cádmio**, two light themes built the same way and the eighth and ninth of the set.

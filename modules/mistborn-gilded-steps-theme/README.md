@@ -21,31 +21,41 @@ declared position tiles across the entire sheet.
 Disabling the module restores the original appearance. That is the undo button, and there is no
 other state to revert.
 
-### Nine themes, on the system's own list
+### Eleven themes, on the system's own list
 
 Since 0.5.0 the module no longer overrides the system's Default theme. It registers its own
 entries through the published API, `cosmereRPG.api.registerTheme()`, and they appear in
 **Settings → Theme** alongside the system's:
 
-- **Gilded Steps — Ferrugem.** Oxidised iron: a red-brown pulled towards orange, darkening to
+- **Gilded Steps — Ferro.** Oxidised iron: a red-brown pulled towards orange, darkening to
   near black at the edges.
-- **Gilded Steps — Negativo.** The same plate, at forge heat: a hot orange ground with gears and
+- **Gilded Steps — Latão.** The same plate, at forge heat: a hot orange ground with gears and
   smoke in near black.
-- **Gilded Steps — Registro.** Harbour ledger paper: a beige ground, hairlines and frames in
+- **Gilded Steps — Electro.** Harbour ledger paper: a beige ground, hairlines and frames in
   brick red, numbers and text in a near-black brown.
-- **Gilded Steps — Mínio.** Red-oxide primer, the paint that goes on structural steel before the
+- **Gilded Steps — Cobre.** Red-oxide primer, the paint that goes on structural steel before the
   finish coat. Opaque, industrial.
-- **Gilded Steps — Verdete.** The verdigris of bronze and copper left in harbour air: a cool,
+- **Gilded Steps — Bronze.** The verdigris of bronze and copper left in harbour air: a cool,
   greyed green.
 - **Gilded Steps — Peltre.** Pewter, matte: tin-and-lead grey with no warmth in it. The most
   neutral of the seven.
 - **Gilded Steps — Zinco.** Blued steel and galvanised zinc — a cold plate blue, deliberately
   away from the navy the system ships with.
-- **Gilded Steps — Platina.** Peltre's negative: polished steel, a near-white plate with mid-grey
+- **Gilded Steps — Aço.** Peltre's negative: polished steel, a near-white plate with mid-grey
   frames instead of gold. The only theme whose default metal is silver rather than gold, because
   the grey frame *is* the point of it.
 - **Gilded Steps — Cádmio.** Platina's cousin at another temperature: an ice-blue plate with
   steel-blue frames. Its default metal is silver too.
+- **Gilded Steps — Bendalloy.** Bismuth alloy: the lilac iridescence a bismuth crystal takes from
+  its own oxide film. The one colour in the set that is not a metal in open air, and so the one
+  that can mark what is *invested* rather than industrial.
+- **Gilded Steps — Cromo.** Chrome-oxide green, the industrial pigment. A green from a metal
+  compound, not from corrosion — which is what keeps it clear of Verdete.
+
+The names are metals, so a player can pick the sheet that looks like their character's. The
+labels changed in 0.9.0; the ids behind them did not, because an id is what gets stored — in each
+player's theme preference and, for the sheets, on the actor itself. Renaming one would silently
+send every choice already made to something that no longer exists.
 
 This works because the system builds that menu in `registerDeferredSettings()`, on the `setup`
 hook — after modules have initialised. The module registers on `init` and arrives in time.
@@ -58,21 +68,23 @@ here declares the complete set, not just the differences.
 
 The theme above is each player's own preference and applies to every sheet they
 open. For a different look on a *specific* actor — one NPC in rust, another in
-beige — the module also registers nine **sheets** of its own, the same mechanism
+beige — the module also registers eleven **sheets** of its own, the same mechanism
 the SWADE companion modules use. They appear under **This Sheet** in an actor's
 sheet configuration:
 
 ```
 Default Sheet
-Gilded Steps — Ferrugem
-Gilded Steps — Negativo
-Gilded Steps — Registro
-Gilded Steps — Mínio
-Gilded Steps — Verdete
+Gilded Steps — Ferro
+Gilded Steps — Latão
+Gilded Steps — Electro
+Gilded Steps — Cobre
+Gilded Steps — Bronze
 Gilded Steps — Peltre
 Gilded Steps — Zinco
-Gilded Steps — Platina
+Gilded Steps — Aço
 Gilded Steps — Cádmio
+Gilded Steps — Bendalloy
+Gilded Steps — Cromo
 ```
 
 The choice is stored on the actor, so everyone sees that NPC the same way, and it

@@ -22,17 +22,29 @@
 
 const ID = 'mistborn-gilded-steps-theme';
 
+/**
+ * Os RÓTULOS mudaram para nomes de metal em 0.9.0, a pedido de Mario: o jogador
+ * escolhe uma ficha com a cara do metal do personagem dele. Os `id` NÃO mudaram.
+ *
+ * A distinção importa. O `id` é o que fica gravado — na preferência de tema de
+ * cada jogador e, no caso das fichas, no próprio ator. Renomeá-lo faria toda
+ * escolha já feita apontar para coisa que não existe mais, e cada ficha voltaria
+ * ao padrão em silêncio. O rótulo é só o que se lê na lista; trocá-lo não custa
+ * nada. Por isso `mgs-ferrugem` continua `mgs-ferrugem` e aparece como "Ferro".
+ */
 /** Os temas que este módulo acrescenta à lista do Cosmere. */
 const TEMAS = [
-    { id: 'mgs-ferrugem', label: 'Gilded Steps — Ferrugem' },
-    { id: 'mgs-negativo', label: 'Gilded Steps — Negativo' },
-    { id: 'mgs-registro', label: 'Gilded Steps — Registro' },
-    { id: 'mgs-minio',    label: 'Gilded Steps — Mínio' },
-    { id: 'mgs-verdete',  label: 'Gilded Steps — Verdete' },
+    { id: 'mgs-ferrugem', label: 'Gilded Steps — Ferro' },
+    { id: 'mgs-negativo', label: 'Gilded Steps — Latão' },
+    { id: 'mgs-registro', label: 'Gilded Steps — Electro' },
+    { id: 'mgs-minio',    label: 'Gilded Steps — Cobre' },
+    { id: 'mgs-verdete',  label: 'Gilded Steps — Bronze' },
     { id: 'mgs-peltre',   label: 'Gilded Steps — Peltre' },
     { id: 'mgs-zinco',    label: 'Gilded Steps — Zinco' },
-    { id: 'mgs-platina',  label: 'Gilded Steps — Platina' },
-    { id: 'mgs-cadmio',   label: 'Gilded Steps — Cádmio' },
+    { id: 'mgs-platina',  label: 'Gilded Steps — Aço' },
+    { id: 'mgs-cadmio',    label: 'Gilded Steps — Cádmio' },
+    { id: 'mgs-bendalloy', label: 'Gilded Steps — Bendalloy' },
+    { id: 'mgs-cromo',     label: 'Gilded Steps — Cromo' },
 ];
 
 /** Os metais são ortogonais ao tema: valem nos três. */

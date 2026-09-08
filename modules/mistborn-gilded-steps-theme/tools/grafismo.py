@@ -477,6 +477,10 @@ VARIANTES3 = {
                      crista='%23636c79', seed=41),
     'cadmio': dict(ferro='%23789ac0', corpo='%238fabc9', luz='%23789ac0',
                      crista='%235c82ab', seed=43),
+    'bendalloy': dict(ferro='%239b8bbd', corpo='%23a99bc7', luz='%239b8bbd',
+                     crista='%237f6ea3', seed=47),
+    'cromo': dict(ferro='%238ea083', corpo='%239cad91', luz='%238ea083',
+                     crista='%23718262', seed=53),
 }
 
 

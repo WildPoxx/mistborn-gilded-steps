@@ -27,17 +27,29 @@
 
 const ID = 'mistborn-gilded-steps-theme';
 
-/** Os mesmos três temas do CSS. O nome curto é o que vira classe. */
+/**
+ * Os RÓTULOS mudaram para nomes de metal em 0.9.0, a pedido de Mario: o jogador
+ * escolhe uma ficha com a cara do metal do personagem dele. Os `id` NÃO mudaram.
+ *
+ * A distinção importa. O `id` é o que fica gravado — na preferência de tema de
+ * cada jogador e, aqui, no próprio ator. Renomeá-lo faria toda
+ * escolha já feita apontar para coisa que não existe mais, e cada ficha voltaria
+ * ao padrão em silêncio. O rótulo é só o que se lê na lista; trocá-lo não custa
+ * nada. Por isso `mgs-ferrugem` continua `mgs-ferrugem` e aparece como "Ferro".
+ */
+/** Os onze temas do CSS. O nome curto é o que vira classe. */
 const TEMAS = [
-    { curto: 'ferrugem', id: 'mgs-ferrugem', label: 'Gilded Steps — Ferrugem' },
-    { curto: 'negativo', id: 'mgs-negativo', label: 'Gilded Steps — Negativo' },
-    { curto: 'registro', id: 'mgs-registro', label: 'Gilded Steps — Registro' },
-    { curto: 'minio',    id: 'mgs-minio',    label: 'Gilded Steps — Mínio' },
-    { curto: 'verdete',  id: 'mgs-verdete',  label: 'Gilded Steps — Verdete' },
+    { curto: 'ferrugem', id: 'mgs-ferrugem', label: 'Gilded Steps — Ferro' },
+    { curto: 'negativo', id: 'mgs-negativo', label: 'Gilded Steps — Latão' },
+    { curto: 'registro', id: 'mgs-registro', label: 'Gilded Steps — Electro' },
+    { curto: 'minio',    id: 'mgs-minio',    label: 'Gilded Steps — Cobre' },
+    { curto: 'verdete',  id: 'mgs-verdete',  label: 'Gilded Steps — Bronze' },
     { curto: 'peltre',   id: 'mgs-peltre',   label: 'Gilded Steps — Peltre' },
     { curto: 'zinco',    id: 'mgs-zinco',    label: 'Gilded Steps — Zinco' },
-    { curto: 'platina',  id: 'mgs-platina',  label: 'Gilded Steps — Platina' },
-    { curto: 'cadmio',   id: 'mgs-cadmio',   label: 'Gilded Steps — Cádmio' },
+    { curto: 'platina',  id: 'mgs-platina',  label: 'Gilded Steps — Aço' },
+    { curto: 'cadmio',    id: 'mgs-cadmio',    label: 'Gilded Steps — Cádmio' },
+    { curto: 'bendalloy', id: 'mgs-bendalloy', label: 'Gilded Steps — Bendalloy' },
+    { curto: 'cromo',     id: 'mgs-cromo',     label: 'Gilded Steps — Cromo' },
 ];
 
 /** Os dois tipos de ator do Cosmere. */

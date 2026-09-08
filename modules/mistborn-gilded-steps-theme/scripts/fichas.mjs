@@ -48,6 +48,8 @@ function base(tipo) {
     const registradas = CONFIG.Actor?.sheetClasses?.[tipo];
     if (!registradas) return null;
     const entradas = Object.values(registradas);
+    // Vazio aqui significa quase sempre tempo errado, não sistema ausente:
+    // ver a nota sobre `ready` mais abaixo.
     const doSistema =
         entradas.find((e) => e.id?.startsWith('cosmere-rpg.') && e.default) ??
         entradas.find((e) => e.id?.startsWith('cosmere-rpg.'));
@@ -71,11 +73,26 @@ function fabricar(Base, curto, nome) {
 }
 
 /**
- * Registrar no `setup`, e não no `init`: as fichas do Cosmere são registradas
- * durante o `init` do próprio sistema, e a nossa herda delas. No `init` do
- * módulo a classe-base ainda pode não existir.
+ * Registrar no `ready`, e a razão está no código do Foundry 13.351.
+ *
+ * `DocumentSheetConfig.registerSheet` tem dois caminhos: se `game.ready` já é
+ * verdadeiro, grava direto em `CONFIG.<Documento>.sheetClasses`; se ainda não,
+ * empilha numa fila privada. `Game#setupGame` só esvazia essa fila mais tarde,
+ * em `initializeSheets()`, que ANTES apaga `sheetClasses` inteiro e só então
+ * repõe o que estava na fila.
+ *
+ * A ordem real é: hook `init` → hook `setup` → `initializeSheets()` → `ready`.
+ * Como o sistema registra as fichas dele no `init`, elas ficam na fila e
+ * `CONFIG.Actor.sheetClasses` continua VAZIO durante o `init` e durante o
+ * `setup`. Foi isso que derrubou a v0.6.0: no `setup` a busca pela classe-base
+ * não achava nada, avisava no console e desistia.
+ *
+ * No `ready` as duas condições finalmente valem ao mesmo tempo — a fila já foi
+ * esvaziada, então a classe-base existe; e `game.ready` já é verdadeiro, então
+ * o registro entra na hora em vez de cair numa fila que ninguém mais esvazia.
+ * A janela de configuração lê a lista quando abre, e sempre abre depois disso.
  */
-Hooks.once('setup', () => {
+Hooks.once('ready', () => {
     const Actors = foundry.documents?.collections?.Actors ?? globalThis.Actors;
     if (!Actors?.registerSheet) {
         console.warn(

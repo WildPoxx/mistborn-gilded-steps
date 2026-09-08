@@ -3,6 +3,18 @@
 The format follows semantic versioning. While the version is 0.x, nothing has been validated at
 runtime.
 
+## 0.6.1 — 2026-09-08
+
+- **Fix: the per-actor sheets never reached the list.** They were registered on the `setup` hook,
+  and in Foundry 13.351 that is too early to *find* the system's sheet class and too early to
+  *register* one. `DocumentSheetConfig.registerSheet` writes straight to
+  `CONFIG.<Document>.sheetClasses` only once `game.ready` is true; before that it queues, and
+  `Game#setupGame` drains that queue in `initializeSheets()` — which first wipes `sheetClasses`
+  entirely. The real order is `init` → `setup` → `initializeSheets()` → `ready`, so during both
+  `init` and `setup` the registry is empty: the lookup for the base class found nothing, warned in
+  the console, and gave up. Registration moved to `ready`, where the queue has been drained (the
+  base class exists) and `game.ready` is true (the registration lands immediately).
+
 ## 0.6.0 — 2026-09-08
 
 - **An appearance per actor.** Three sheets are registered under **This Sheet** in an actor's

@@ -2,7 +2,7 @@
   "id": "mistborn-gilded-steps-theme",
   "title": "Gilded Steps — theme for Cosmere RPG",
   "description": "Visual themes of the Mistborn Gilded Steps campaign for the Cosmere RPG system. It adds eleven themes to the system's own theme list and eleven per-actor appearance sheets, so a player's preference and an individual NPC's colour can coexist. It redefines colour and ornament only. No rule, roll, template, permission or sheet structure is altered. Disabling the module restores the system's original appearance.",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "compatibility": {
     "minimum": "13",
     "verified": "13.351",
@@ -27,7 +27,7 @@
   },
   "url": "https://github.com/WildPoxx/mistborn-gilded-steps",
   "manifest": "https://github.com/WildPoxx/mistborn-gilded-steps/releases/latest/download/module.json",
-  "download": "https://github.com/WildPoxx/mistborn-gilded-steps/releases/download/v0.9.0/module.zip",
+  "download": "https://github.com/WildPoxx/mistborn-gilded-steps/releases/download/v0.9.1/module.zip",
   "license": "LICENSE",
   "readme": "https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/modules/mistborn-gilded-steps-theme/README.md",
   "changelog": "https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/modules/mistborn-gilded-steps-theme/CHANGELOG.md",

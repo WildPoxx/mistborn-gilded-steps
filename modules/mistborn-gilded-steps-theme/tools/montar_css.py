@@ -6,9 +6,10 @@ v0.5.0 (2026-09-08): o tema deixou de sobrescrever o Default do Cosmere e passou
 a REGISTRAR temas próprios pela API do sistema. São três entradas na lista, e
 cada uma tem seu bloco aqui.
 """
-import pathlib
+import json, pathlib
 
 G = pathlib.Path(__file__).parent
+BARRAS = json.loads((G/'barras.json').read_text(encoding='utf-8'))
 def u(n): return G.joinpath(n).read_text(encoding='utf-8')
 
 CAB = '''/*
@@ -823,6 +824,26 @@ body.cosmere-theme-{t['id']},
 
   --mgs-lado-esq: {u(f'lado-esq-{v}.uri')};
   --mgs-lado-dir: {u(f'lado-dir-{v}.uri')};
+
+  /* --- As barras de vida, foco e investidura ---
+     O sistema escreve o numero DENTRO da barra e o pinta de branco fixo
+     (`.value {{ color: var(--cosmere-color-white) }}`), com o separador em
+     `--cosmere-color-accent`. Nos temas claros a barra e escura e o separador
+     ficava escuro sobre escuro; nos escuros a barra e clara e o branco sumia.
+     O branco fixo do sistema so funciona por acaso.
+
+     A correcao tem duas metades, e as duas sao necessarias.
+     1. A parte VAZIA da barra passa a ficar do mesmo lado da parte cheia. Antes
+        eram lados opostos, e uma barra pela metade nao tinha cor de numero que
+        servisse as duas.
+     2. O numero deixa de ser branco fixo e sai de `--mgs-barra-tinta`, clara
+        nos temas de barra escura e escura nos de barra clara. A regra que faz
+        isso esta no fim do arquivo.
+     Piso medido: nenhum par abaixo de 4,8:1. */
+  --mgs-barra-tinta: {BARRAS[v]['tinta']};
+  --cosmere-color-health-back: {BARRAS[v]['trilho']};
+  --cosmere-color-focus-back: {BARRAS[v]['trilho']};
+  --cosmere-color-invest-back: {BARRAS[v]['trilho']};
 }}
 
 /* As duas faixas laterais. Precisam de `position`, `repeat` e `size` POR CAMADA:
@@ -872,6 +893,7 @@ if __name__ == "__main__":
             "   nada quebra: fica o metal padrão do tema.\n"
             "   ======================================================================= */\n\n")
     css += "".join(metais(t) for t in TEMAS)
+    css += (G/'regra_barras.txt').read_text(encoding='utf-8')
     destino = pathlib.Path('/home/claude/mgs-theme/styles/mistborn-gilded-steps-theme.css')
     destino.write_text(css, encoding='utf-8', newline='\n')
     print("CSS montado:", len(css), "caracteres em", destino)

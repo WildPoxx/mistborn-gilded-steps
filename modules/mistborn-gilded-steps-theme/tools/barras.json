@@ -1,0 +1,46 @@
+{
+ "ferrugem": {
+  "tinta": "#1a0e08",
+  "trilho": "#a97755"
+ },
+ "negativo": {
+  "tinta": "#ffdcae",
+  "trilho": "#611d10"
+ },
+ "registro": {
+  "tinta": "#f6efe1",
+  "trilho": "#7a2b1f"
+ },
+ "minio": {
+  "tinta": "#180705",
+  "trilho": "#a77064"
+ },
+ "verdete": {
+  "tinta": "#07160f",
+  "trilho": "#6fa392"
+ },
+ "peltre": {
+  "tinta": "#101114",
+  "trilho": "#939aa6"
+ },
+ "zinco": {
+  "tinta": "#071219",
+  "trilho": "#6f9bb8"
+ },
+ "platina": {
+  "tinta": "#f6f8fa",
+  "trilho": "#4b535f"
+ },
+ "cadmio": {
+  "tinta": "#f2f6fb",
+  "trilho": "#2c557e"
+ },
+ "bendalloy": {
+  "tinta": "#f6f3fb",
+  "trilho": "#50407a"
+ },
+ "cromo": {
+  "tinta": "#f3f6f1",
+  "trilho": "#3f5636"
+ }
+}

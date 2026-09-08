@@ -157,6 +157,12 @@ mist, absent at the edge and full where text lands — restores it without remov
 where it counts. Its gradient stops are the right place to trade legibility against atmosphere.
 The worst pair in the theme now measures 4.62:1.
 
+The resource bars needed more than colour choice. The system paints the number inside them a
+fixed white and the separator with the accent, which reads on some themes and disappears on
+others; the module overrides both per theme and keeps a bar's filled and empty halves on the same
+side of the luminance divide, so a half-full bar has one number colour that works. That override
+wins on specificity rather than file order.
+
 `tools/contraste.py` computes these ratios from token values; the figures quoted in the CSS
 comments come from measuring the rendered image.
 

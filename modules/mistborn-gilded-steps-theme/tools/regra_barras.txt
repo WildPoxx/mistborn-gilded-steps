@@ -1,0 +1,109 @@
+
+
+/* =======================================================================
+   O NUMERO DENTRO DA BARRA
+   O sistema pinta `.value` de branco fixo e o separador de accent, pelo
+   seletor `.application.sheet.actor app-actor-resource .resource .bar
+   .container .value` — sete classes e um elemento. As regras abaixo tem
+   nove classes: vencem por especificidade, e nao por ordem de arquivo,
+   que e o que sobrevive a uma atualizacao do sistema.
+   ======================================================================= */
+
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-ferrugem app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-ferrugem app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-negativo app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-negativo app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-registro .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-registro app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-registro .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-registro app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-minio .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-minio app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-minio .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-minio app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-verdete .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-verdete app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-verdete .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-verdete app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-peltre .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-peltre app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-peltre .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-peltre app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-zinco .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-zinco app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-zinco .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-zinco app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-platina .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-platina app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-platina .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-platina app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-cadmio .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-cadmio app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-cadmio .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-cadmio app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-bendalloy .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-bendalloy app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-bendalloy .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-bendalloy app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}
+
+body.cosmere-theme-mgs-cromo .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value,
+.application.cosmere-rpg.sheet.actor.mgs-tema-cromo app-actor-resource .resource .bar .container .value {
+  color: var(--mgs-barra-tinta);
+}
+body.cosmere-theme-mgs-cromo .application.cosmere-rpg.sheet.actor app-actor-resource .resource .bar .container .value .delim,
+.application.cosmere-rpg.sheet.actor.mgs-tema-cromo app-actor-resource .resource .bar .container .value .delim {
+  color: color-mix(in srgb, var(--mgs-barra-tinta) 72%, transparent);
+}

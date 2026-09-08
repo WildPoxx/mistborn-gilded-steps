@@ -3,6 +3,24 @@
 The format follows semantic versioning. While the version is 0.x, nothing has been validated at
 runtime.
 
+## 0.9.1 — 2026-09-08
+
+- **Fix: the number inside the resource bars could be unreadable.** Mario caught it on the light
+  themes; measuring showed the dark ones had the mirror image of the same fault.
+- The system writes that number inside the bar and paints it a fixed white, with the separator in
+  `--cosmere-color-accent`. On a light theme the bar is dark and the separator went dark on dark;
+  on a dark theme the bar is light and the white vanished. The fixed white only ever worked by
+  accident.
+- Two halves to the fix, both needed. The **empty** part of a bar now sits on the same side of the
+  luminance divide as the filled part — they were on opposite sides, so a half-full bar had no
+  single number colour that served both. And the number itself now comes from `--mgs-barra-tinta`,
+  light where the bar is dark and dark where it is light.
+- The override wins on **specificity**, nine classes against the system's seven, not on file
+  order, which is what survives a system update.
+- Measured on rendered pixels, with the prototype reproducing the system's own white rule so the
+  cascade is actually exercised: 66 pairs — eleven themes, three bars, filled and empty — and the
+  worst is 4.80:1.
+
 ## 0.9.0 — 2026-09-08
 
 - **Bendalloy and Cromo**, the tenth and eleventh themes, built like Platina and Cádmio and named

@@ -36,7 +36,11 @@ community to install.
 - **[Gilded Steps Theme](modules/mistborn-gilded-steps-theme/)** — an appearance module for the
   Cosmere RPG system on Foundry V13. It redefines colour and ornament only: no rule, roll,
   template, permission or sheet structure is altered, and disabling it restores the system's
-  original look.
+  original look. Install from Foundry with this manifest URL:
+
+  ```
+  https://github.com/WildPoxx/mistborn-gilded-steps/releases/latest/download/module.json
+  ```
 
 ## Governance
 
@@ -44,6 +48,21 @@ community to install.
 - [`SPOILER_POLICY.md`](SPOILER_POLICY.md) — the continuity line and how to handle it.
 - [`VISUAL_IDENTITY.md`](VISUAL_IDENTITY.md) — the *Gilded Steps* visual language.
 - [`AGENTS.md`](AGENTS.md) — instructions for assistants working in this repository.
+
+## Licensing
+
+This repository holds two kinds of work, under two different terms.
+
+**`modules/` is MIT licensed.** The CSS, scripts and generators there are original work. Use,
+adapt and redistribute them freely — each module carries its own `LICENSE` file.
+
+**Everything else is not licensed for reuse.** The portal, the wiki and the campaign material
+are fan work built on settings owned by others. They are published so this table's players —
+and anyone curious — can read them. That is not a grant of rights to redistribute or adapt
+them, because those rights are not ours to grant.
+
+There is deliberately **no licence file at the repository root**: one there would suggest the
+campaign material is freely licensed, and it is not.
 
 ## Rights
 

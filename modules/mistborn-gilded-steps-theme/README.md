@@ -67,9 +67,17 @@ CSS.
 
 ## Installation
 
-Copy this folder into `Data/modules/` of the instance's data root, under the name
+**From Foundry.** In *Add-on Modules → Install Module*, paste this manifest URL:
+
+```
+https://github.com/WildPoxx/mistborn-gilded-steps/releases/latest/download/module.json
+```
+
+**By hand.** Copy this folder into `Data/modules/` of the instance's data root, under the name
 `mistborn-gilded-steps-theme` — identical to the `id` in the manifest, or Foundry will refuse
-it. Then enable the module under **Settings → Manage Modules**.
+it.
+
+Either way, enable the module under **Settings → Manage Modules**.
 
 ## Status
 
@@ -98,8 +106,18 @@ gold.
    again a **derivation** of the contract, not an adaptation. The portal stays in the iron
    family, which has not changed.
 
+## Licence
+
+This module is released under the **MIT License** — see [`LICENSE`](LICENSE). The CSS, the
+script and the graphics generators are original work and you are free to use, adapt and
+redistribute them.
+
+**The MIT licence covers this folder only.** The rest of the repository is campaign material
+that draws on third-party settings and is not licensed for reuse; see the repository README.
+
 ## Rights
 
 Fan material, non-commercial. *Mistborn*, the Cosmere and Scadrial belong to Brandon Sanderson
 and Dragonsteel Entertainment. The *Cosmere RPG* belongs to Brotherwise Games and its rights
-holders. This module is not affiliated with, endorsed by, or produced by any of them.
+holders. This module is not affiliated with, endorsed by, or produced by any of them, and it
+redistributes none of their text, art, rules or code.

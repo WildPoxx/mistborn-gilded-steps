@@ -24,7 +24,11 @@
     "requires": [],
     "recommends": []
   },
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/WildPoxx/mistborn-gilded-steps",
+  "manifest": "https://github.com/WildPoxx/mistborn-gilded-steps/releases/latest/download/module.json",
+  "download": "https://github.com/WildPoxx/mistborn-gilded-steps/releases/download/v0.4.0/module.zip",
+  "license": "LICENSE",
+  "readme": "https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/modules/mistborn-gilded-steps-theme/README.md",
+  "changelog": "https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/modules/mistborn-gilded-steps-theme/CHANGELOG.md",
+  "bugs": "https://github.com/WildPoxx/mistborn-gilded-steps/issues"
 }

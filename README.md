@@ -21,10 +21,10 @@ land here.
 
 ## Quick links
 
-- [Player portal](docs/index.html)
+- [Player portal](https://wildpoxx.github.io/mistborn-gilded-steps/)
 - [Wiki: home](wiki/Home.md)
 - [Start here](wiki/Start-Here.md)
-- [Constabulary Record](docs/constabulary-record.html)
+- [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html)
 - [Metalborn Lottery](wiki/Metalborn-Lottery.md)
 - [Table rules](wiki/Table-Rules.md)
 

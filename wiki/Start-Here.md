@@ -37,7 +37,7 @@ mysterious past.
 The characters occupy a borderline position, close to a rising gang. That makes them neither
 villains nor heroes. It makes them people with interests.
 
-Each character's file lives in the [Constabulary Record](../docs/constabulary-record.html) —
+Each character's file lives in the [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html) —
 the archive the Bilming Constabulary keeps on you.
 
 ## Before the first session
@@ -45,7 +45,7 @@ the archive the Bilming Constabulary keeps on you.
 1. Read this page and the [Home](Home.md).
 2. Read the [Metalborn Lottery](Metalborn-Lottery.md) — it changes how your character finds out
    whether they have the Metallic Arts.
-3. Read the [Constabulary Record](../docs/constabulary-record.html) and send the GM your
+3. Read the [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html) and send the GM your
    identification details.
 4. Read the [Table Rules](Table-Rules.md).
 5. Bring two things: someone your character depends on, and someone who depends on them.

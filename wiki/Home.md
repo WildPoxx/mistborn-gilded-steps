@@ -18,7 +18,7 @@ play.
 
 ## Who we are
 
-- [Constabulary Record](../docs/constabulary-record.html) — the files the Bilming Constabulary
+- [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html) — the files the Bilming Constabulary
   keeps on us
 
 ## The setting

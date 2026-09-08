@@ -27,6 +27,10 @@ const TEMAS = [
     { id: 'mgs-ferrugem', label: 'Gilded Steps — Ferrugem' },
     { id: 'mgs-negativo', label: 'Gilded Steps — Negativo' },
     { id: 'mgs-registro', label: 'Gilded Steps — Registro' },
+    { id: 'mgs-minio',    label: 'Gilded Steps — Mínio' },
+    { id: 'mgs-verdete',  label: 'Gilded Steps — Verdete' },
+    { id: 'mgs-peltre',   label: 'Gilded Steps — Peltre' },
+    { id: 'mgs-zinco',    label: 'Gilded Steps — Zinco' },
 ];
 
 /** Os metais são ortogonais ao tema: valem nos três. */

@@ -29,9 +29,13 @@ const ID = 'mistborn-gilded-steps-theme';
 
 /** Os mesmos três temas do CSS. O nome curto é o que vira classe. */
 const TEMAS = [
-    { curto: 'ferrugem', label: 'Gilded Steps — Ferrugem' },
-    { curto: 'negativo', label: 'Gilded Steps — Negativo' },
-    { curto: 'registro', label: 'Gilded Steps — Registro' },
+    { curto: 'ferrugem', id: 'mgs-ferrugem', label: 'Gilded Steps — Ferrugem' },
+    { curto: 'negativo', id: 'mgs-negativo', label: 'Gilded Steps — Negativo' },
+    { curto: 'registro', id: 'mgs-registro', label: 'Gilded Steps — Registro' },
+    { curto: 'minio',    id: 'mgs-minio',    label: 'Gilded Steps — Mínio' },
+    { curto: 'verdete',  id: 'mgs-verdete',  label: 'Gilded Steps — Verdete' },
+    { curto: 'peltre',   id: 'mgs-peltre',   label: 'Gilded Steps — Peltre' },
+    { curto: 'zinco',    id: 'mgs-zinco',    label: 'Gilded Steps — Zinco' },
 ];
 
 /** Os dois tipos de ator do Cosmere. */

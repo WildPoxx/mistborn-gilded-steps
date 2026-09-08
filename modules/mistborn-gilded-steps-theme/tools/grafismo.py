@@ -464,6 +464,14 @@ VARIANTES3 = {
                      crista='%23241207', seed=13),
     'registro': dict(ferro='%238a5a44', corpo='%23a08876', luz='%238a7160',
                      crista='%236b5445', seed=19),
+    'minio': dict(ferro='%23b39a90', corpo='%23a68b80', luz='%23cdb7ad',
+                     crista='%23f0e2dc', seed=23),
+    'verdete': dict(ferro='%239db3a8', corpo='%238fa89c', luz='%23b8ccc2',
+                     crista='%23e4efe9', seed=29),
+    'peltre': dict(ferro='%23a9aeb6', corpo='%239aa0aa', luz='%23c2c7ce',
+                     crista='%23edeff2', seed=31),
+    'zinco': dict(ferro='%239db0be', corpo='%238fa4b3', luz='%23b6c8d4',
+                     crista='%23e3edf4', seed=37),
 }
 
 
@@ -477,4 +485,4 @@ if __name__ == "__main__":
         (saida / f"lado-dir-{nome}.uri").write_text(uri(lateral3(True, **cfg)), encoding="utf-8")
     (saida / "fuligem.uri").write_text(uri(fuligem()), encoding="utf-8")
     (saida / "fuligem-claro.uri").write_text(uri(fuligem(0.045)), encoding="utf-8")
-    print("grafismos gerados:", len(VARIANTES), "variantes")
+    print("grafismos gerados:", len(VARIANTES3), "variantes")

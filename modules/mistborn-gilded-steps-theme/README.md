@@ -21,7 +21,7 @@ declared position tiles across the entire sheet.
 Disabling the module restores the original appearance. That is the undo button, and there is no
 other state to revert.
 
-### Three themes, on the system's own list
+### Seven themes, on the system's own list
 
 Since 0.5.0 the module no longer overrides the system's Default theme. It registers its own
 entries through the published API, `cosmereRPG.api.registerTheme()`, and they appear in
@@ -33,6 +33,14 @@ entries through the published API, `cosmereRPG.api.registerTheme()`, and they ap
   smoke in near black.
 - **Gilded Steps — Registro.** Harbour ledger paper: a beige ground, hairlines and frames in
   brick red, numbers and text in a near-black brown.
+- **Gilded Steps — Mínio.** Red-oxide primer, the paint that goes on structural steel before the
+  finish coat. Opaque, industrial.
+- **Gilded Steps — Verdete.** The verdigris of bronze and copper left in harbour air: a cool,
+  greyed green.
+- **Gilded Steps — Peltre.** Pewter, matte: tin-and-lead grey with no warmth in it. The most
+  neutral of the seven.
+- **Gilded Steps — Zinco.** Blued steel and galvanised zinc — a cold plate blue, deliberately
+  away from the navy the system ships with.
 
 This works because the system builds that menu in `registerDeferredSettings()`, on the `setup`
 hook — after modules have initialised. The module registers on `init` and arrives in time.
@@ -45,7 +53,7 @@ here declares the complete set, not just the differences.
 
 The theme above is each player's own preference and applies to every sheet they
 open. For a different look on a *specific* actor — one NPC in rust, another in
-beige — the module also registers three **sheets** of its own, the same mechanism
+beige — the module also registers seven **sheets** of its own, the same mechanism
 the SWADE companion modules use. They appear under **This Sheet** in an actor's
 sheet configuration:
 
@@ -54,6 +62,10 @@ Default Sheet
 Gilded Steps — Ferrugem
 Gilded Steps — Negativo
 Gilded Steps — Registro
+Gilded Steps — Mínio
+Gilded Steps — Verdete
+Gilded Steps — Peltre
+Gilded Steps — Zinco
 ```
 
 The choice is stored on the actor, so everyone sees that NPC the same way, and it

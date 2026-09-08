@@ -3,6 +3,21 @@
 The format follows semantic versioning. While the version is 0.x, nothing has been validated at
 runtime.
 
+## 0.7.0 — 2026-09-08
+
+- **Four more themes**, taking the range from three to seven, at Mario's suggestion: a spread of
+  metal finishes rather than variations on rust.
+  - **Mínio** — red-oxide primer on structural steel.
+  - **Verdete** — verdigris on bronze and copper in harbour air.
+  - **Peltre** — matte pewter, the most neutral of the set.
+  - **Zinco** — blued steel and galvanised zinc, kept deliberately away from the system's navy.
+- All four are dark, since the two light themes already existed, and each brings its own four
+  metals and its own mist and gear tints. Contrast was measured on rendered pixels against the
+  hardest panel of each: the worst pair in the four is 4.95:1.
+- Seven themes means seven sets of tiles: the stylesheet is now about 1 MB, ~200 KB over the wire
+  once the server gzips it. The graphics are `data:` URIs of SVG text, which compresses to a fifth
+  of its size.
+
 ## 0.6.1 — 2026-09-08
 
 - **Fix: the per-actor sheets never reached the list.** They were registered on the `setup` hook,

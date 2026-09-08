@@ -256,6 +256,222 @@ MAPA_REGISTRO = """
   --cosmere-color-turn-slow: var(--mgs-linha-forte);
   --cosmere-color-parchment: var(--mgs-bege-claro);"""
 
+# ----------------------------------------------------------------- minio
+
+TOK_MINIO = """  /* --- Mínio — avermelhado. Zarcão de mínio, a tinta de fundo que se passa em estrutura de aço antes da pintura. Vermelho de óxido, opaco, industrial.
+         Sugestão de Mario, 2026-09-08: ampliar a gama para emular metais.
+         Piso de contraste medido contra #4a211a, o painel mais claro. --- */
+  --mgs-minio-990: #180705;
+  --mgs-minio-950: #23100c;
+  --mgs-minio-900: #301511;
+  --mgs-minio-850: #3c1a15;
+  --mgs-minio-800: #4a211a;
+  --mgs-minio-700: #63302a;
+  --mgs-minio-line: #a36a5e;
+
+  --mgs-fog: #dfcac3;
+  --mgs-mist: #c4a79e;
+  --mgs-paper: #f2e4df;
+
+  --mgs-danger: #e08a80;"""
+
+MAPA_MINIO = """
+  --cosmere-color-sheet: var(--mgs-minio-950);
+  --cosmere-color-base-1: var(--mgs-minio-800);
+  --cosmere-color-base-2: var(--mgs-minio-990);
+  --cosmere-color-base-3: var(--mgs-minio-900);
+  --cosmere-color-base-4: var(--mgs-minio-850);
+  --cosmere-color-base-5: var(--mgs-minio-line);
+  --cosmere-color-base-6: var(--mgs-minio-700);
+  --cosmere-color-neutral: var(--mgs-minio-950);
+
+  --cosmere-color-text-main: var(--mgs-paper);
+  --cosmere-color-text-sub: var(--mgs-fog);
+  --cosmere-color-faded: var(--mgs-mist);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: #6fb3a9;
+
+  --cosmere-color-health-front: #6cab90;
+  --cosmere-color-health-back: var(--mgs-minio-850);
+  --cosmere-color-focus-front: #8b9c9e;
+  --cosmere-color-focus-back: var(--mgs-minio-900);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-minio-850);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: #e08a80;
+  --cosmere-color-complication-background-dark: var(--mgs-minio-990);
+  --cosmere-color-opportunity: #6fb3a9;
+  --cosmere-color-opportunity-text: #6fb3a9;
+  --cosmere-color-opportunity-background-dark: var(--mgs-minio-990);
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-minio-700);
+  --cosmere-color-parchment: var(--mgs-paper);"""
+
+# ----------------------------------------------------------------- verdete
+
+TOK_VERDETE = """  /* --- Verdete — esverdeado. A pátina do bronze e do cobre exposto ao ar do porto. Verde acinzentado, frio, de metal que envelheceu ao relento.
+         Sugestão de Mario, 2026-09-08: ampliar a gama para emular metais.
+         Piso de contraste medido contra #1e4032, o painel mais claro. --- */
+  --mgs-verdete-990: #07160f;
+  --mgs-verdete-950: #0d2018;
+  --mgs-verdete-900: #132a20;
+  --mgs-verdete-850: #183328;
+  --mgs-verdete-800: #1e4032;
+  --mgs-verdete-700: #2b5646;
+  --mgs-verdete-line: #6fa392;
+
+  --mgs-fog: #cfe0d7;
+  --mgs-mist: #aec5b9;
+  --mgs-paper: #e6f0ea;
+
+  --mgs-danger: #e18f85;"""
+
+MAPA_VERDETE = """
+  --cosmere-color-sheet: var(--mgs-verdete-950);
+  --cosmere-color-base-1: var(--mgs-verdete-800);
+  --cosmere-color-base-2: var(--mgs-verdete-990);
+  --cosmere-color-base-3: var(--mgs-verdete-900);
+  --cosmere-color-base-4: var(--mgs-verdete-850);
+  --cosmere-color-base-5: var(--mgs-verdete-line);
+  --cosmere-color-base-6: var(--mgs-verdete-700);
+  --cosmere-color-neutral: var(--mgs-verdete-950);
+
+  --cosmere-color-text-main: var(--mgs-paper);
+  --cosmere-color-text-sub: var(--mgs-fog);
+  --cosmere-color-faded: var(--mgs-mist);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: #6fb3a9;
+
+  --cosmere-color-health-front: #76b198;
+  --cosmere-color-health-back: var(--mgs-verdete-850);
+  --cosmere-color-focus-front: #99a8aa;
+  --cosmere-color-focus-back: var(--mgs-verdete-900);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-verdete-850);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: #e18f85;
+  --cosmere-color-complication-background-dark: var(--mgs-verdete-990);
+  --cosmere-color-opportunity: #6fb3a9;
+  --cosmere-color-opportunity-text: #6fb3a9;
+  --cosmere-color-opportunity-background-dark: var(--mgs-verdete-990);
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-verdete-700);
+  --cosmere-color-parchment: var(--mgs-paper);"""
+
+# ----------------------------------------------------------------- peltre
+
+TOK_PELTRE = """  /* --- Peltre — prateado. Peltre polido e fosco: cinza de estanho com chumbo, sem calor nenhum. É o tema mais neutro dos sete.
+         Sugestão de Mario, 2026-09-08: ampliar a gama para emular metais.
+         Piso de contraste medido contra #33373e, o painel mais claro. --- */
+  --mgs-peltre-990: #101114;
+  --mgs-peltre-950: #1a1c20;
+  --mgs-peltre-900: #232529;
+  --mgs-peltre-850: #2a2d33;
+  --mgs-peltre-800: #33373e;
+  --mgs-peltre-700: #474c56;
+  --mgs-peltre-line: #939aa6;
+
+  --mgs-fog: #d7dbe1;
+  --mgs-mist: #b6bcc6;
+  --mgs-paper: #eef0f3;
+
+  --mgs-danger: #e08a80;"""
+
+MAPA_PELTRE = """
+  --cosmere-color-sheet: var(--mgs-peltre-950);
+  --cosmere-color-base-1: var(--mgs-peltre-800);
+  --cosmere-color-base-2: var(--mgs-peltre-990);
+  --cosmere-color-base-3: var(--mgs-peltre-900);
+  --cosmere-color-base-4: var(--mgs-peltre-850);
+  --cosmere-color-base-5: var(--mgs-peltre-line);
+  --cosmere-color-base-6: var(--mgs-peltre-700);
+  --cosmere-color-neutral: var(--mgs-peltre-950);
+
+  --cosmere-color-text-main: var(--mgs-paper);
+  --cosmere-color-text-sub: var(--mgs-fog);
+  --cosmere-color-faded: var(--mgs-mist);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: #6fb3a9;
+
+  --cosmere-color-health-front: #70ae93;
+  --cosmere-color-health-back: var(--mgs-peltre-850);
+  --cosmere-color-focus-front: #94a4a6;
+  --cosmere-color-focus-back: var(--mgs-peltre-900);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-peltre-850);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: #e08a80;
+  --cosmere-color-complication-background-dark: var(--mgs-peltre-990);
+  --cosmere-color-opportunity: #6fb3a9;
+  --cosmere-color-opportunity-text: #6fb3a9;
+  --cosmere-color-opportunity-background-dark: var(--mgs-peltre-990);
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-peltre-700);
+  --cosmere-color-parchment: var(--mgs-paper);"""
+
+# ----------------------------------------------------------------- zinco
+
+TOK_ZINCO = """  /* --- Zinco — azulado. Aço azulado e zinco galvanizado. Azul de chapa temperada, frio, longe do azul-marinho de Roshar que o sistema traz de fábrica.
+         Sugestão de Mario, 2026-09-08: ampliar a gama para emular metais.
+         Piso de contraste medido contra #1c3546, o painel mais claro. --- */
+  --mgs-zinco-990: #071219;
+  --mgs-zinco-950: #0d1a24;
+  --mgs-zinco-900: #12232f;
+  --mgs-zinco-850: #172c3a;
+  --mgs-zinco-800: #1c3546;
+  --mgs-zinco-700: #2a4c64;
+  --mgs-zinco-line: #6f9bb8;
+
+  --mgs-fog: #c9dbe6;
+  --mgs-mist: #a5bfcf;
+  --mgs-paper: #e4eef5;
+
+  --mgs-danger: #e08a80;"""
+
+MAPA_ZINCO = """
+  --cosmere-color-sheet: var(--mgs-zinco-950);
+  --cosmere-color-base-1: var(--mgs-zinco-800);
+  --cosmere-color-base-2: var(--mgs-zinco-990);
+  --cosmere-color-base-3: var(--mgs-zinco-900);
+  --cosmere-color-base-4: var(--mgs-zinco-850);
+  --cosmere-color-base-5: var(--mgs-zinco-line);
+  --cosmere-color-base-6: var(--mgs-zinco-700);
+  --cosmere-color-neutral: var(--mgs-zinco-950);
+
+  --cosmere-color-text-main: var(--mgs-paper);
+  --cosmere-color-text-sub: var(--mgs-fog);
+  --cosmere-color-faded: var(--mgs-mist);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: #6fb3a9;
+
+  --cosmere-color-health-front: #6cab90;
+  --cosmere-color-health-back: var(--mgs-zinco-850);
+  --cosmere-color-focus-front: #8e9fa1;
+  --cosmere-color-focus-back: var(--mgs-zinco-900);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-zinco-850);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: #e08a80;
+  --cosmere-color-complication-background-dark: var(--mgs-zinco-990);
+  --cosmere-color-opportunity: #6fb3a9;
+  --cosmere-color-opportunity-text: #6fb3a9;
+  --cosmere-color-opportunity-background-dark: var(--mgs-zinco-990);
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-zinco-700);
+  --cosmere-color-parchment: var(--mgs-paper);"""
+
 # ------------------------------------------------------------------- temas
 
 TEMAS = [
@@ -277,6 +493,26 @@ TEMAS = [
        vinheta='rgb(90 40 24 / 15%)', fuligem='fuligem-claro.uri',
        metais={'prata':('#3a4749','7,51 e 5,42'), 'ouro':('#6b3f16','6,96 e 5,03'),
                'cobre':('#8c2f10','6,46 e 4,67'), 'estanho':('#1b4f4e','7,19 e 5,19')}),
+  dict(id='mgs-minio', nome='Mínio',
+       tokens=TOK_MINIO, mapa=MAPA_MINIO, var='minio',
+       metal='#dfba69', tinta_metal='11%',
+       vinheta='rgb(0 0 0 / 30%)', fuligem='fuligem.uri',
+       metais={'prata':('#c2ced0','medido contra #4a211a'), 'ouro':('#dfba69','medido contra #4a211a'), 'cobre':('#d68258','medido contra #4a211a'), 'estanho':('#6fb3a9','medido contra #4a211a')}),
+  dict(id='mgs-verdete', nome='Verdete',
+       tokens=TOK_VERDETE, mapa=MAPA_VERDETE, var='verdete',
+       metal='#dfba69', tinta_metal='11%',
+       vinheta='rgb(0 0 0 / 30%)', fuligem='fuligem.uri',
+       metais={'prata':('#c2ced0','medido contra #1e4032'), 'ouro':('#dfba69','medido contra #1e4032'), 'cobre':('#dc936f','medido contra #1e4032'), 'estanho':('#6fb3a9','medido contra #1e4032')}),
+  dict(id='mgs-peltre', nome='Peltre',
+       tokens=TOK_PELTRE, mapa=MAPA_PELTRE, var='peltre',
+       metal='#dfba69', tinta_metal='11%',
+       vinheta='rgb(0 0 0 / 30%)', fuligem='fuligem.uri',
+       metais={'prata':('#c2ced0','medido contra #33373e'), 'ouro':('#dfba69','medido contra #33373e'), 'cobre':('#db906a','medido contra #33373e'), 'estanho':('#6fb3a9','medido contra #33373e')}),
+  dict(id='mgs-zinco', nome='Zinco',
+       tokens=TOK_ZINCO, mapa=MAPA_ZINCO, var='zinco',
+       metal='#dfba69', tinta_metal='11%',
+       vinheta='rgb(0 0 0 / 30%)', fuligem='fuligem.uri',
+       metais={'prata':('#c2ced0','medido contra #1c3546'), 'ouro':('#dfba69','medido contra #1c3546'), 'cobre':('#d88860','medido contra #1c3546'), 'estanho':('#6fb3a9','medido contra #1c3546')}),
 ]
 
 

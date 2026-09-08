@@ -7,7 +7,7 @@ table. **An asset with no recorded provenance does not enter the repository.**
 | --- | --- | --- | --- | --- | --- |
 | `portraits/dion-rook.jpg` | Private vault, `Dion-Token-001.jpeg` | The player of Dion Rook | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
 | `portraits/rhazed.jpg` | Private vault, `Rhazed-Token-002.jpeg` | The player of Rhazed | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
-| `portraits/julian-vance.jpg` | Private vault, `Vance-Token-001.jpeg` | The player of Julien Vance | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
+| `portraits/julien-vance.jpg` | Private vault, `Vance-Token-001.jpeg` | The player of Julien Vance | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
 
 ## Two origins, two rules
 

@@ -41,6 +41,32 @@ One consequence matters for anyone editing the CSS: the system defines its colou
 **only inside `.cosmere-theme-default`**. A theme of ours inherits nothing from it, so each block
 here declares the complete set, not just the differences.
 
+### An appearance per actor
+
+The theme above is each player's own preference and applies to every sheet they
+open. For a different look on a *specific* actor — one NPC in rust, another in
+beige — the module also registers three **sheets** of its own, the same mechanism
+the SWADE companion modules use. They appear under **This Sheet** in an actor's
+sheet configuration:
+
+```
+Default Sheet
+Gilded Steps — Ferrugem
+Gilded Steps — Negativo
+Gilded Steps — Registro
+```
+
+The choice is stored on the actor, so everyone sees that NPC the same way, and it
+overrides the player's own theme for that window only. Available for both actor
+types, `character` and `adversary`.
+
+These sheets subclass the system's own and add nothing but a CSS class — no data,
+template, permission or behaviour is touched. **This is the one place where the
+module stops being a pure skin** and depends on the Cosmere sheet classes. If a
+system update reorganises them, the entries simply stop appearing and the actor
+falls back to the default sheet; the stored choice survives and takes effect again
+when they return.
+
 ### Four metals
 
 Each character can have their own: silver, gold, copper or tin. The metal is **orthogonal to the
@@ -125,10 +151,13 @@ published source of Cosmere RPG 3.1.0; the contrast was measured on rendered ima
 scaffold that reconstructs the sheet's markup. But a selector that exists is no guarantee of a
 visible effect on screen.
 
-Two failure modes are known and both are quiet. If `registerTheme` is absent from the installed
-build, the themes never reach the list and the world stays on the system's own; the console says
-so. If the sheet-render hook has none of the four names the script listens for, every sheet
-opens in the theme's default metal. Neither breaks anything.
+Confirmed on 2026-09-08 in Foundry 13.351 with Cosmere RPG 3.1.0: the module loads and is
+active, `cosmereRPG.api.registerTheme` is a function, the themes reach the list, and the sheet
+render hook is **`renderCharacterSheet`** — the first of the four names the script listens for.
+What has *not* been verified is the per-actor sheet registration introduced in 0.6.0.
+
+One failure mode is known and quiet. If `registerTheme` is absent from a future build, the
+themes never reach the list and the world stays on the system's own; the console says so.
 
 | | |
 |---|---|

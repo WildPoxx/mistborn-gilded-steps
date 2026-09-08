@@ -28,6 +28,14 @@
  * `.cosmere-theme-default`. Um tema nosso não herda nada dele — por isso cada
  * bloco abaixo define o conjunto INTEIRO, e não só as diferenças.
  *
+ * DOIS NÍVEIS DE ESCOLHA (v0.6.0)
+ * Cada bloco tem dois seletores. `body.cosmere-theme-<id>` é a preferência de
+ * quem joga, na configuração do sistema. `.application.cosmere-rpg.mgs-tema-<nome>`
+ * é a ficha de aparência própria, escolhida em "This Sheet" na configuração
+ * daquele ator e gravada nele — de modo que um NPC pode ter cor diferente de
+ * outro, e todo mundo o vê assim. Quando os dois valem, a ficha ganha, porque o
+ * seletor é mais específico e está mais fundo na árvore.
+ *
  * OS GRAFISMOS
  * Engrenagens submersas em volutas de bruma. Topo e rodapé usam as duas faixas
  * ancoradas que o sistema expõe (`.banners .top` e `.bot`, 200px, largura
@@ -60,7 +68,19 @@
    TEMA "Ferrugem" — id `mgs-ferrugem`
    ======================================================================= */
 
-body.cosmere-theme-mgs-ferrugem {
+/* Dois seletores, um bloco só. O primeiro é o tema escolhido por quem joga, no
+   <body>; o segundo é a ficha que carrega a classe da sua própria aparência,
+   escolhida em "This Sheet" na configuração daquele ator.
+
+   Lista de seletores, e não dois blocos iguais, porque as variáveis de grafismo
+   carregam os desenhos inteiros em `data:` URI. Duplicar o bloco dobraria o
+   arquivo — de 450 KB para 900 — sem acrescentar um pixel.
+
+   Quando os dois valem ao mesmo tempo, a ficha ganha: `.application` é mais
+   específico e está mais fundo. É o que faz a escolha do ator sobrepor a
+   preferência do jogador, e só naquela janela. */
+body.cosmere-theme-mgs-ferrugem,
+.application.cosmere-rpg.mgs-tema-ferrugem {
   /* --- Ferrugem: a superfície da ficha é ferro oxidado, não ferro limpo.
          Marrom-avermelhado puxado para o alaranjado, escurecendo até quase
          preto. Decisão de Mario, 2026-09-07. --- */
@@ -162,7 +182,8 @@ body.cosmere-theme-mgs-ferrugem {
 /* As duas faixas laterais. Precisam de `position`, `repeat` e `size` POR CAMADA:
    sem isso, o ladrilho de 150×460 se repete pela ficha inteira. Nenhuma dessas
    três propriedades é de caixa — são de pintura, e não mexem no layout. */
-body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg {
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg,
+.application.cosmere-rpg.mgs-tema-ferrugem {
   background-image:
     linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 6%, var(--cosmere-color-sheet) 13%, var(--cosmere-color-sheet) 87%, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 94%, transparent 100%),
     var(--mgs-lado-esq),
@@ -177,7 +198,19 @@ body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg {
    TEMA "Negativo" — id `mgs-negativo`
    ======================================================================= */
 
-body.cosmere-theme-mgs-negativo {
+/* Dois seletores, um bloco só. O primeiro é o tema escolhido por quem joga, no
+   <body>; o segundo é a ficha que carrega a classe da sua própria aparência,
+   escolhida em "This Sheet" na configuração daquele ator.
+
+   Lista de seletores, e não dois blocos iguais, porque as variáveis de grafismo
+   carregam os desenhos inteiros em `data:` URI. Duplicar o bloco dobraria o
+   arquivo — de 450 KB para 900 — sem acrescentar um pixel.
+
+   Quando os dois valem ao mesmo tempo, a ficha ganha: `.application` é mais
+   específico e está mais fundo. É o que faz a escolha do ator sobrepor a
+   preferência do jogador, e só naquela janela. */
+body.cosmere-theme-mgs-negativo,
+.application.cosmere-rpg.mgs-tema-negativo {
   /* --- Negativo: a mesma chapa, em brasa. A ferrugem invertida na luminância,
          não na cor — laranja quente por baixo, ferro e fumaça quase pretos por
          cima. Escolha de Mario, 2026-09-08, entre três leituras de "invertida".
@@ -273,7 +306,8 @@ body.cosmere-theme-mgs-negativo {
 /* As duas faixas laterais. Precisam de `position`, `repeat` e `size` POR CAMADA:
    sem isso, o ladrilho de 150×460 se repete pela ficha inteira. Nenhuma dessas
    três propriedades é de caixa — são de pintura, e não mexem no layout. */
-body.cosmere-theme-mgs-negativo .application.cosmere-rpg {
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg,
+.application.cosmere-rpg.mgs-tema-negativo {
   background-image:
     linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 6%, var(--cosmere-color-sheet) 13%, var(--cosmere-color-sheet) 87%, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 94%, transparent 100%),
     var(--mgs-lado-esq),
@@ -288,7 +322,19 @@ body.cosmere-theme-mgs-negativo .application.cosmere-rpg {
    TEMA "Registro" — id `mgs-registro`
    ======================================================================= */
 
-body.cosmere-theme-mgs-registro {
+/* Dois seletores, um bloco só. O primeiro é o tema escolhido por quem joga, no
+   <body>; o segundo é a ficha que carrega a classe da sua própria aparência,
+   escolhida em "This Sheet" na configuração daquele ator.
+
+   Lista de seletores, e não dois blocos iguais, porque as variáveis de grafismo
+   carregam os desenhos inteiros em `data:` URI. Duplicar o bloco dobraria o
+   arquivo — de 450 KB para 900 — sem acrescentar um pixel.
+
+   Quando os dois valem ao mesmo tempo, a ficha ganha: `.application` é mais
+   específico e está mais fundo. É o que faz a escolha do ator sobrepor a
+   preferência do jogador, e só naquela janela. */
+body.cosmere-theme-mgs-registro,
+.application.cosmere-rpg.mgs-tema-registro {
   /* --- Bege, linha vermelha, tinta marrom. Papel de registro portuário
          pautado a lápis vermelho. Decisão de Mario, 2026-09-07. --- */
   --mgs-bege-claro: #f6efe1;
@@ -381,7 +427,8 @@ body.cosmere-theme-mgs-registro {
 /* As duas faixas laterais. Precisam de `position`, `repeat` e `size` POR CAMADA:
    sem isso, o ladrilho de 150×460 se repete pela ficha inteira. Nenhuma dessas
    três propriedades é de caixa — são de pintura, e não mexem no layout. */
-body.cosmere-theme-mgs-registro .application.cosmere-rpg {
+body.cosmere-theme-mgs-registro .application.cosmere-rpg,
+.application.cosmere-rpg.mgs-tema-registro {
   background-image:
     linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 6%, var(--cosmere-color-sheet) 13%, var(--cosmere-color-sheet) 87%, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 94%, transparent 100%),
     var(--mgs-lado-esq),
@@ -405,10 +452,22 @@ body.cosmere-theme-mgs-ferrugem.mgs-metal-prata    { --mgs-metal: #c2ced0; } /* 
 body.cosmere-theme-mgs-ferrugem.mgs-metal-ouro     { --mgs-metal: #dfba69; } /* 9,80 e 8,97 */
 body.cosmere-theme-mgs-ferrugem.mgs-metal-cobre    { --mgs-metal: #d68258; } /* 6,20 e 5,68 */
 body.cosmere-theme-mgs-ferrugem.mgs-metal-estanho  { --mgs-metal: #6fb3a9; } /* 7,50 e 6,86 */
-body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-prata    { --mgs-metal: #c2ced0; }
-body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-ouro     { --mgs-metal: #dfba69; }
-body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-cobre    { --mgs-metal: #d68258; }
-body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-estanho  { --mgs-metal: #6fb3a9; }
+
+/* Por ator, em dois casos que NÃO podem se misturar:
+   1. a ficha herda o tema do <body> — e aí o metal tem de vir da paleta
+      desse tema. O `:not` é o que impede esta regra de alcançar uma ficha
+      que tem aparência própria: sem ele, `body.cosmere-theme-x .application
+      .cosmere-rpg.mgs-metal-y` (um elemento a mais na conta) vence a regra
+      da ficha e o ator sai com o metal do tema errado;
+   2. a ficha tem aparência própria — e aí o metal vem da paleta DELA. */
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-prata:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-ferrugem.mgs-metal-prata    { --mgs-metal: #c2ced0; }
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-ouro:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-ferrugem.mgs-metal-ouro     { --mgs-metal: #dfba69; }
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-cobre:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-ferrugem.mgs-metal-cobre    { --mgs-metal: #d68258; }
+body.cosmere-theme-mgs-ferrugem .application.cosmere-rpg.mgs-metal-estanho:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-ferrugem.mgs-metal-estanho  { --mgs-metal: #6fb3a9; }
 
 /* Metais do tema "Negativo". No <body> vale para o mundo inteiro;
    na própria ficha vale só para aquele personagem, e vence porque
@@ -417,10 +476,22 @@ body.cosmere-theme-mgs-negativo.mgs-metal-prata    { --mgs-metal: #2b3636; } /* 
 body.cosmere-theme-mgs-negativo.mgs-metal-ouro     { --mgs-metal: #4b2e0d; } /* 4,62 */
 body.cosmere-theme-mgs-negativo.mgs-metal-cobre    { --mgs-metal: #5e200a; } /* 4,64 */
 body.cosmere-theme-mgs-negativo.mgs-metal-estanho  { --mgs-metal: #103a38; } /* 4,65 */
-body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-prata    { --mgs-metal: #2b3636; }
-body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-ouro     { --mgs-metal: #4b2e0d; }
-body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-cobre    { --mgs-metal: #5e200a; }
-body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-estanho  { --mgs-metal: #103a38; }
+
+/* Por ator, em dois casos que NÃO podem se misturar:
+   1. a ficha herda o tema do <body> — e aí o metal tem de vir da paleta
+      desse tema. O `:not` é o que impede esta regra de alcançar uma ficha
+      que tem aparência própria: sem ele, `body.cosmere-theme-x .application
+      .cosmere-rpg.mgs-metal-y` (um elemento a mais na conta) vence a regra
+      da ficha e o ator sai com o metal do tema errado;
+   2. a ficha tem aparência própria — e aí o metal vem da paleta DELA. */
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-prata:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-negativo.mgs-metal-prata    { --mgs-metal: #2b3636; }
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-ouro:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-negativo.mgs-metal-ouro     { --mgs-metal: #4b2e0d; }
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-cobre:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-negativo.mgs-metal-cobre    { --mgs-metal: #5e200a; }
+body.cosmere-theme-mgs-negativo .application.cosmere-rpg.mgs-metal-estanho:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-negativo.mgs-metal-estanho  { --mgs-metal: #103a38; }
 
 /* Metais do tema "Registro". No <body> vale para o mundo inteiro;
    na própria ficha vale só para aquele personagem, e vence porque
@@ -429,8 +500,20 @@ body.cosmere-theme-mgs-registro.mgs-metal-prata    { --mgs-metal: #3a4749; } /* 
 body.cosmere-theme-mgs-registro.mgs-metal-ouro     { --mgs-metal: #6b3f16; } /* 6,96 e 5,03 */
 body.cosmere-theme-mgs-registro.mgs-metal-cobre    { --mgs-metal: #8c2f10; } /* 6,46 e 4,67 */
 body.cosmere-theme-mgs-registro.mgs-metal-estanho  { --mgs-metal: #1b4f4e; } /* 7,19 e 5,19 */
-body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-prata    { --mgs-metal: #3a4749; }
-body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-ouro     { --mgs-metal: #6b3f16; }
-body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-cobre    { --mgs-metal: #8c2f10; }
-body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-estanho  { --mgs-metal: #1b4f4e; }
+
+/* Por ator, em dois casos que NÃO podem se misturar:
+   1. a ficha herda o tema do <body> — e aí o metal tem de vir da paleta
+      desse tema. O `:not` é o que impede esta regra de alcançar uma ficha
+      que tem aparência própria: sem ele, `body.cosmere-theme-x .application
+      .cosmere-rpg.mgs-metal-y` (um elemento a mais na conta) vence a regra
+      da ficha e o ator sai com o metal do tema errado;
+   2. a ficha tem aparência própria — e aí o metal vem da paleta DELA. */
+body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-prata:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-registro.mgs-metal-prata    { --mgs-metal: #3a4749; }
+body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-ouro:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-registro.mgs-metal-ouro     { --mgs-metal: #6b3f16; }
+body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-cobre:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-registro.mgs-metal-cobre    { --mgs-metal: #8c2f10; }
+body.cosmere-theme-mgs-registro .application.cosmere-rpg.mgs-metal-estanho:not([class*="mgs-tema-"]),
+.application.cosmere-rpg.mgs-tema-registro.mgs-metal-estanho  { --mgs-metal: #1b4f4e; }
 

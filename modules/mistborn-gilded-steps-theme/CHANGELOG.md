@@ -3,6 +3,22 @@
 The format follows semantic versioning. While the version is 0.x, nothing has been validated at
 runtime.
 
+## 0.6.0 — 2026-09-08
+
+- **An appearance per actor.** Three sheets are registered under **This Sheet** in an actor's
+  configuration — Ferrugem, Negativo, Registro — for both `character` and `adversary`. The choice
+  is stored on the actor, so a table can have one NPC in rust and another in beige, and everyone
+  sees them that way. It overrides the player's own theme for that window only.
+- Each theme block now carries two selectors, `body.cosmere-theme-<id>` and
+  `.application.cosmere-rpg.mgs-tema-<name>`, in one declaration list rather than two blocks: the
+  graphics live in those variables as `data:` URIs, and duplicating them would have doubled the
+  stylesheet for nothing.
+- The per-actor metal rule gained a `:not([class*="mgs-tema-"])` guard. Without it the body-scoped
+  rule — one element longer, therefore more specific — reached a sheet that had its own
+  appearance and gave it the metal of the wrong palette.
+- The sheet render hook is confirmed as `renderCharacterSheet`, read from a live console in
+  13.351. The Status section no longer claims it is unknown.
+
 ## 0.5.0 — 2026-09-08
 
 - **Three themes on the system's own list**, registered through

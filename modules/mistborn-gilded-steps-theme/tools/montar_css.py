@@ -41,6 +41,14 @@ CAB = '''/*
  * `.cosmere-theme-default`. Um tema nosso não herda nada dele — por isso cada
  * bloco abaixo define o conjunto INTEIRO, e não só as diferenças.
  *
+ * DOIS NÍVEIS DE ESCOLHA (v0.6.0)
+ * Cada bloco tem dois seletores. `body.cosmere-theme-<id>` é a preferência de
+ * quem joga, na configuração do sistema. `.application.cosmere-rpg.mgs-tema-<nome>`
+ * é a ficha de aparência própria, escolhida em "This Sheet" na configuração
+ * daquele ator e gravada nele — de modo que um NPC pode ter cor diferente de
+ * outro, e todo mundo o vê assim. Quando os dois valem, a ficha ganha, porque o
+ * seletor é mais específico e está mais fundo na árvore.
+ *
  * OS GRAFISMOS
  * Engrenagens submersas em volutas de bruma. Topo e rodapé usam as duas faixas
  * ancoradas que o sistema expõe (`.banners .top` e `.bot`, 200px, largura
@@ -274,11 +282,25 @@ TEMAS = [
 
 def bloco(t):
     v = t['var']
+    # a classe da ficha usa o nome curto: mgs-tema-ferrugem, não mgs-tema-mgs-ferrugem
+    c = t['var']
     return f"""/* =======================================================================
    TEMA "{t['nome']}" — id `{t['id']}`
    ======================================================================= */
 
-body.cosmere-theme-{t['id']} {{
+/* Dois seletores, um bloco só. O primeiro é o tema escolhido por quem joga, no
+   <body>; o segundo é a ficha que carrega a classe da sua própria aparência,
+   escolhida em "This Sheet" na configuração daquele ator.
+
+   Lista de seletores, e não dois blocos iguais, porque as variáveis de grafismo
+   carregam os desenhos inteiros em `data:` URI. Duplicar o bloco dobraria o
+   arquivo — de 450 KB para 900 — sem acrescentar um pixel.
+
+   Quando os dois valem ao mesmo tempo, a ficha ganha: `.application` é mais
+   específico e está mais fundo. É o que faz a escolha do ator sobrepor a
+   preferência do jogador, e só naquela janela. */
+body.cosmere-theme-{t['id']},
+.application.cosmere-rpg.mgs-tema-{c} {{
 {t['tokens']}
 
   /* Metal da ficha. É o único valor que as variações trocam. */
@@ -322,7 +344,8 @@ body.cosmere-theme-{t['id']} {{
 /* As duas faixas laterais. Precisam de `position`, `repeat` e `size` POR CAMADA:
    sem isso, o ladrilho de 150×460 se repete pela ficha inteira. Nenhuma dessas
    três propriedades é de caixa — são de pintura, e não mexem no layout. */
-body.cosmere-theme-{t['id']} .application.cosmere-rpg {{
+body.cosmere-theme-{t['id']} .application.cosmere-rpg,
+.application.cosmere-rpg.mgs-tema-{c} {{
   background-image:
     linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 6%, var(--cosmere-color-sheet) 13%, var(--cosmere-color-sheet) 87%, color-mix(in srgb, var(--cosmere-color-sheet) 55%, transparent) 94%, transparent 100%),
     var(--mgs-lado-esq),
@@ -337,13 +360,23 @@ body.cosmere-theme-{t['id']} .application.cosmere-rpg {{
 
 
 def metais(t):
+    c = t['var']
     L = [f"/* Metais do tema \"{t['nome']}\". No <body> vale para o mundo inteiro;",
          "   na própria ficha vale só para aquele personagem, e vence porque",
          "   redefine a variável num elemento mais fundo. */"]
     for m, (cor, nota) in t['metais'].items():
         L.append(f"body.cosmere-theme-{t['id']}.mgs-metal-{m:<8} {{ --mgs-metal: {cor}; }} /* {nota} */")
+    L.append("")
+    L.append("/* Por ator, em dois casos que NÃO podem se misturar:")
+    L.append("   1. a ficha herda o tema do <body> — e aí o metal tem de vir da paleta")
+    L.append("      desse tema. O `:not` é o que impede esta regra de alcançar uma ficha")
+    L.append("      que tem aparência própria: sem ele, `body.cosmere-theme-x .application")
+    L.append("      .cosmere-rpg.mgs-metal-y` (um elemento a mais na conta) vence a regra")
+    L.append("      da ficha e o ator sai com o metal do tema errado;")
+    L.append("   2. a ficha tem aparência própria — e aí o metal vem da paleta DELA. */")
     for m, (cor, _) in t['metais'].items():
-        L.append(f"body.cosmere-theme-{t['id']} .application.cosmere-rpg.mgs-metal-{m:<8} {{ --mgs-metal: {cor}; }}")
+        L.append(f'body.cosmere-theme-{t["id"]} .application.cosmere-rpg.mgs-metal-{m}:not([class*="mgs-tema-"]),')
+        L.append(f".application.cosmere-rpg.mgs-tema-{c}.mgs-metal-{m:<8} {{ --mgs-metal: {cor}; }}")
     return "\n".join(L) + "\n\n"
 
 

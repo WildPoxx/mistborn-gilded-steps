@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# Gilded Steps — release automatizada
+#
+# Como publicar uma versao:
+#   1. suba a versao em modules/mistborn-gilded-steps-theme/module.json
+#      (ex.: 0.5.0) e commite
+#   2. git tag v0.5.0 && git push origin main --tags
+#
+# Este workflow entao: confere se a tag bate com o module.json, sincroniza o
+# campo "download" com a tag, empacota o module.zip com o manifesto na RAIZ do
+# zip — que e o que o Foundry exige — e publica a Release com module.json + zip
+# anexados. O manifest "latest" (releases/latest/download/module.json) passa a
+# apontar para ela, e o Foundry oferece a atualizacao sozinho.
+#
+# Este e um monorepo: a raiz do repositorio nao e a raiz do modulo. Por isso o
+# empacotamento entra em modules/<id>/ antes de zipar, e nunca zipa a raiz.
+# ---------------------------------------------------------------------------
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+env:
+  MODULE_DIR: modules/mistborn-gilded-steps-theme
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Conferir se a tag bate com o module.json
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          VERSION="$(jq -r .version "$MODULE_DIR/module.json")"
+          if [ "$TAG" != "$VERSION" ]; then
+            echo "Tag v$TAG != module.json version $VERSION — suba a versao antes de taggear."
+            exit 1
+          fi
+
+      - name: Sincronizar download URL com a tag
+        run: |
+          jq --arg tag "$GITHUB_REF_NAME" \
+            '.download = "https://github.com/${{ github.repository }}/releases/download/\($tag)/module.zip"' \
+            "$MODULE_DIR/module.json" > module.json.tmp
+          mv module.json.tmp "$MODULE_DIR/module.json"
+
+      - name: Empacotar module.zip com o manifesto na raiz
+        run: |
+          cd "$MODULE_DIR"
+          zip -rq "$GITHUB_WORKSPACE/module.zip" . -x '.*'
+          cp module.json "$GITHUB_WORKSPACE/module.json"
+
+      - name: Conferir a forma do zip
+        run: |
+          unzip -l module.zip
+          unzip -p module.zip module.json > /dev/null
+
+      - name: Publicar Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            module.zip
+            module.json
+          generate_release_notes: true

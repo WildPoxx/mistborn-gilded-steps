@@ -31,6 +31,8 @@ const TEMAS = [
     { id: 'mgs-verdete',  label: 'Gilded Steps — Verdete' },
     { id: 'mgs-peltre',   label: 'Gilded Steps — Peltre' },
     { id: 'mgs-zinco',    label: 'Gilded Steps — Zinco' },
+    { id: 'mgs-platina',  label: 'Gilded Steps — Platina' },
+    { id: 'mgs-cadmio',   label: 'Gilded Steps — Cádmio' },
 ];
 
 /** Os metais são ortogonais ao tema: valem nos três. */

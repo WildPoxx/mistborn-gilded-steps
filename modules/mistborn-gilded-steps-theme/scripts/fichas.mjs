@@ -36,6 +36,8 @@ const TEMAS = [
     { curto: 'verdete',  id: 'mgs-verdete',  label: 'Gilded Steps — Verdete' },
     { curto: 'peltre',   id: 'mgs-peltre',   label: 'Gilded Steps — Peltre' },
     { curto: 'zinco',    id: 'mgs-zinco',    label: 'Gilded Steps — Zinco' },
+    { curto: 'platina',  id: 'mgs-platina',  label: 'Gilded Steps — Platina' },
+    { curto: 'cadmio',   id: 'mgs-cadmio',   label: 'Gilded Steps — Cádmio' },
 ];
 
 /** Os dois tipos de ator do Cosmere. */

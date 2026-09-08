@@ -472,6 +472,120 @@ MAPA_ZINCO = """
   --cosmere-color-turn-slow: var(--mgs-zinco-700);
   --cosmere-color-parchment: var(--mgs-paper);"""
 
+# ----------------------------------------------------------------- platina
+
+TOK_PLATINA = """  /* --- Platina — o negativo do Peltre. Aço polido: chapa clara, quase branca,
+         com filete e moldura em cinza médio no lugar do dourado. Sugestão de
+         Mario, 2026-09-08: "aço platinado, resplandecente".
+         Piso medido contra #c3cad4, o painel mais escuro. --- */
+  --mgs-platina-claro: #f6f8fa;
+  --mgs-platina: #eaedf1;
+  --mgs-platina-painel: #e1e5ea;
+  --mgs-platina-sombra: #d5dae1;
+  --mgs-platina-fundo: #c3cad4;
+
+  --mgs-linha-aco: #4b535f;
+  --mgs-linha-aco-forte: #454e5b;
+
+  --mgs-tinta: #22262c;
+  --mgs-tinta-sub: #3b414a;
+  --mgs-tinta-fraca: #4c535d;
+
+  --mgs-danger: #8b2f26;"""
+
+MAPA_PLATINA = """
+  --cosmere-color-sheet: var(--mgs-platina);
+  --cosmere-color-base-1: var(--mgs-platina-fundo);
+  --cosmere-color-base-2: var(--mgs-platina-claro);
+  --cosmere-color-base-3: var(--mgs-platina-painel);
+  --cosmere-color-base-4: var(--mgs-platina-sombra);
+  --cosmere-color-base-5: var(--mgs-linha-aco);
+  --cosmere-color-base-6: var(--mgs-linha-aco-forte);
+  --cosmere-color-neutral: var(--mgs-platina-sombra);
+
+  --cosmere-color-text-main: var(--mgs-tinta);
+  --cosmere-color-text-sub: var(--mgs-tinta-sub);
+  --cosmere-color-faded: var(--mgs-tinta-fraca);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: var(--mgs-linha-aco);
+
+  --cosmere-color-health-front: #2c4f42;
+  --cosmere-color-health-back: var(--mgs-platina-sombra);
+  --cosmere-color-focus-front: #3f4c55;
+  --cosmere-color-focus-back: var(--mgs-platina-sombra);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-platina-sombra);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: var(--mgs-danger);
+  --cosmere-color-complication-background: #f0dcd8;
+  --cosmere-color-opportunity: #1f4f4e;
+  --cosmere-color-opportunity-text: #1f4f4e;
+  --cosmere-color-opportunity-background: #d9e3e2;
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-linha-aco-forte);
+  --cosmere-color-parchment: var(--mgs-platina-claro);"""
+
+
+# ------------------------------------------------------------------ cadmio
+
+TOK_CADMIO = """  /* --- Cádmio — a bolha temporal. Chapa clara puxada ao azul-gelo, com filete
+         e moldura em azul-aço. Prima do Platina: mesma construção, outra
+         temperatura. Sugestão de Mario, 2026-09-08.
+         Piso medido contra #b9cde3, o painel mais escuro. --- */
+  --mgs-cadmio-claro: #f2f6fb;
+  --mgs-cadmio: #e6edf6;
+  --mgs-cadmio-painel: #dce6f2;
+  --mgs-cadmio-sombra: #cedcec;
+  --mgs-cadmio-fundo: #b9cde3;
+
+  --mgs-linha-gelo: #2c557e;
+  --mgs-linha-gelo-forte: #24486c;
+
+  --mgs-tinta: #16273c;
+  --mgs-tinta-sub: #274563;
+  --mgs-tinta-fraca: #365674;
+
+  --mgs-danger: #8b2f26;"""
+
+MAPA_CADMIO = """
+  --cosmere-color-sheet: var(--mgs-cadmio);
+  --cosmere-color-base-1: var(--mgs-cadmio-fundo);
+  --cosmere-color-base-2: var(--mgs-cadmio-claro);
+  --cosmere-color-base-3: var(--mgs-cadmio-painel);
+  --cosmere-color-base-4: var(--mgs-cadmio-sombra);
+  --cosmere-color-base-5: var(--mgs-linha-gelo);
+  --cosmere-color-base-6: var(--mgs-linha-gelo-forte);
+  --cosmere-color-neutral: var(--mgs-cadmio-sombra);
+
+  --cosmere-color-text-main: var(--mgs-tinta);
+  --cosmere-color-text-sub: var(--mgs-tinta-sub);
+  --cosmere-color-faded: var(--mgs-tinta-fraca);
+  --cosmere-color-text-accent: var(--mgs-metal);
+  --cosmere-color-accent: var(--mgs-metal);
+  --cosmere-color-highlight: var(--mgs-linha-gelo);
+
+  --cosmere-color-health-front: #1f4f3f;
+  --cosmere-color-health-back: var(--mgs-cadmio-sombra);
+  --cosmere-color-focus-front: #33505f;
+  --cosmere-color-focus-back: var(--mgs-cadmio-sombra);
+  --cosmere-color-invest-front: var(--mgs-metal);
+  --cosmere-color-invest-back: var(--mgs-cadmio-sombra);
+
+  --cosmere-color-complication: var(--mgs-danger);
+  --cosmere-color-complication-text: var(--mgs-danger);
+  --cosmere-color-complication-background: #f0dcd8;
+  --cosmere-color-opportunity: #1c4f52;
+  --cosmere-color-opportunity-text: #1c4f52;
+  --cosmere-color-opportunity-background: #d7e5e6;
+
+  --cosmere-color-turn-fast: var(--mgs-metal);
+  --cosmere-color-turn-slow: var(--mgs-linha-gelo-forte);
+  --cosmere-color-parchment: var(--mgs-cadmio-claro);"""
+
+
 # ------------------------------------------------------------------- temas
 
 TEMAS = [
@@ -513,6 +627,20 @@ TEMAS = [
        metal='#dfba69', tinta_metal='11%',
        vinheta='rgb(0 0 0 / 30%)', fuligem='fuligem.uri',
        metais={'prata':('#c2ced0','medido contra #1c3546'), 'ouro':('#dfba69','medido contra #1c3546'), 'cobre':('#d88860','medido contra #1c3546'), 'estanho':('#6fb3a9','medido contra #1c3546')}),
+  dict(id='mgs-platina', nome='Platina',
+       tokens=TOK_PLATINA, mapa=MAPA_PLATINA, var='platina',
+       # O padrão é PRATA, não ouro: é a moldura cinza que Mario pediu.
+       metal='#495361', tinta_metal='8%',
+       vinheta='rgb(60 68 80 / 13%)', fuligem='fuligem-claro.uri',
+       metais={'prata':('#495361','4,72 no pior painel'), 'ouro':('#605119','4,73'),
+               'cobre':('#863c1b','4,75'), 'estanho':('#1f4a4a','5,95')}),
+  dict(id='mgs-cadmio', nome='Cádmio',
+       tokens=TOK_CADMIO, mapa=MAPA_CADMIO, var='cadmio',
+       # Como no Platina, o padrão é a "prata" — aqui um azul-aço, não ouro.
+       metal='#2c557e', tinta_metal='8%',
+       vinheta='rgb(40 70 110 / 13%)', fuligem='fuligem-claro.uri',
+       metais={'prata':('#2c557e','4,77 no pior painel'), 'ouro':('#615219','4,73'),
+               'cobre':('#883d1b','4,73'), 'estanho':('#1f4a4a','6,04')}),
 ]
 
 

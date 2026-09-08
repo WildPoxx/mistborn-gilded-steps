@@ -3,6 +3,20 @@
 The format follows semantic versioning. While the version is 0.x, nothing has been validated at
 runtime.
 
+## 0.8.0 — 2026-09-08
+
+- **Platina and Cádmio**, two light themes built the same way and the eighth and ninth of the set.
+  Platina and the negative of Peltre: polished steel, a near-white plate,
+  frames and hairlines in mid grey. It is the first theme whose **default metal is silver, not
+  gold** — the grey frame is what Mario asked for, so gold would have defeated it. The other
+  three metals are there, in versions dark enough to read on a pale ground.
+- Its mist and gears are darker than the ground, like Registro's; on a white plate a pale metal
+  simply disappears.
+- **Cádmio** is Platina at another temperature: an ice-blue plate with steel-blue frames, named
+  for the temporal metal. Same construction, same silver default.
+- Worst measured pair, on rendered pixels: 5.16:1 for Platina, 5.24:1 for Cádmio.
+- Nine themes bring the stylesheet to about 1.3 MB, ~250 KB gzipped.
+
 ## 0.7.0 — 2026-09-08
 
 - **Four more themes**, taking the range from three to seven, at Mario's suggestion: a spread of

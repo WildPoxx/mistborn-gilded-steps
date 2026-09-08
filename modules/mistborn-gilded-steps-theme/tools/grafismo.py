@@ -472,6 +472,11 @@ VARIANTES3 = {
                      crista='%23edeff2', seed=31),
     'zinco': dict(ferro='%239db0be', corpo='%238fa4b3', luz='%23b6c8d4',
                      crista='%23e3edf4', seed=37),
+    # Platina é clara: a bruma tem de ser mais ESCURA que o fundo, senão some.
+    'platina': dict(ferro='%237d8795', corpo='%23949dab', luz='%237d8795',
+                     crista='%23636c79', seed=41),
+    'cadmio': dict(ferro='%23789ac0', corpo='%238fabc9', luz='%23789ac0',
+                     crista='%235c82ab', seed=43),
 }
 
 

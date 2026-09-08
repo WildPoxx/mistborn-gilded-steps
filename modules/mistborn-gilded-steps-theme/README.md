@@ -21,7 +21,7 @@ declared position tiles across the entire sheet.
 Disabling the module restores the original appearance. That is the undo button, and there is no
 other state to revert.
 
-### Seven themes, on the system's own list
+### Nine themes, on the system's own list
 
 Since 0.5.0 the module no longer overrides the system's Default theme. It registers its own
 entries through the published API, `cosmereRPG.api.registerTheme()`, and they appear in
@@ -41,6 +41,11 @@ entries through the published API, `cosmereRPG.api.registerTheme()`, and they ap
   neutral of the seven.
 - **Gilded Steps — Zinco.** Blued steel and galvanised zinc — a cold plate blue, deliberately
   away from the navy the system ships with.
+- **Gilded Steps — Platina.** Peltre's negative: polished steel, a near-white plate with mid-grey
+  frames instead of gold. The only theme whose default metal is silver rather than gold, because
+  the grey frame *is* the point of it.
+- **Gilded Steps — Cádmio.** Platina's cousin at another temperature: an ice-blue plate with
+  steel-blue frames. Its default metal is silver too.
 
 This works because the system builds that menu in `registerDeferredSettings()`, on the `setup`
 hook — after modules have initialised. The module registers on `init` and arrives in time.
@@ -53,7 +58,7 @@ here declares the complete set, not just the differences.
 
 The theme above is each player's own preference and applies to every sheet they
 open. For a different look on a *specific* actor — one NPC in rust, another in
-beige — the module also registers seven **sheets** of its own, the same mechanism
+beige — the module also registers nine **sheets** of its own, the same mechanism
 the SWADE companion modules use. They appear under **This Sheet** in an actor's
 sheet configuration:
 
@@ -66,6 +71,8 @@ Gilded Steps — Mínio
 Gilded Steps — Verdete
 Gilded Steps — Peltre
 Gilded Steps — Zinco
+Gilded Steps — Platina
+Gilded Steps — Cádmio
 ```
 
 The choice is stored on the actor, so everyone sees that NPC the same way, and it

@@ -114,7 +114,25 @@ a:hover { color: var(--accent); }
   font-size: clamp(1.02rem, 2vw, 1.2rem);
 }
 
-.section-drawing { position: absolute; inset: auto 0 0 0; z-index: 1; display: block; width: 100%; height: clamp(150px, 24vw, 280px); pointer-events: none; opacity: 0.9; }
+/* ── Skyline ────────────────────────────────────────────
+   The hero drawing is one inline SVG with no colours of its own; every fill
+   reads a custom property below. The band behind it is dark in BOTH themes,
+   so the skyline keeps one palette and only its haze follows --band, which
+   makes the base of the drawing dissolve into whatever the band is. */
+:root {
+  --sky-1: #2a4c64;   --sky-o1: 0.30;
+  --sky-2: #1c3546;   --sky-o2: 0.52;
+  --sky-3: #12232f;   --sky-o3: 0.74;
+  --sky-4: #071219;   --sky-o4: 1;
+  --sky-lit: #f0d9a0; --sky-lit-o: 0.62; --sky-lit-o-far: 0.30;
+  --sky-haze: var(--band);
+}
+
+.section-drawing {
+  position: absolute; inset: auto 0 0 0; z-index: 1; display: block;
+  width: 100%; height: clamp(190px, 30vw, 340px);
+  pointer-events: none; opacity: 0.95;
+}
 .hero .wrap { position: relative; z-index: 2; }
 
 /* ── Buttons ────────────────────────────────────────────── */

@@ -26,7 +26,7 @@ land here.
 - [Start here](wiki/Start-Here.md)
 - [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html)
 - [Dice tray](https://wildpoxx.github.io/mistborn-gilded-steps/dice-tray.html)
-- [Metalborn Lottery](wiki/Metalborn-Lottery.md)
+- [Metallic Arts](wiki/Metallic-Arts.md)
 - [Table rules](wiki/Table-Rules.md)
 
 ## Modules

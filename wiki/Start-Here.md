@@ -43,7 +43,7 @@ the archive the Bilming Constabulary keeps on you.
 ## Before the first session
 
 1. Read this page and the [Home](Home.md).
-2. Read the [Metalborn Lottery](Metalborn-Lottery.md) — it changes how your character finds out
+2. Read the [Metallic Arts](Metallic-Arts.md) — it changes how your character finds out
    whether they have the Metallic Arts.
 3. Read the [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html) and send the GM your
    identification details.

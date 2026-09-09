@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metallic Arts — Random Determination — Mistborn Gilded Steps</title>
+  <meta name="description" content="The Metallic Art, Allomancy and Feruchemy Discovery tables, each with a roller, for randomly determining a Metalborn path at character creation.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/portal.css">
+  <link rel="stylesheet" href="styles/tray.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="tray-head">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">← Player portal</a></p>
+      <p class="kicker">Character creation · roll here or with real dice</p>
+      <h1>Metallic Arts</h1>
+      <p class="lead">
+        In the novels, Allomantic and Feruchemical powers are inherited, and so they fall unevenly
+        across the population. If you want to discover your character's powers alongside them
+        rather than choosing, roll on these tables. The three below are the ones from the
+        <em>Mistborn Handbook</em>, laid out as they appear there, each with its own roll.
+      </p>
+      <p class="era">
+        <label for="era">Era of Scadrial</label>
+        <select id="era">
+          <option value="2" selected>Second Era — this campaign, 343 PC</option>
+          <option value="1">First Era</option>
+        </select>
+      </p>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+
+      <!-- ───────────────── 1. METALLIC ART DISCOVERY ───────────────── -->
+      <section class="tool" aria-labelledby="t1">
+        <header>
+          <h2 id="t1">Randomizing Your Metalborn Path</h2>
+          <span class="hint">Roll first</span>
+        </header>
+        <div class="tool-body">
+          <p class="muted" style="margin-top:0">
+            Roll on this table, then take the path in the column for the era you are playing in.
+            If you land on Misting, Ferring or Twinborn, go on to the table for that art below.
+          </p>
+
+          <table class="rolltable" id="tbl-path">
+            <caption>Metallic Art Discovery</caption>
+            <thead>
+              <tr><th scope="col">d20</th><th scope="col">Era 1 Path</th><th scope="col">Era 2 Path</th></tr>
+            </thead>
+            <tbody>
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name">None</td><td class="name">None</td></tr>
+              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name">Misting path</td><td class="name">Ferring path</td></tr>
+              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name">Misting path</td><td class="name">Misting path</td></tr>
+              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name">Mistborn path</td><td class="name">Ferring or Misting path</td></tr>
+              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name">Feruchemist path</td><td class="name">Twinborn path</td></tr>
+            </tbody>
+          </table>
+
+          <div class="roll-bar">
+            <button class="btn" data-roll="path">Roll d20</button>
+            <button class="btn ghost" data-clear="path" type="button">Clear</button>
+          </div>
+          <div class="outcome" id="out-path" hidden aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- ───────────────── 2. ALLOMANCY DISCOVERY ───────────────── -->
+      <section class="tool" aria-labelledby="t2">
+        <header>
+          <h2 id="t2">Randomizing Your Misting Power</h2>
+          <span class="hint">Allomancy</span>
+        </header>
+        <div class="tool-body">
+          <p class="muted" style="margin-top:0">
+            Roll here for your Allomantic power. If the metal is not available in your era, reroll —
+            the roller does that for you and shows you both rolls.
+          </p>
+
+          <table class="rolltable" id="tbl-allo">
+            <caption>Allomancy Discovery</caption>
+            <thead>
+              <tr><th scope="col">d20</th><th scope="col">Power</th><th scope="col">Misting Name</th></tr>
+            </thead>
+            <tbody>
+              <tr data-lo="1"  data-hi="2"><td>1–2</td><td class="name">Iron</td><td>Lurcher</td></tr>
+              <tr data-lo="3"  data-hi="4"><td>3–4</td><td class="name">Steel</td><td>Coinshot</td></tr>
+              <tr data-lo="5"  data-hi="6"><td>5–6</td><td class="name">Tin</td><td>Tineye</td></tr>
+              <tr data-lo="7"  data-hi="8"><td>7–8</td><td class="name">Pewter</td><td>Pewterarm / Thug</td></tr>
+              <tr data-lo="9"  data-hi="9"><td>9</td><td class="name">Zinc</td><td>Rioter</td></tr>
+              <tr data-lo="10" data-hi="10"><td>10</td><td class="name">Brass</td><td>Soother</td></tr>
+              <tr data-lo="11" data-hi="11"><td>11</td><td class="name">Copper</td><td>Smoker / Coppercloud</td></tr>
+              <tr data-lo="12" data-hi="12"><td>12</td><td class="name">Bronze</td><td>Seeker</td></tr>
+              <tr data-lo="13" data-hi="13" data-era2><td>13</td><td class="name">Chromium*</td><td>Leecher</td></tr>
+              <tr data-lo="14" data-hi="14" data-era2><td>14</td><td class="name">Nicrosil*</td><td>Nicroburst</td></tr>
+              <tr data-lo="15" data-hi="15" data-late><td>15</td><td class="name">Aluminum†</td><td>Aluminum Gnat / Void</td></tr>
+              <tr data-lo="16" data-hi="16" data-late><td>16</td><td class="name">Duralumin†</td><td>Duralumin Gnat</td></tr>
+              <tr data-lo="17" data-hi="17" data-era2><td>17</td><td class="name">Cadmium*</td><td>Pulser</td></tr>
+              <tr data-lo="18" data-hi="18" data-era2><td>18</td><td class="name">Bendalloy*</td><td>Slider</td></tr>
+              <tr data-lo="19" data-hi="19" data-late><td>19</td><td class="name">Gold†</td><td>Augur</td></tr>
+              <tr data-lo="20" data-hi="20" data-late><td>20</td><td class="name">Electrum†</td><td>Oracle</td></tr>
+            </tbody>
+          </table>
+          <p class="table-foot">
+            <span>* Only available in Era 2.</span>
+            <span>† Only available near the end of Era 1 or during Era 2.</span>
+          </p>
+
+          <div class="roll-bar">
+            <button class="btn" data-roll="allo">Roll d20</button>
+            <button class="btn ghost" data-clear="allo" type="button">Clear</button>
+          </div>
+          <div class="outcome" id="out-allo" hidden aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- ───────────────── 3. FERUCHEMY DISCOVERY ───────────────── -->
+      <section class="tool" aria-labelledby="t3">
+        <header>
+          <h2 id="t3">Randomizing Your Feruchemical Power</h2>
+          <span class="hint">Feruchemy</span>
+        </header>
+        <div class="tool-body">
+          <p class="muted" style="margin-top:0">Roll here for your Feruchemical power.</p>
+
+          <table class="rolltable" id="tbl-feru">
+            <caption>Feruchemy Discovery</caption>
+            <thead>
+              <tr><th scope="col">d20</th><th scope="col">Power</th><th scope="col">Ferring Name</th></tr>
+            </thead>
+            <tbody>
+              <tr data-lo="1"  data-hi="1"><td>1</td><td class="name">Iron</td><td>Skimmer</td></tr>
+              <tr data-lo="2"  data-hi="2"><td>2</td><td class="name">Steel</td><td>Steelrunner</td></tr>
+              <tr data-lo="3"  data-hi="3"><td>3</td><td class="name">Tin</td><td>Windwhisperer</td></tr>
+              <tr data-lo="4"  data-hi="4"><td>4</td><td class="name">Pewter</td><td>Pewterarm / Brute</td></tr>
+              <tr data-lo="5"  data-hi="6"><td>5–6</td><td class="name">Zinc</td><td>Sparker</td></tr>
+              <tr data-lo="7"  data-hi="8"><td>7–8</td><td class="name">Brass</td><td>Firesoul</td></tr>
+              <tr data-lo="9"  data-hi="10"><td>9–10</td><td class="name">Copper</td><td>Archivist</td></tr>
+              <tr data-lo="11" data-hi="12"><td>11–12</td><td class="name">Bronze</td><td>Sentry</td></tr>
+              <tr data-lo="13" data-hi="13"><td>13</td><td class="name">Chromium</td><td>Spinner</td></tr>
+              <tr data-lo="14" data-hi="14"><td>14</td><td class="name">Nicrosil</td><td>Soulbearer</td></tr>
+              <tr data-lo="15" data-hi="15"><td>15</td><td class="name">Aluminum</td><td>Trueself</td></tr>
+              <tr data-lo="16" data-hi="16"><td>16</td><td class="name">Duralumin</td><td>Connector</td></tr>
+              <tr data-lo="17" data-hi="17"><td>17</td><td class="name">Cadmium</td><td>Gasper</td></tr>
+              <tr data-lo="18" data-hi="18"><td>18</td><td class="name">Bendalloy</td><td>Subsumer</td></tr>
+              <tr data-lo="19" data-hi="19"><td>19</td><td class="name">Gold</td><td>Bloodmaker</td></tr>
+              <tr data-lo="20" data-hi="20"><td>20</td><td class="name">Electrum</td><td>Pinnacle</td></tr>
+            </tbody>
+          </table>
+
+          <div class="roll-bar">
+            <button class="btn" data-roll="feru">Roll d20</button>
+            <button class="btn ghost" data-clear="feru" type="button">Clear</button>
+          </div>
+          <div class="outcome" id="out-feru" hidden aria-live="polite"></div>
+        </div>
+      </section>
+
+      <p class="disclaimer">
+        This is unofficial fan content, created and shared for non-commercial use. It has not been
+        reviewed by Dragonsteel Entertainment, LLC or Brotherwise Games, LLC. The tables above are
+        from the <em>Mistborn Handbook</em>, reproduced here so this table's players can roll on
+        them away from the book. Nothing on this page leaves your browser.
+        Plain dice are on the <a href="dice-tray.html">dice tray</a>.
+      </p>
+    </div>
+  </main>
+
+  <div class="mist" aria-hidden="true"></div>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Mistborn Gilded Steps</strong> — fan material, non-commercial, for private table use.</p>
+      <p>
+        <a href="index.html">Portal</a> ·
+        <a href="dice-tray.html">Dice tray</a> ·
+        <a href="constabulary-record.html">Constabulary Record</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  function d20() {
+    var c = window.crypto || window.msCrypto;
+    if (c && c.getRandomValues) {
+      var limit = Math.floor(4294967296 / 20) * 20, v = new Uint32Array(1);
+      do { c.getRandomValues(v); } while (v[0] >= limit);
+      return (v[0] % 20) + 1;
+    }
+    return Math.floor(Math.random() * 20) + 1;
+  }
+
+  var TABLES = {
+    path: { table: "tbl-path", out: "out-path" },
+    allo: { table: "tbl-allo", out: "out-allo" },
+    feru: { table: "tbl-feru", out: "out-feru" }
+  };
+
+  function era() { return document.getElementById("era").value; }
+
+  function rowFor(tableId, n) {
+    var rows = document.querySelectorAll("#" + tableId + " tbody tr");
+    for (var i = 0; i < rows.length; i++) {
+      if (n >= +rows[i].dataset.lo && n <= +rows[i].dataset.hi) return rows[i];
+    }
+    return null;
+  }
+
+  function clearHits(tableId) {
+    Array.prototype.forEach.call(
+      document.querySelectorAll("#" + tableId + " tbody tr.hit"),
+      function (r) { r.classList.remove("hit"); }
+    );
+  }
+
+  /* What the row says, for the era in play. */
+  function readRow(kind, row) {
+    var cells = row.querySelectorAll("td");
+    if (kind === "path") return cells[era() === "1" ? 1 : 2].textContent.trim();
+    return cells[1].textContent.replace(/[*†]/g, "").trim() + " — " + cells[2].textContent.trim();
+  }
+
+  function show(kind, n, said, aside, rerolls) {
+    var cfg = TABLES[kind], out = document.getElementById(cfg.out);
+    out.innerHTML = "";
+    var a = document.createElement("div"); a.className = "n"; a.textContent = n;
+    var b = document.createElement("div");
+    var s = document.createElement("div"); s.className = "said"; s.textContent = said;
+    b.appendChild(s);
+    if (rerolls && rerolls.length) {
+      var r = document.createElement("span"); r.className = "aside";
+      r.textContent = "Rerolled past " + rerolls.join(", ") + " — not available in this era.";
+      b.appendChild(r);
+    }
+    if (aside) { var x = document.createElement("span"); x.className = "aside"; x.textContent = aside; b.appendChild(x); }
+    out.appendChild(a); out.appendChild(b);
+    out.hidden = false;
+  }
+
+  function roll(kind) {
+    var cfg = TABLES[kind];
+    clearHits(cfg.table);
+
+    var n, row, rerolls = [], guard = 0;
+    do {
+      n = d20();
+      row = rowFor(cfg.table, n);
+      /* Era 1 has no access to the metals marked with an asterisk. */
+      if (kind === "allo" && era() === "1" && row.hasAttribute("data-era2")) {
+        rerolls.push(n); guard++; continue;
+      }
+      break;
+    } while (guard < 50);
+
+    row.classList.add("hit");
+
+    var said = readRow(kind, row), aside = "";
+    if (kind === "path") {
+      if (/^None/.test(said)) aside = "No Metallic Art woke in you — the most common result in the population.";
+      else if (/or/.test(said)) aside = "This result is a choice, not a roll. Take whichever path you want, then roll on its table below.";
+      else if (/Twinborn/.test(said)) aside = "Roll on both tables below: one Allomantic power and one Feruchemical.";
+      else if (/Mistborn/.test(said)) aside = "Every Allomantic metal, not one. No second roll needed.";
+      else if (/Feruchemist/.test(said)) aside = "Every Feruchemical metal, not one. No second roll needed.";
+      else aside = "Now roll on the " + (/Ferring/.test(said) ? "Feruchemy" : "Allomancy") + " Discovery table below.";
+    } else if (kind === "allo" && era() === "1" && row.hasAttribute("data-late")) {
+      aside = "Marked † — only near the end of Era 1. Check with the GM before taking it.";
+    }
+
+    show(kind, n, said, aside, rerolls);
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-roll]"), function (b) {
+    b.addEventListener("click", function () { roll(b.getAttribute("data-roll")); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-clear]"), function (b) {
+    b.addEventListener("click", function () {
+      var k = b.getAttribute("data-clear");
+      clearHits(TABLES[k].table);
+      document.getElementById(TABLES[k].out).hidden = true;
+    });
+  });
+
+  /* Switching era invalidates anything already rolled. */
+  document.getElementById("era").addEventListener("change", function () {
+    Object.keys(TABLES).forEach(function (k) {
+      clearHits(TABLES[k].table);
+      document.getElementById(TABLES[k].out).hidden = true;
+    });
+  });
+})();
+</script>
+</body>
+</html>

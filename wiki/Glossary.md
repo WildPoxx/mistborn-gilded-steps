@@ -13,8 +13,8 @@ definitions, no spoilers; the depth belongs on the setting pages.
 | **The Steps** | What the people who live in Yomend Steps call it. |
 | **Ashlar Row** | An old residential row in Knightbridge, under redevelopment. Original to this project. |
 | **Mendari** | A community of Terris descent living in the district. Original to this project. |
-| **Metalborn Lottery** | This table's house rule for discovering the Metallic Arts. |
-| **Burden** | The mechanical consequence of taking the Second Chance in the Metalborn Lottery. |
+| **Metalborn** | Anyone who has woken an Allomantic or Feruchemical power. See [Metallic Arts](Metallic-Arts.md). |
+| **Twinborn** | Someone with one Allomantic power and one Feruchemical power. |
 
 ## From the setting
 

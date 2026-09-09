@@ -13,7 +13,7 @@ play.
 ## Start here
 
 - [Start Here](Start-Here.md)
-- [Metalborn Lottery](Metalborn-Lottery.md) — house rule
+- [Metallic Arts](Metallic-Arts.md) — house rule
 - [Table Rules](Table-Rules.md)
 
 ## Who we are

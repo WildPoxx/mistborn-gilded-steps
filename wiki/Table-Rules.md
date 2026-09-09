@@ -6,7 +6,7 @@
 
 ### House rules in force
 
-- [Metalborn Lottery](Metalborn-Lottery.md) — replaces the standard discovery of the Metallic
+- [Metallic Arts](Metallic-Arts.md) — replaces the standard discovery of the Metallic
   Arts. Approved; pending playtest validation.
 
 No other house rule is in force. Proposals under study do not apply at the table until they are

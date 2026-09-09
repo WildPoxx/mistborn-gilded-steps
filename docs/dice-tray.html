@@ -29,35 +29,19 @@
   <main id="content">
     <div class="wrap">
 
-      <!-- ─────────────────── METALBORN PATH ─────────────────── -->
       <section class="tool" aria-labelledby="t-path">
         <header>
-          <h2 id="t-path">Metalborn Path</h2>
-          <span class="hint">Second Era · character creation</span>
+          <h2 id="t-path">Metallic Arts</h2>
+          <span class="hint">Character creation</span>
         </header>
         <div class="tool-body">
-          <p class="muted" style="margin-top:0">
-            Roll to discover whether your character is Metalborn, and which power they woke to.
-            The tray walks the whole branch: the path first, then the metal, and both if you come
-            out Twinborn. It never chooses for you where the rules give you a choice.
+          <p style="margin-top:0">
+            Rolling to discover your character's powers has a page of its own, with the three
+            discovery tables laid out as they appear in the book and a roll under each one.
           </p>
-
           <div class="dice-row">
-            <button class="btn" id="walk">Roll for my path</button>
-            <button class="btn ghost" id="walk-reset" type="button">Clear</button>
+            <a class="btn" href="metallic-arts.html">Open the Metallic Arts tables</a>
           </div>
-
-          <div class="steps" id="steps" hidden></div>
-
-          <div class="choice" id="choice" hidden>
-            <p><strong>The roll gives you a choice.</strong> On this result the rules let you take either path. Pick the one you want and the tray will roll its metal.</p>
-            <div class="dice-row">
-              <button class="btn ghost" data-pick="ferring">Take the Ferring path</button>
-              <button class="btn ghost" data-pick="misting">Take the Misting path</button>
-            </div>
-          </div>
-
-          <div class="verdict" id="verdict" hidden aria-live="polite"></div>
         </div>
       </section>
 
@@ -127,6 +111,7 @@
       <p><strong>Mistborn Gilded Steps</strong> — fan material, non-commercial, for private table use.</p>
       <p>
         <a href="index.html">Portal</a> ·
+        <a href="metallic-arts.html">Metallic Arts</a> ·
         <a href="constabulary-record.html">Constabulary Record</a> ·
         <a href="https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/wiki/Home.md">Wiki</a>
       </p>
@@ -148,124 +133,6 @@
     }
     return Math.floor(Math.random() * sides) + 1;
   }
-
-  /* ── Tables: Mistborn Handbook, Second Era ─────────────── */
-
-  function band(n, ranges) {
-    for (var i = 0; i < ranges.length; i++) {
-      if (n >= ranges[i][0] && n <= ranges[i][1]) return ranges[i][2];
-    }
-    return null;
-  }
-
-  var DISCOVERY_ERA2 = [
-    [1, 4, "none"], [5, 9, "ferring"], [10, 14, "misting"],
-    [15, 17, "choice"], [18, 20, "twinborn"]
-  ];
-
-  var ALLOMANCY = [
-    [1, 2, ["Iron", "Lurcher"]],       [3, 4, ["Steel", "Coinshot"]],
-    [5, 6, ["Tin", "Tineye"]],         [7, 8, ["Pewter", "Pewterarm (Thug)"]],
-    [9, 9, ["Zinc", "Rioter"]],        [10, 10, ["Brass", "Soother"]],
-    [11, 11, ["Copper", "Smoker (Coppercloud)"]], [12, 12, ["Bronze", "Seeker"]],
-    [13, 13, ["Chromium", "Leecher"]], [14, 14, ["Nicrosil", "Nicroburst"]],
-    [15, 15, ["Aluminum", "Aluminum Gnat (Void)"]], [16, 16, ["Duralumin", "Duralumin Gnat"]],
-    [17, 17, ["Cadmium", "Pulser"]],   [18, 18, ["Bendalloy", "Slider"]],
-    [19, 19, ["Gold", "Augur"]],       [20, 20, ["Electrum", "Oracle"]]
-  ];
-
-  var FERUCHEMY = [
-    [1, 1, ["Iron", "Skimmer"]],       [2, 2, ["Steel", "Steelrunner"]],
-    [3, 3, ["Tin", "Windwhisperer"]],  [4, 4, ["Pewter", "Pewterarm (Brute)"]],
-    [5, 6, ["Zinc", "Sparker"]],       [7, 8, ["Brass", "Firesoul"]],
-    [9, 10, ["Copper", "Archivist"]],  [11, 12, ["Bronze", "Sentry"]],
-    [13, 13, ["Chromium", "Spinner"]], [14, 14, ["Nicrosil", "Soulbearer"]],
-    [15, 15, ["Aluminum", "Trueself"]],[16, 16, ["Duralumin", "Connector"]],
-    [17, 17, ["Cadmium", "Gasper"]],   [18, 18, ["Bendalloy", "Subsumer"]],
-    [19, 19, ["Gold", "Bloodmaker"]],  [20, 20, ["Electrum", "Pinnacle"]]
-  ];
-
-  /* ── The walk ───────────────────────────────────────────── */
-
-  var elSteps   = document.getElementById("steps");
-  var elChoice  = document.getElementById("choice");
-  var elVerdict = document.getElementById("verdict");
-
-  function clearWalk() {
-    elSteps.innerHTML = ""; elSteps.hidden = true;
-    elChoice.hidden = true;
-    elVerdict.innerHTML = ""; elVerdict.hidden = true;
-  }
-
-  function addStep(roll, what, said) {
-    var row = document.createElement("div");
-    row.className = "step-row";
-    var a = document.createElement("div"); a.className = "roll"; a.textContent = roll;
-    var b = document.createElement("div");
-    var w = document.createElement("div"); w.className = "what"; w.textContent = what;
-    var s = document.createElement("div"); s.className = "said"; s.textContent = said;
-    b.appendChild(w); b.appendChild(s); row.appendChild(a); row.appendChild(b);
-    elSteps.appendChild(row); elSteps.hidden = false;
-  }
-
-  function say(label, name, gloss) {
-    elVerdict.innerHTML = "";
-    var l = document.createElement("div"); l.className = "label"; l.textContent = label;
-    var n = document.createElement("div"); n.className = "name"; n.textContent = name;
-    elVerdict.appendChild(l); elVerdict.appendChild(n);
-    if (gloss) { var g = document.createElement("p"); g.className = "gloss"; g.textContent = gloss; elVerdict.appendChild(g); }
-    elVerdict.hidden = false;
-  }
-
-  function rollMetal(kind) {
-    var table = kind === "ferring" ? FERUCHEMY : ALLOMANCY;
-    var n = d(20), hit = band(n, table);
-    addStep(n, kind === "ferring" ? "Feruchemy Discovery" : "Allomancy Discovery",
-            hit[0] + " — " + hit[1]);
-    return hit;
-  }
-
-  function finish(kind) {
-    if (kind === "ferring") {
-      var f = rollMetal("ferring");
-      say("Ferring", f[1], "Feruchemist of " + f[0] + ". You store an attribute in a "
-          + f[0].toLowerCase() + "mind and draw on it later.");
-    } else {
-      var a = rollMetal("misting");
-      say("Misting", a[1], "Allomancer of " + a[0] + ". You burn " + a[0].toLowerCase() + ".");
-    }
-  }
-
-  document.getElementById("walk").addEventListener("click", function () {
-    clearWalk();
-    var n = d(20), path = band(n, DISCOVERY_ERA2);
-
-    if (path === "none") {
-      addStep(n, "Metallic Art Discovery", "None");
-      say("Not Metalborn", "None",
-          "No Metallic Art woke in you. That is the most common result in the population, and it is a character, not a failure.");
-      return;
-    }
-    if (path === "choice") {
-      addStep(n, "Metallic Art Discovery", "Ferring or Misting — your choice");
-      elChoice.hidden = false;
-      return;
-    }
-    if (path === "twinborn") {
-      addStep(n, "Metallic Art Discovery", "Twinborn");
-      var a = rollMetal("misting"), f = rollMetal("ferring");
-      say("Twinborn", a[1] + " · " + f[1],
-          "Misting of " + a[0] + " and Ferring of " + f[0] + ". Twinborn combinations have names of their own; ask the GM about yours.");
-      return;
-    }
-    addStep(n, "Metallic Art Discovery", path === "ferring" ? "Ferring path" : "Misting path");
-    finish(path);
-  });
-
-  Array.prototype.forEach.call(elChoice.querySelectorAll("[data-pick]"), function (b) {
-    b.addEventListener("click", function () { elChoice.hidden = true; finish(b.getAttribute("data-pick")); });
-  });
-  document.getElementById("walk-reset").addEventListener("click", clearWalk);
 
   /* ── Plain dice ─────────────────────────────────────────── */
 

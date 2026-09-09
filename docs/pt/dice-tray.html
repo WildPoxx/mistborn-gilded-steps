@@ -1,30 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dice Tray — Mistborn Gilded Steps</title>
-  <meta name="description" content="A dice tray for the Mistborn Gilded Steps table: plain dice and a walkthrough for randomly determining a Metalborn path in the Second Era.">
+  <title>Bandeja de Dados — Mistborn Gilded Steps</title>
+  <meta name="description" content="Bandeja de dados da mesa Mistborn Gilded Steps: dados simples e as tabelas de descoberta das Artes Metálicas da Segunda Era.">
   <meta name="color-scheme" content="light dark">
   <link rel="alternate" hreflang="en" href="https://wildpoxx.github.io/mistborn-gilded-steps/dice-tray.html">
   <link rel="alternate" hreflang="pt-BR" href="https://wildpoxx.github.io/mistborn-gilded-steps/pt/dice-tray.html">
-  <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/gilded.css">
-  <link rel="stylesheet" href="styles/site.css">
+  <link rel="stylesheet" href="../styles/fonts.css">
+  <link rel="stylesheet" href="../styles/gilded.css">
+  <link rel="stylesheet" href="../styles/site.css">
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
+  <a class="skip" href="#content">Pular para o conteúdo</a>
 
   <header class="tray-head">
     <div class="wrap">
-      <p class="lang-switch"><span aria-current="true">English</span><a href="pt/dice-tray.html" hreflang="pt-BR" lang="pt-BR">Português</a></p>
-      <p class="crumb"><a href="index.html">← Player portal</a></p>
-      <p class="kicker">Second Era · 343 PC · for the table, without Foundry</p>
-      <h1>Dice Tray</h1>
+      <p class="lang-switch"><a href="../dice-tray.html" hreflang="en" lang="en">English</a><span aria-current="true">Português</span></p>
+      <p class="crumb"><a href="index.html">← Portal do jogador</a></p>
+      <p class="kicker">Segunda Era · 343 PC · para a mesa, sem o Foundry</p>
+      <h1>Bandeja de Dados</h1>
       <p class="lead">
-        Dice for players who are away from the virtual tabletop. Nothing here talks to a server:
-        every roll happens in your own browser, and nothing is recorded anywhere but this page,
-        until you reload it.
+        Dados para os jogadores que estão longe da mesa virtual. Nada aqui conversa com servidor
+        nenhum: cada rolagem acontece no seu próprio navegador, e nada fica registrado em outro
+        lugar além desta página, até você recarregá-la.
       </p>
     </div>
   </header>
@@ -34,16 +34,16 @@
 
       <section class="tool" aria-labelledby="t-path">
         <header>
-          <h2 id="t-path">Metallic Arts</h2>
-          <span class="hint">Character creation</span>
+          <h2 id="t-path">Artes Metálicas</h2>
+          <span class="hint">Criação de personagem</span>
         </header>
         <div class="tool-body">
           <p style="margin-top:0">
-            Rolling to discover your character's powers has a page of its own, with the three
-            discovery tables laid out as they appear in the book and a roll under each one.
+            Rolar para descobrir os poderes do seu personagem tem página própria, com as três
+            tabelas de descoberta dispostas como aparecem no livro e uma rolagem sob cada uma.
           </p>
           <div class="dice-row">
-            <a class="btn" href="metallic-arts.html">Open the Metallic Arts tables</a>
+            <a class="btn" href="metallic-arts.html">Abrir as tabelas das Artes Metálicas</a>
           </div>
         </div>
       </section>
@@ -51,8 +51,8 @@
       <!-- ─────────────────────── PLAIN DICE ─────────────────── -->
       <section class="tool" aria-labelledby="t-dice">
         <header>
-          <h2 id="t-dice">Dice</h2>
-          <span class="hint">Tap a die, or set it up below</span>
+          <h2 id="t-dice">Dados</h2>
+          <span class="hint">Toque um dado, ou monte a rolagem abaixo</span>
         </header>
         <div class="tool-body">
           <div class="dice-row" id="quick">
@@ -67,42 +67,42 @@
 
           <div class="controls">
             <div class="control">
-              <label for="count">How many</label>
+              <label for="count">Quantos</label>
               <input type="number" id="count" value="1" min="1" max="30" step="1">
             </div>
             <div class="control">
-              <label for="sides">Sides</label>
+              <label for="sides">Faces</label>
               <input type="number" id="sides" value="20" min="2" max="1000" step="1">
             </div>
             <div class="control">
-              <label for="mod">Modifier</label>
+              <label for="mod">Modificador</label>
               <input type="number" id="mod" value="0" step="1">
             </div>
             <div class="control">
-              <label for="keep">Keep</label>
+              <label for="keep">Manter</label>
               <select id="keep">
-                <option value="all">all of them</option>
-                <option value="high">the highest one</option>
-                <option value="low">the lowest one</option>
+                <option value="all">todos</option>
+                <option value="high">o maior</option>
+                <option value="low">o menor</option>
               </select>
             </div>
-            <button class="btn" id="roll">Roll</button>
+            <button class="btn" id="roll">Rolar</button>
           </div>
 
           <div class="result" id="result" hidden aria-live="polite"></div>
 
           <div class="log">
-            <h3>This session</h3>
-            <ol id="log"><li class="empty">No rolls yet.</li></ol>
+            <h3>Nesta sessão</h3>
+            <ol id="log"><li class="empty">Nenhuma rolagem ainda.</li></ol>
           </div>
         </div>
       </section>
 
       <p class="disclaimer">
-        This is unofficial fan content, created and shared for non-commercial use. It has not been
-        reviewed by Dragonsteel Entertainment, LLC or Brotherwise Games, LLC. The discovery tables
-        implemented here are rules from the <em>Mistborn Handbook</em>; the book is where they
-        belong, and this tray is a convenience for a table that already owns it.
+        Este é conteúdo de fã não oficial, criado e compartilhado sem fim comercial. Não foi
+        revisado pela Dragonsteel Entertainment, LLC nem pela Brotherwise Games, LLC. As tabelas de
+        descoberta implementadas aqui são regras do <em>Mistborn Handbook</em>; o lugar delas é o
+        livro, e esta bandeja é uma comodidade para uma mesa que já o possui.
       </p>
     </div>
   </main>
@@ -111,11 +111,11 @@
 
   <footer>
     <div class="wrap">
-      <p><strong>Mistborn Gilded Steps</strong> — fan material, non-commercial, for private table use.</p>
+      <p><strong>Mistborn Gilded Steps</strong> — material de fã, sem fim comercial, para uso privado de mesa.</p>
       <p>
         <a href="index.html">Portal</a> ·
-        <a href="metallic-arts.html">Metallic Arts</a> ·
-        <a href="constabulary-record.html">Constabulary Record</a> ·
+        <a href="metallic-arts.html">Artes Metálicas</a> ·
+        <a href="constabulary-record.html">Registro Constabulário</a> ·
         <a href="https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/wiki/Home.md">Wiki</a>
       </p>
     </div>
@@ -168,7 +168,7 @@
     if (keep === "low")  used = [Math.min.apply(null, out)];
     var sum = used.reduce(function (a, b) { return a + b; }, 0) + mod;
     var label = n + "d" + sides + (mod ? (mod > 0 ? "+" + mod : mod) : "")
-              + (keep === "high" ? " keep highest" : keep === "low" ? " keep lowest" : "");
+              + (keep === "high" ? " manter o maior" : keep === "low" ? " manter o menor" : "");
     var detail = label + "  →  [" + out.join(", ") + "]"
                + (keep !== "all" ? "  kept " + used[0] : "")
                + (mod ? "  " + (mod > 0 ? "+" : "") + mod : "");

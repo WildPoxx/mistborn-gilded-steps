@@ -99,6 +99,28 @@ a:hover { color: var(--accent); }
 .hero { padding-bottom: 0; }
 .hero .wrap { padding-bottom: clamp(9rem, 20vw, 15rem); }
 
+/* ── Language ───────────────────────────────────────────
+   English is the source version of the site; /pt/ is the translation for the
+   players. The switch sits above the kicker in the header band, small, so it
+   is findable without competing with the title. */
+.lang-switch {
+  display: flex; gap: 0.9rem; align-items: center;
+  margin: 0 0 1.1rem;
+  font: 600 0.74rem/1.4 var(--mgs-font-ui);
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+.lang-switch > * { position: relative; }
+.lang-switch > * + *::before {
+  content: ""; position: absolute; left: -0.5rem; top: 0.15em; bottom: 0.15em;
+  width: 1px; background: color-mix(in srgb, var(--band-ink) 30%, transparent);
+}
+.lang-switch [aria-current] { color: var(--mgs-metal); }
+.lang-switch a {
+  color: color-mix(in srgb, var(--band-ink) 70%, transparent);
+  text-decoration: none; text-underline-offset: 4px;
+}
+.lang-switch a:hover, .lang-switch a:focus-visible { color: var(--band-ink); text-decoration: underline; }
+
 .kicker {
   margin: 0 0 1rem;
   color: var(--mgs-metal);

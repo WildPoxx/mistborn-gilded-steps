@@ -29,6 +29,19 @@ land here.
 - [Metallic Arts](wiki/Metallic-Arts.md)
 - [Table rules](wiki/Table-Rules.md)
 
+### Português
+
+English is the source version of this site. The player-facing pages are also published in
+Brazilian Portuguese for the players who prefer them; game terms — metal names, paths, table
+titles — stay in English, matching the *Mistborn Handbook* and the Foundry character sheet.
+
+- [Portal do jogador](https://wildpoxx.github.io/mistborn-gilded-steps/pt/)
+- [Registro Constabulário](https://wildpoxx.github.io/mistborn-gilded-steps/pt/constabulary-record.html)
+- [Artes Metálicas](https://wildpoxx.github.io/mistborn-gilded-steps/pt/metallic-arts.html)
+- [Bandeja de dados](https://wildpoxx.github.io/mistborn-gilded-steps/pt/dice-tray.html)
+
+The wiki is English only.
+
 ## Modules
 
 `modules/` holds the Foundry VTT modules built for this campaign and published for the

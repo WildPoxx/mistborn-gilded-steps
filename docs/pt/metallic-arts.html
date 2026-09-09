@@ -1,37 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Metallic Arts — Random Determination — Mistborn Gilded Steps</title>
-  <meta name="description" content="The Metallic Art, Allomancy and Feruchemy Discovery tables, each with a roller, for randomly determining a Metalborn path at character creation.">
+  <title>Artes Metálicas — Determinação Aleatória — Mistborn Gilded Steps</title>
+  <meta name="description" content="As tabelas de descoberta de Arte Metálica, Alomancia e Feruquimia, cada uma com seu rolador, para sortear o caminho Metalborn na criação de personagem.">
   <meta name="color-scheme" content="light dark">
   <link rel="alternate" hreflang="en" href="https://wildpoxx.github.io/mistborn-gilded-steps/metallic-arts.html">
   <link rel="alternate" hreflang="pt-BR" href="https://wildpoxx.github.io/mistborn-gilded-steps/pt/metallic-arts.html">
-  <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/gilded.css">
-  <link rel="stylesheet" href="styles/site.css">
+  <link rel="stylesheet" href="../styles/fonts.css">
+  <link rel="stylesheet" href="../styles/gilded.css">
+  <link rel="stylesheet" href="../styles/site.css">
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
+  <a class="skip" href="#content">Pular para o conteúdo</a>
 
   <header class="tray-head">
     <div class="wrap">
-      <p class="lang-switch"><span aria-current="true">English</span><a href="pt/metallic-arts.html" hreflang="pt-BR" lang="pt-BR">Português</a></p>
-      <p class="crumb"><a href="index.html">← Player portal</a></p>
-      <p class="kicker">Character creation · roll here or with real dice</p>
-      <h1>Metallic Arts</h1>
+      <p class="lang-switch"><a href="../metallic-arts.html" hreflang="en" lang="en">English</a><span aria-current="true">Português</span></p>
+      <p class="crumb"><a href="index.html">← Portal do jogador</a></p>
+      <p class="kicker">Criação de personagem · role aqui ou com dados de verdade</p>
+      <h1>Artes Metálicas</h1>
       <p class="lead">
-        In the novels, Allomantic and Feruchemical powers are inherited, and so they fall unevenly
-        across the population. If you want to discover your character's powers alongside them
-        rather than choosing, roll on these tables. The three below are the ones from the
-        <em>Mistborn Handbook</em>, laid out as they appear there, each with its own roll.
+        Nos romances, os poderes alomânticos e feruquímicos são herdados, e por isso caem de forma
+        desigual sobre a população. Se você quiser descobrir os poderes do seu personagem junto com
+        ele, em vez de escolher, role nestas tabelas. As três abaixo são as do
+        <em>Mistborn Handbook</em>, dispostas como aparecem lá, cada uma com sua própria rolagem.
+      </p>
+      <p class="notice">
+        Os nomes das artes, dos metais, dos caminhos e das tabelas ficam em inglês, como estão no
+        <em>Mistborn Handbook</em> e na ficha do Foundry. Só o texto ao redor está em português.
       </p>
       <p class="era">
-        <label for="era">Era of Scadrial</label>
+        <label for="era">Era de Scadrial</label>
         <select id="era">
-          <option value="2" selected>Second Era — this campaign, 343 PC</option>
-          <option value="1">First Era</option>
+          <option value="2" selected>Segunda Era — esta campanha, 343 PC</option>
+          <option value="1">Primeira Era</option>
         </select>
       </p>
     </div>
@@ -43,32 +47,32 @@
       <!-- ───────────────── 1. METALLIC ART DISCOVERY ───────────────── -->
       <section class="tool" aria-labelledby="t1">
         <header>
-          <h2 id="t1">Randomizing Your Metalborn Path</h2>
-          <span class="hint">Roll first</span>
+          <h2 id="t1">Sorteando o seu caminho Metalborn</h2>
+          <span class="hint">Role primeiro</span>
         </header>
         <div class="tool-body">
           <p class="muted" style="margin-top:0">
-            Roll on this table, then take the path in the column for the era you are playing in.
-            If you land on Misting, Ferring or Twinborn, go on to the table for that art below.
+            Role nesta tabela e pegue o caminho na coluna da Era em que você está jogando. Se cair
+            em Misting, Ferring ou Twinborn, siga para a tabela daquela arte, mais abaixo.
           </p>
 
           <table class="rolltable" id="tbl-path">
             <caption>Metallic Art Discovery</caption>
             <thead>
-              <tr><th scope="col">d20</th><th scope="col">Era 1 Path</th><th scope="col">Era 2 Path</th></tr>
+              <tr><th scope="col">d20</th><th scope="col">Caminho na Era 1</th><th scope="col">Caminho na Era 2</th></tr>
             </thead>
             <tbody>
-              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name">None</td><td class="name">None</td></tr>
-              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name">Misting path</td><td class="name">Ferring path</td></tr>
-              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name">Misting path</td><td class="name">Misting path</td></tr>
-              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name">Mistborn path</td><td class="name">Ferring or Misting path</td></tr>
-              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name">Feruchemist path</td><td class="name">Twinborn path</td></tr>
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name">Nenhum</td><td class="name">Nenhum</td></tr>
+              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name">Caminho Misting</td><td class="name">Caminho Ferring</td></tr>
+              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name">Caminho Misting</td><td class="name">Caminho Misting</td></tr>
+              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name">Caminho Mistborn</td><td class="name">Caminho Ferring ou Misting</td></tr>
+              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name">Caminho Feruchemist</td><td class="name">Caminho Twinborn</td></tr>
             </tbody>
           </table>
 
           <div class="roll-bar">
-            <button class="btn" data-roll="path">Roll d20</button>
-            <button class="btn ghost" data-clear="path" type="button">Clear</button>
+            <button class="btn" data-roll="path">Rolar d20</button>
+            <button class="btn ghost" data-clear="path" type="button">Limpar</button>
           </div>
           <div class="outcome" id="out-path" hidden aria-live="polite"></div>
         </div>
@@ -77,19 +81,19 @@
       <!-- ───────────────── 2. ALLOMANCY DISCOVERY ───────────────── -->
       <section class="tool" aria-labelledby="t2">
         <header>
-          <h2 id="t2">Randomizing Your Misting Power</h2>
+          <h2 id="t2">Sorteando o seu poder Misting</h2>
           <span class="hint">Allomancy</span>
         </header>
         <div class="tool-body">
           <p class="muted" style="margin-top:0">
-            Roll here for your Allomantic power. If the metal is not available in your era, reroll —
-            the roller does that for you and shows you both rolls.
+            Role aqui o seu poder alomântico. Se o metal não existir na sua Era, role de novo — o
+            rolador faz isso por você e mostra as duas rolagens.
           </p>
 
           <table class="rolltable" id="tbl-allo">
             <caption>Allomancy Discovery</caption>
             <thead>
-              <tr><th scope="col">d20</th><th scope="col">Power</th><th scope="col">Misting Name</th></tr>
+              <tr><th scope="col">d20</th><th scope="col">Poder</th><th scope="col">Nome Misting</th></tr>
             </thead>
             <tbody>
               <tr data-lo="1"  data-hi="2"><td>1–2</td><td class="name">Iron</td><td>Lurcher</td></tr>
@@ -111,13 +115,13 @@
             </tbody>
           </table>
           <p class="table-foot">
-            <span>* Only available in Era 2.</span>
-            <span>† Only available near the end of Era 1 or during Era 2.</span>
+            <span>* Só existe na Era 2.</span>
+            <span>† Só perto do fim da Era 1 ou durante a Era 2.</span>
           </p>
 
           <div class="roll-bar">
-            <button class="btn" data-roll="allo">Roll d20</button>
-            <button class="btn ghost" data-clear="allo" type="button">Clear</button>
+            <button class="btn" data-roll="allo">Rolar d20</button>
+            <button class="btn ghost" data-clear="allo" type="button">Limpar</button>
           </div>
           <div class="outcome" id="out-allo" hidden aria-live="polite"></div>
         </div>
@@ -126,16 +130,16 @@
       <!-- ───────────────── 3. FERUCHEMY DISCOVERY ───────────────── -->
       <section class="tool" aria-labelledby="t3">
         <header>
-          <h2 id="t3">Randomizing Your Feruchemical Power</h2>
+          <h2 id="t3">Sorteando o seu poder feruquímico</h2>
           <span class="hint">Feruchemy</span>
         </header>
         <div class="tool-body">
-          <p class="muted" style="margin-top:0">Roll here for your Feruchemical power.</p>
+          <p class="muted" style="margin-top:0">Role aqui o seu poder feruquímico.</p>
 
           <table class="rolltable" id="tbl-feru">
             <caption>Feruchemy Discovery</caption>
             <thead>
-              <tr><th scope="col">d20</th><th scope="col">Power</th><th scope="col">Ferring Name</th></tr>
+              <tr><th scope="col">d20</th><th scope="col">Poder</th><th scope="col">Nome Ferring</th></tr>
             </thead>
             <tbody>
               <tr data-lo="1"  data-hi="1"><td>1</td><td class="name">Iron</td><td>Skimmer</td></tr>
@@ -158,19 +162,19 @@
           </table>
 
           <div class="roll-bar">
-            <button class="btn" data-roll="feru">Roll d20</button>
-            <button class="btn ghost" data-clear="feru" type="button">Clear</button>
+            <button class="btn" data-roll="feru">Rolar d20</button>
+            <button class="btn ghost" data-clear="feru" type="button">Limpar</button>
           </div>
           <div class="outcome" id="out-feru" hidden aria-live="polite"></div>
         </div>
       </section>
 
       <p class="disclaimer">
-        This is unofficial fan content, created and shared for non-commercial use. It has not been
-        reviewed by Dragonsteel Entertainment, LLC or Brotherwise Games, LLC. The tables above are
-        from the <em>Mistborn Handbook</em>, reproduced here so this table's players can roll on
-        them away from the book. Nothing on this page leaves your browser.
-        Plain dice are on the <a href="dice-tray.html">dice tray</a>.
+        Este é conteúdo de fã não oficial, criado e compartilhado sem fim comercial. Não foi
+        revisado pela Dragonsteel Entertainment, LLC nem pela Brotherwise Games, LLC. As tabelas
+        acima são do <em>Mistborn Handbook</em>, reproduzidas aqui para que os jogadores desta mesa
+        possam rolar nelas longe do livro. Nada nesta página sai do seu navegador.
+        Dados comuns estão na <a href="dice-tray.html">bandeja de dados</a>.
       </p>
     </div>
   </main>
@@ -179,11 +183,11 @@
 
   <footer>
     <div class="wrap">
-      <p><strong>Mistborn Gilded Steps</strong> — fan material, non-commercial, for private table use.</p>
+      <p><strong>Mistborn Gilded Steps</strong> — material de fã, sem fim comercial, para uso privado de mesa.</p>
       <p>
         <a href="index.html">Portal</a> ·
-        <a href="dice-tray.html">Dice tray</a> ·
-        <a href="constabulary-record.html">Constabulary Record</a>
+        <a href="dice-tray.html">Bandeja de dados</a> ·
+        <a href="constabulary-record.html">Registro Constabulário</a>
       </p>
     </div>
   </footer>
@@ -241,7 +245,7 @@
     b.appendChild(s);
     if (rerolls && rerolls.length) {
       var r = document.createElement("span"); r.className = "aside";
-      r.textContent = "Rerolled past " + rerolls.join(", ") + " — not available in this era.";
+      r.textContent = "Rolado de novo por cima de " + rerolls.join(", ") + " — não existe nesta Era.";
       b.appendChild(r);
     }
     if (aside) { var x = document.createElement("span"); x.className = "aside"; x.textContent = aside; b.appendChild(x); }
@@ -268,14 +272,14 @@
 
     var said = readRow(kind, row), aside = "";
     if (kind === "path") {
-      if (/^None/.test(said)) aside = "No Metallic Art woke in you — the most common result in the population.";
-      else if (/or/.test(said)) aside = "This result is a choice, not a roll. Take whichever path you want, then roll on its table below.";
-      else if (/Twinborn/.test(said)) aside = "Roll on both tables below: one Allomantic power and one Feruchemical.";
-      else if (/Mistborn/.test(said)) aside = "Every Allomantic metal, not one. No second roll needed.";
-      else if (/Feruchemist/.test(said)) aside = "Every Feruchemical metal, not one. No second roll needed.";
-      else aside = "Now roll on the " + (/Ferring/.test(said) ? "Feruchemy" : "Allomancy") + " Discovery table below.";
+      if (/^Nenhum/.test(said)) aside = "Nenhuma Arte Metálica despertou em você — o resultado mais comum na população.";
+      else if (/ ou /.test(said)) aside = "Este resultado é uma escolha, não uma rolagem. Fique com o caminho que quiser e depois role na tabela dele, abaixo.";
+      else if (/Twinborn/.test(said)) aside = "Role nas duas tabelas abaixo: um poder alomântico e um feruquímico.";
+      else if (/Mistborn/.test(said)) aside = "Todos os metais alomânticos, não apenas um. Não precisa de segunda rolagem.";
+      else if (/Feruchemist/.test(said)) aside = "Todos os metais feruquímicos, não apenas um. Não precisa de segunda rolagem.";
+      else aside = "Agora role na tabela " + (/Ferring/.test(said) ? "Feruchemy" : "Allomancy") + " Discovery, abaixo.";
     } else if (kind === "allo" && era() === "1" && row.hasAttribute("data-late")) {
-      aside = "Marked † — only near the end of Era 1. Check with the GM before taking it.";
+      aside = "Marcado com † — só perto do fim da Era 1. Confirme com o narrador antes de ficar com ele.";
     }
 
     show(kind, n, said, aside, rerolls);

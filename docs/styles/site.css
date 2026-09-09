@@ -11,12 +11,25 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* ── Type ───────────────────────────────────────────────
+   The four families are declared in fonts.css and served from this repo.
+   Overriding the --mgs-font-* tokens here, rather than editing gilded.css,
+   keeps the generated theme file re-extractable from the Foundry module. */
+:root {
+  --mgs-font-display: "Zilla Slab", "Rockwell", "Roboto Slab", Georgia, serif;
+  --mgs-font-prose:   "Source Serif 4", "Source Serif Pro", Georgia, serif;
+  --mgs-font-ui:      "IBM Plex Sans Condensed", "Bahnschrift", "Segoe UI", system-ui, sans-serif;
+  --mgs-font-mono:    "IBM Plex Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+}
+
 body {
   margin: 0;
   color: var(--ink);
   font-family: var(--mgs-font-prose);
-  font-size: 1.04rem;
-  line-height: 1.62;
+  font-size: 1.06rem;
+  line-height: 1.68;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 
   /* vignette · left column · right column · grain · ground */
   background-color: var(--ground);
@@ -89,8 +102,8 @@ a:hover { color: var(--accent); }
 .kicker {
   margin: 0 0 1rem;
   color: var(--mgs-metal);
-  font: 600 0.8rem/1.35 var(--mgs-font-ui);
-  letter-spacing: 0.17em;
+  font: 600 0.84rem/1.35 var(--mgs-font-ui);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 .crumb { margin: 0 0 0.4rem; font: 600 0.78rem/1.4 var(--mgs-font-ui); letter-spacing: 0.13em; text-transform: uppercase; color: var(--mgs-verdigris-bright); }
@@ -100,18 +113,23 @@ a:hover { color: var(--accent); }
   margin: 0;
   max-width: 18ch;
   font-family: var(--mgs-font-display);
-  font-size: clamp(2.4rem, 7.5vw, 5rem);
-  line-height: 0.98;
+  font-size: clamp(2.4rem, 7.5vw, 4.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
   color: var(--mgs-bege-claro);
   text-shadow: 0 2px 0 rgb(0 0 0 / 28%);
 }
 .file-head h1, .tray-head h1 { font-size: clamp(2rem, 5.5vw, 3.4rem); }
 
+p, li { text-wrap: pretty; }
+
 .lead {
-  max-width: 62ch;
+  max-width: 60ch;
   margin: 1.4rem 0 0;
   color: color-mix(in srgb, var(--band-ink) 88%, transparent);
-  font-size: clamp(1.02rem, 2vw, 1.2rem);
+  font-size: clamp(1.04rem, 2vw, 1.24rem);
+  line-height: 1.6;
 }
 
 /* ── Skyline ────────────────────────────────────────────
@@ -167,7 +185,7 @@ a:hover { color: var(--accent); }
 .button.primary:hover, .btn:not(.ghost):hover { background: linear-gradient(170deg, var(--mgs-metal-bright) 0%, var(--mgs-metal) 100%); color: #2a1a12; }
 .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--edge-firm); }
 .btn.ghost:hover { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--ink); }
-.die { min-width: 68px; font-family: var(--mgs-font-mono); font-weight: 700; }
+.die { min-width: 68px; font-family: var(--mgs-font-mono); font-weight: 700; font-variant-numeric: tabular-nums; }
 
 /* ── Sections and headings ──────────────────────────────── */
 
@@ -175,19 +193,20 @@ main { padding-bottom: 3rem; }
 .section { padding: clamp(2.2rem, 5vw, 3.4rem) 0; }
 
 h2 { font-family: var(--mgs-font-display); color: var(--ink); }
-.section h2 { margin: 0 0 1.1rem; font-size: clamp(1.6rem, 3.6vw, 2.5rem); line-height: 1.06; }
-.section p { max-width: 68ch; }
+.section h2 { margin: 0 0 1.1rem; font-size: clamp(1.55rem, 3.4vw, 2.35rem); line-height: 1.08; letter-spacing: -0.012em; text-wrap: balance; }
+.section p { max-width: 66ch; text-wrap: pretty; }
 
-/* The step: three descending marks. The only ornament besides metal. */
+/* The step. A hairline that jogs up once and carries on — an engraved mark,
+   not three stacked pixels. The only ornament besides metal. */
 .step-mark {
-  display: block; width: 7px; height: 3px;
+  display: block; width: 46px; height: 9px;
   background: var(--accent);
-  box-shadow: 7px 4px 0 var(--accent), 14px 8px 0 var(--accent);
+  clip-path: polygon(0 7px, 19px 7px, 26px 0, 46px 0, 46px 2px, 27px 2px, 20px 9px, 0 9px);
 }
-.section h2 .step-mark { margin-bottom: 0.75rem; }
+.section h2 .step-mark { margin-bottom: 0.7rem; }
 
 .rule { position: relative; height: 1px; background: var(--edge); margin: 0.5rem 0; }
-.rule .step-mark { position: absolute; left: 0; top: -5px; }
+.rule .step-mark { position: absolute; left: 0; top: -8px; }
 
 .two-col { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 2.6rem; align-items: start; }
 
@@ -196,9 +215,9 @@ h2 { font-family: var(--mgs-font-display); color: var(--ink); }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.9rem; margin-top: 1.8rem; }
 .card { display: block; padding: 1.3rem 1.2rem 1.15rem; color: var(--ink); text-decoration: none; }
 .card::after {
-  content: ""; position: absolute; left: 1.2rem; top: 0.7rem; z-index: 1;
-  width: 7px; height: 3px; background: var(--mgs-verdigris);
-  box-shadow: 7px 4px 0 var(--mgs-verdigris), 14px 8px 0 var(--mgs-verdigris);
+  content: ""; position: absolute; left: 1.2rem; top: 0.75rem; z-index: 1;
+  width: 34px; height: 8px; background: var(--mgs-verdigris);
+  clip-path: polygon(0 6px, 14px 6px, 20px 0, 34px 0, 34px 2px, 21px 2px, 15px 8px, 0 8px);
   opacity: 0.8;
 }
 .card:hover::after { background: var(--accent); box-shadow: 7px 4px 0 var(--accent), 14px 8px 0 var(--accent); opacity: 1; }
@@ -285,7 +304,7 @@ footer p { max-width: 80ch; }
 }
 .rolltable td { padding: 0.46rem 0.8rem; border-bottom: 1px solid var(--edge); }
 .rolltable tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--ink) 5%, transparent); }
-.rolltable td:first-child { width: 5.6rem; font-family: var(--mgs-font-mono); color: var(--ink-sub); white-space: nowrap; }
+.rolltable td:first-child { width: 5.6rem; font-variant-numeric: tabular-nums; font-family: var(--mgs-font-mono); color: var(--ink-sub); white-space: nowrap; }
 .rolltable td.name { font-weight: 700; }
 
 .rolltable tr.hit td {
@@ -395,14 +414,19 @@ footer p { max-width: 80ch; }
 .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 0 1.7rem; margin: 0; }
 .field { border-bottom: 1px solid var(--edge); padding: 0.58rem 0; margin: 0; }
 .field dt { color: var(--ink-sub); font: 700 0.73rem/1.5 var(--mgs-font-ui); font-variant-caps: all-small-caps; letter-spacing: 0.11em; }
-.field dd { margin: 0.12rem 0 0; font-family: var(--mgs-font-mono); font-size: 0.93rem; color: var(--ink); }
+.field dd { margin: 0.12rem 0 0; font-family: var(--mgs-font-mono); font-variant-numeric: tabular-nums; font-size: 0.93rem; color: var(--ink); }
 .field.wide { grid-column: 1 / -1; }
 
 .nil, .sealed, .guess { font-family: var(--mgs-font-ui); font-size: 0.77rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .nil { color: var(--ink-sub); }
 .nil::before { content: "— "; }
 .sealed { color: var(--mgs-ember-deep); }
-.sealed::before { content: "▚ "; }
+/* A chamfered stamp, drawn, not a block glyph the reader's font may not have. */
+.sealed::before {
+  content: ""; display: inline-block; width: 8px; height: 8px;
+  margin-right: 0.45em; background: currentColor;
+  clip-path: polygon(3px 0, 8px 0, 8px 5px, 5px 8px, 0 8px, 0 3px);
+}
 .guess { color: var(--mgs-metal-deep); }
 .guess::before { content: "? "; }
 

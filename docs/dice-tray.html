@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dice Tray — Mistborn Gilded Steps</title>
+  <meta name="description" content="A dice tray for the Mistborn Gilded Steps table: plain dice and a walkthrough for randomly determining a Metalborn path in the Second Era.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/portal.css">
+  <link rel="stylesheet" href="styles/tray.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="tray-head">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">← Player portal</a></p>
+      <p class="kicker">Second Era · 343 PC · for the table, without Foundry</p>
+      <h1>Dice Tray</h1>
+      <p class="lead">
+        Dice for players who are away from the virtual tabletop. Nothing here talks to a server:
+        every roll happens in your own browser, and nothing is recorded anywhere but this page,
+        until you reload it.
+      </p>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+
+      <!-- ─────────────────── METALBORN PATH ─────────────────── -->
+      <section class="tool" aria-labelledby="t-path">
+        <header>
+          <h2 id="t-path">Metalborn Path</h2>
+          <span class="hint">Second Era · character creation</span>
+        </header>
+        <div class="tool-body">
+          <p class="muted" style="margin-top:0">
+            Roll to discover whether your character is Metalborn, and which power they woke to.
+            The tray walks the whole branch: the path first, then the metal, and both if you come
+            out Twinborn. It never chooses for you where the rules give you a choice.
+          </p>
+
+          <div class="dice-row">
+            <button class="btn" id="walk">Roll for my path</button>
+            <button class="btn ghost" id="walk-reset" type="button">Clear</button>
+          </div>
+
+          <div class="steps" id="steps" hidden></div>
+
+          <div class="choice" id="choice" hidden>
+            <p><strong>The roll gives you a choice.</strong> On this result the rules let you take either path. Pick the one you want and the tray will roll its metal.</p>
+            <div class="dice-row">
+              <button class="btn ghost" data-pick="ferring">Take the Ferring path</button>
+              <button class="btn ghost" data-pick="misting">Take the Misting path</button>
+            </div>
+          </div>
+
+          <div class="verdict" id="verdict" hidden aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────── PLAIN DICE ─────────────────── -->
+      <section class="tool" aria-labelledby="t-dice">
+        <header>
+          <h2 id="t-dice">Dice</h2>
+          <span class="hint">Tap a die, or set it up below</span>
+        </header>
+        <div class="tool-body">
+          <div class="dice-row" id="quick">
+            <button class="die" data-sides="20">d20</button>
+            <button class="die" data-sides="12">d12</button>
+            <button class="die" data-sides="10">d10</button>
+            <button class="die" data-sides="8">d8</button>
+            <button class="die" data-sides="6">d6</button>
+            <button class="die" data-sides="4">d4</button>
+            <button class="die" data-sides="100">d100</button>
+          </div>
+
+          <div class="controls">
+            <div class="control">
+              <label for="count">How many</label>
+              <input type="number" id="count" value="1" min="1" max="30" step="1">
+            </div>
+            <div class="control">
+              <label for="sides">Sides</label>
+              <input type="number" id="sides" value="20" min="2" max="1000" step="1">
+            </div>
+            <div class="control">
+              <label for="mod">Modifier</label>
+              <input type="number" id="mod" value="0" step="1">
+            </div>
+            <div class="control">
+              <label for="keep">Keep</label>
+              <select id="keep">
+                <option value="all">all of them</option>
+                <option value="high">the highest one</option>
+                <option value="low">the lowest one</option>
+              </select>
+            </div>
+            <button class="btn" id="roll">Roll</button>
+          </div>
+
+          <div class="result" id="result" hidden aria-live="polite"></div>
+
+          <div class="log">
+            <h3>This session</h3>
+            <ol id="log"><li class="empty">No rolls yet.</li></ol>
+          </div>
+        </div>
+      </section>
+
+      <p class="disclaimer">
+        This is unofficial fan content, created and shared for non-commercial use. It has not been
+        reviewed by Dragonsteel Entertainment, LLC or Brotherwise Games, LLC. The discovery tables
+        implemented here are rules from the <em>Mistborn Handbook</em>; the book is where they
+        belong, and this tray is a convenience for a table that already owns it.
+      </p>
+    </div>
+  </main>
+
+  <div class="mist" aria-hidden="true"></div>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Mistborn Gilded Steps</strong> — fan material, non-commercial, for private table use.</p>
+      <p>
+        <a href="index.html">Portal</a> ·
+        <a href="constabulary-record.html">Constabulary Record</a> ·
+        <a href="https://github.com/WildPoxx/mistborn-gilded-steps/blob/main/wiki/Home.md">Wiki</a>
+      </p>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* Rolls use crypto when the browser offers it, so the tray is not
+     noticeably biased over a campaign's worth of character creation. */
+  function d(sides) {
+    var c = window.crypto || window.msCrypto;
+    if (c && c.getRandomValues) {
+      var limit = Math.floor(4294967296 / sides) * sides, v = new Uint32Array(1);
+      do { c.getRandomValues(v); } while (v[0] >= limit);
+      return (v[0] % sides) + 1;
+    }
+    return Math.floor(Math.random() * sides) + 1;
+  }
+
+  /* ── Tables: Mistborn Handbook, Second Era ─────────────── */
+
+  function band(n, ranges) {
+    for (var i = 0; i < ranges.length; i++) {
+      if (n >= ranges[i][0] && n <= ranges[i][1]) return ranges[i][2];
+    }
+    return null;
+  }
+
+  var DISCOVERY_ERA2 = [
+    [1, 4, "none"], [5, 9, "ferring"], [10, 14, "misting"],
+    [15, 17, "choice"], [18, 20, "twinborn"]
+  ];
+
+  var ALLOMANCY = [
+    [1, 2, ["Iron", "Lurcher"]],       [3, 4, ["Steel", "Coinshot"]],
+    [5, 6, ["Tin", "Tineye"]],         [7, 8, ["Pewter", "Pewterarm (Thug)"]],
+    [9, 9, ["Zinc", "Rioter"]],        [10, 10, ["Brass", "Soother"]],
+    [11, 11, ["Copper", "Smoker (Coppercloud)"]], [12, 12, ["Bronze", "Seeker"]],
+    [13, 13, ["Chromium", "Leecher"]], [14, 14, ["Nicrosil", "Nicroburst"]],
+    [15, 15, ["Aluminum", "Aluminum Gnat (Void)"]], [16, 16, ["Duralumin", "Duralumin Gnat"]],
+    [17, 17, ["Cadmium", "Pulser"]],   [18, 18, ["Bendalloy", "Slider"]],
+    [19, 19, ["Gold", "Augur"]],       [20, 20, ["Electrum", "Oracle"]]
+  ];
+
+  var FERUCHEMY = [
+    [1, 1, ["Iron", "Skimmer"]],       [2, 2, ["Steel", "Steelrunner"]],
+    [3, 3, ["Tin", "Windwhisperer"]],  [4, 4, ["Pewter", "Pewterarm (Brute)"]],
+    [5, 6, ["Zinc", "Sparker"]],       [7, 8, ["Brass", "Firesoul"]],
+    [9, 10, ["Copper", "Archivist"]],  [11, 12, ["Bronze", "Sentry"]],
+    [13, 13, ["Chromium", "Spinner"]], [14, 14, ["Nicrosil", "Soulbearer"]],
+    [15, 15, ["Aluminum", "Trueself"]],[16, 16, ["Duralumin", "Connector"]],
+    [17, 17, ["Cadmium", "Gasper"]],   [18, 18, ["Bendalloy", "Subsumer"]],
+    [19, 19, ["Gold", "Bloodmaker"]],  [20, 20, ["Electrum", "Pinnacle"]]
+  ];
+
+  /* ── The walk ───────────────────────────────────────────── */
+
+  var elSteps   = document.getElementById("steps");
+  var elChoice  = document.getElementById("choice");
+  var elVerdict = document.getElementById("verdict");
+
+  function clearWalk() {
+    elSteps.innerHTML = ""; elSteps.hidden = true;
+    elChoice.hidden = true;
+    elVerdict.innerHTML = ""; elVerdict.hidden = true;
+  }
+
+  function addStep(roll, what, said) {
+    var row = document.createElement("div");
+    row.className = "step-row";
+    var a = document.createElement("div"); a.className = "roll"; a.textContent = roll;
+    var b = document.createElement("div");
+    var w = document.createElement("div"); w.className = "what"; w.textContent = what;
+    var s = document.createElement("div"); s.className = "said"; s.textContent = said;
+    b.appendChild(w); b.appendChild(s); row.appendChild(a); row.appendChild(b);
+    elSteps.appendChild(row); elSteps.hidden = false;
+  }
+
+  function say(label, name, gloss) {
+    elVerdict.innerHTML = "";
+    var l = document.createElement("div"); l.className = "label"; l.textContent = label;
+    var n = document.createElement("div"); n.className = "name"; n.textContent = name;
+    elVerdict.appendChild(l); elVerdict.appendChild(n);
+    if (gloss) { var g = document.createElement("p"); g.className = "gloss"; g.textContent = gloss; elVerdict.appendChild(g); }
+    elVerdict.hidden = false;
+  }
+
+  function rollMetal(kind) {
+    var table = kind === "ferring" ? FERUCHEMY : ALLOMANCY;
+    var n = d(20), hit = band(n, table);
+    addStep(n, kind === "ferring" ? "Feruchemy Discovery" : "Allomancy Discovery",
+            hit[0] + " — " + hit[1]);
+    return hit;
+  }
+
+  function finish(kind) {
+    if (kind === "ferring") {
+      var f = rollMetal("ferring");
+      say("Ferring", f[1], "Feruchemist of " + f[0] + ". You store an attribute in a "
+          + f[0].toLowerCase() + "mind and draw on it later.");
+    } else {
+      var a = rollMetal("misting");
+      say("Misting", a[1], "Allomancer of " + a[0] + ". You burn " + a[0].toLowerCase() + ".");
+    }
+  }
+
+  document.getElementById("walk").addEventListener("click", function () {
+    clearWalk();
+    var n = d(20), path = band(n, DISCOVERY_ERA2);
+
+    if (path === "none") {
+      addStep(n, "Metallic Art Discovery", "None");
+      say("Not Metalborn", "None",
+          "No Metallic Art woke in you. That is the most common result in the population, and it is a character, not a failure.");
+      return;
+    }
+    if (path === "choice") {
+      addStep(n, "Metallic Art Discovery", "Ferring or Misting — your choice");
+      elChoice.hidden = false;
+      return;
+    }
+    if (path === "twinborn") {
+      addStep(n, "Metallic Art Discovery", "Twinborn");
+      var a = rollMetal("misting"), f = rollMetal("ferring");
+      say("Twinborn", a[1] + " · " + f[1],
+          "Misting of " + a[0] + " and Ferring of " + f[0] + ". Twinborn combinations have names of their own; ask the GM about yours.");
+      return;
+    }
+    addStep(n, "Metallic Art Discovery", path === "ferring" ? "Ferring path" : "Misting path");
+    finish(path);
+  });
+
+  Array.prototype.forEach.call(elChoice.querySelectorAll("[data-pick]"), function (b) {
+    b.addEventListener("click", function () { elChoice.hidden = true; finish(b.getAttribute("data-pick")); });
+  });
+  document.getElementById("walk-reset").addEventListener("click", clearWalk);
+
+  /* ── Plain dice ─────────────────────────────────────────── */
+
+  var elResult = document.getElementById("result");
+  var elLog = document.getElementById("log");
+  var count = 0;
+
+  function log(line) {
+    if (count === 0) elLog.innerHTML = "";
+    count++;
+    var li = document.createElement("li");
+    li.innerHTML = "<b>" + count + ".</b> ";
+    li.appendChild(document.createTextNode(line));
+    elLog.insertBefore(li, elLog.firstChild);
+  }
+
+  function show(total, detail) {
+    elResult.innerHTML = "";
+    var t = document.createElement("div"); t.className = "total"; t.textContent = total;
+    var x = document.createElement("div"); x.className = "detail"; x.textContent = detail;
+    elResult.appendChild(t); elResult.appendChild(x);
+    elResult.hidden = false;
+  }
+
+  function roll(n, sides, mod, keep) {
+    var out = [], i;
+    for (i = 0; i < n; i++) out.push(d(sides));
+    var used = out.slice();
+    if (keep === "high") used = [Math.max.apply(null, out)];
+    if (keep === "low")  used = [Math.min.apply(null, out)];
+    var sum = used.reduce(function (a, b) { return a + b; }, 0) + mod;
+    var label = n + "d" + sides + (mod ? (mod > 0 ? "+" + mod : mod) : "")
+              + (keep === "high" ? " keep highest" : keep === "low" ? " keep lowest" : "");
+    var detail = label + "  →  [" + out.join(", ") + "]"
+               + (keep !== "all" ? "  kept " + used[0] : "")
+               + (mod ? "  " + (mod > 0 ? "+" : "") + mod : "");
+    show(sum, detail);
+    log(label + " = " + sum + "  [" + out.join(", ") + "]");
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("#quick .die"), function (b) {
+    b.addEventListener("click", function () {
+      var s = parseInt(b.getAttribute("data-sides"), 10);
+      document.getElementById("sides").value = s;
+      roll(1, s, 0, "all");
+    });
+  });
+
+  document.getElementById("roll").addEventListener("click", function () {
+    var n = Math.min(30, Math.max(1, parseInt(document.getElementById("count").value, 10) || 1));
+    var s = Math.min(1000, Math.max(2, parseInt(document.getElementById("sides").value, 10) || 20));
+    var m = parseInt(document.getElementById("mod").value, 10) || 0;
+    roll(n, s, m, document.getElementById("keep").value);
+  });
+})();
+</script>
+</body>
+</html>

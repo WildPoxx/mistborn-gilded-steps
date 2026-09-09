@@ -25,6 +25,7 @@ land here.
 - [Wiki: home](wiki/Home.md)
 - [Start here](wiki/Start-Here.md)
 - [Constabulary Record](https://wildpoxx.github.io/mistborn-gilded-steps/constabulary-record.html)
+- [Dice tray](https://wildpoxx.github.io/mistborn-gilded-steps/dice-tray.html)
 - [Metalborn Lottery](wiki/Metalborn-Lottery.md)
 - [Table rules](wiki/Table-Rules.md)
 
@@ -66,7 +67,11 @@ campaign material is freely licensed, and it is not.
 
 ## Rights
 
-Fan material, non-commercial, made for private table use. *Mistborn*, the Cosmere and Scadrial
+> This is unofficial fan content, created and shared for non-commercial use. It has not been
+> reviewed by Dragonsteel Entertainment, LLC or Brotherwise Games, LLC.
+
+Published under the [Cosmere RPG Fan Content Policy](https://www.cosmererpg.com/fan-content-policy).
+Non-commercial, never monetised or paywalled, made for private table use. *Mistborn*, the Cosmere and Scadrial
 belong to Brandon Sanderson and Dragonsteel Entertainment. The *Cosmere RPG*, the *Mistborn
 Handbook* and the *Mistborn World Guide* belong to Brotherwise Games and their rights holders.
 

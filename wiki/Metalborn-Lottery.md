@@ -3,12 +3,19 @@
 **House rule.** Original to this campaign, built on top of the official Second Era table for
 discovering the Metallic Arts. Approved for use; still pending playtest validation.
 
-This page **does not reproduce** the official table. Consult it in the *Mistborn Handbook*,
-p. 129 (`Metallic Art Discovery`, Era 2) — the GM has the book at the table.
-
 ## 1. First discovery
 
-Roll `1d20` on the official Era 2 `Metallic Art Discovery` table.
+Roll `1d20` on the `Metallic Art Discovery` table (*Mistborn Handbook*, p. 129), Second Era
+column. The [dice tray](https://wildpoxx.github.io/mistborn-gilded-steps/dice-tray.html) will
+walk it for you.
+
+| d20 | Second Era path |
+| --- | --- |
+| 1-4 | None |
+| 5-9 | Ferring |
+| 10-14 | Misting |
+| 15-17 | Ferring or Misting — your choice |
+| 18-20 | Twinborn |
 
 **Every result except a natural `1` ends the lottery.** Build the character down the official
 path for whatever came up.

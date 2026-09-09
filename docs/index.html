@@ -6,8 +6,8 @@
   <title>Mistborn Gilded Steps — Player Portal</title>
   <meta name="description" content="Player portal for the Mistborn Gilded Steps campaign: Bilming, Scadrial, 343 PC. Urban industrial fantasy on the Cosmere RPG.">
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/portal.css">
+  <link rel="stylesheet" href="styles/gilded.css">
+  <link rel="stylesheet" href="styles/site.css">
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
@@ -39,19 +39,19 @@
       <title id="section-title">Cross-section of Yomend Steps: water and quay below, warehouses and cranes along the low strip, the hillside rising in terraces, and the tall houses on the ridge.</title>
       <defs>
         <linearGradient id="mgs-mist" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="var(--mgs-fog)" stop-opacity="0"></stop>
-          <stop offset="55%"  stop-color="var(--mgs-fog)" stop-opacity="0.14"></stop>
-          <stop offset="100%" stop-color="var(--mgs-fog)" stop-opacity="0"></stop>
+          <stop offset="0%"   stop-color="var(--mgs-bege)" stop-opacity="0"></stop>
+          <stop offset="55%"  stop-color="var(--mgs-bege)" stop-opacity="0.16"></stop>
+          <stop offset="100%" stop-color="var(--mgs-bege)" stop-opacity="0"></stop>
         </linearGradient>
         <linearGradient id="mgs-smoke" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%"   stop-color="var(--mgs-fog)" stop-opacity="0.10"></stop>
-          <stop offset="100%" stop-color="var(--mgs-fog)" stop-opacity="0"></stop>
+          <stop offset="0%"   stop-color="var(--mgs-bege)" stop-opacity="0.11"></stop>
+          <stop offset="100%" stop-color="var(--mgs-bege)" stop-opacity="0"></stop>
         </linearGradient>
       </defs>
 
       <!-- Water -->
-      <rect x="0" y="258" width="342" height="42" fill="var(--mgs-verdigris-deep)" opacity="0.32"></rect>
-      <g stroke="var(--mgs-fog)" stroke-opacity="0.10" stroke-width="1">
+      <rect x="0" y="258" width="342" height="42" fill="var(--mgs-verdigris-deep)" opacity="0.22"></rect>
+      <g stroke="var(--mgs-metal)" stroke-opacity="0.13" stroke-width="1">
         <line x1="0" y1="268" x2="338" y2="268"></line>
         <line x1="0" y1="277" x2="300" y2="277"></line>
         <line x1="40" y1="286" x2="338" y2="286"></line>
@@ -59,8 +59,8 @@
 
       <!-- Distant plane: the ridge behind and the high houses -->
       <path d="M340 300 L340 202 L560 184 L780 160 L980 126 L1440 102 L1440 300 Z"
-            fill="var(--mgs-iron-700)" opacity="0.34"></path>
-      <g fill="var(--mgs-iron-700)" opacity="0.62">
+            fill="var(--mgs-rust-700)" opacity="0.42"></path>
+      <g fill="var(--mgs-rust-700)" opacity="0.75">
         <rect x="1052" y="86"  width="44" height="46"></rect>
         <rect x="1104" y="66"  width="30" height="66"></rect>
         <rect x="1142" y="94"  width="52" height="38"></rect>
@@ -71,7 +71,7 @@
         <rect x="1396" y="76"  width="28" height="56"></rect>
       </g>
       <!-- Lit windows on the ridge: capital watching the harbour -->
-      <g fill="var(--mgs-brass-bright)" opacity="0.55">
+      <g fill="var(--mgs-metal-bright)" opacity="0.72">
         <rect x="1063" y="98"  width="5" height="7"></rect>
         <rect x="1078" y="98"  width="5" height="7"></rect>
         <rect x="1112" y="80"  width="5" height="7"></rect>
@@ -92,10 +92,10 @@
       <path d="M340 256 L416 256 L416 241 L492 241 L492 226 L568 226 L568 211 L644 211
                L644 196 L720 196 L720 181 L796 181 L796 166 L872 166 L872 151 L948 151
                L948 136 L1024 136 L1024 121 L1440 121 L1440 300 L340 300 Z"
-            fill="#131b1c"></path>
+            fill="var(--mgs-rust-900)"></path>
 
       <!-- Chimneys on the slope, with drifting smoke -->
-      <g fill="#131b1c">
+      <g fill="var(--mgs-rust-900)">
         <rect x="466" y="96"  width="13" height="146"></rect>
         <rect x="618" y="114" width="11" height="98"></rect>
       </g>
@@ -106,7 +106,7 @@
       <rect x="0" y="176" width="1440" height="96" fill="url(#mgs-mist)"></rect>
 
       <!-- Near plane: quay, warehouses and cranes -->
-      <g fill="#0a0f10">
+      <g fill="var(--mgs-rust-990)">
         <!-- deck and piles -->
         <rect x="34" y="248" width="308" height="13"></rect>
         <rect x="70" y="261" width="6" height="26"></rect>

@@ -97,7 +97,7 @@ a:hover { color: var(--accent); }
   overflow: hidden;
 }
 .hero { padding-bottom: 0; }
-.hero .wrap { padding-bottom: clamp(9rem, 20vw, 15rem); }
+.hero .wrap { padding-bottom: clamp(11rem, 24vw, 18rem); }
 
 /* ── Language ───────────────────────────────────────────
    English is the source version of the site; /pt/ is the translation for the
@@ -155,25 +155,45 @@ p, li { text-wrap: pretty; }
 }
 
 /* ── Skyline ────────────────────────────────────────────
-   The hero drawing is one inline SVG with no colours of its own; every fill
-   reads a custom property below. The band behind it is dark in BOTH themes,
-   so the skyline keeps one palette and only its haze follows --band, which
-   makes the base of the drawing dissolve into whatever the band is. */
-:root {
-  --sky-1: #2a4c64;   --sky-o1: 0.30;
-  --sky-2: #1c3546;   --sky-o2: 0.52;
-  --sky-3: #12232f;   --sky-o3: 0.74;
-  --sky-4: #071219;   --sky-o4: 1;
-  --sky-lit: #f0d9a0; --sky-lit-o: 0.62; --sky-lit-o-far: 0.30;
-  --sky-haze: var(--band);
-}
-
+   The hero drawing is Mario's artwork, exported from the Vault's vector source
+   to WebP: Bilming across the water, the harbour cranes, the mists curling in
+   at both edges. The source is a framed picture with a straight-edged panel;
+   the export is cropped to that panel's top and bottom, and the mask below
+   dissolves its remaining edges into the band so only the picture is left.
+   The band is dark in both themes, so one file serves both. */
 .section-drawing {
   position: absolute; inset: auto 0 0 0; z-index: 1; display: block;
-  width: 100%; height: clamp(190px, 30vw, 340px);
-  pointer-events: none; opacity: 0.95;
+  width: 100%; height: clamp(200px, 27vw, 380px);
+  object-fit: cover; object-position: 50% 100%;
+  pointer-events: none; user-select: none;
+
+  --fade:
+    linear-gradient(to bottom, transparent 0, #000 20%, #000 100%),
+    linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%);
+  -webkit-mask-image: var(--fade);
+          mask-image: var(--fade);
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
 }
+
+@media (max-width: 700px) {
+  /* On a phone the frame is far taller than the art is wide, so cover would
+     crop the city away. Hold the skyline and let the outer mists go. */
+  .section-drawing { object-position: 50% 72%; height: clamp(170px, 44vw, 240px); }
+}
+
 .hero .wrap { position: relative; z-index: 2; }
+
+/* The hero buttons sit over the artwork, and the mists there run bright. Give
+   the outlined ones a plate of the band's own colour so the label never has to
+   compete with a curl of teal behind it. */
+.hero .actions .button:not(.primary) {
+  background: color-mix(in srgb, var(--band) 76%, transparent);
+  backdrop-filter: blur(3px);
+}
+.hero .actions .button:not(.primary):hover {
+  background: color-mix(in srgb, var(--accent) 30%, var(--band));
+}
 
 /* ── Buttons ────────────────────────────────────────────── */
 
@@ -199,8 +219,12 @@ p, li { text-wrap: pretty; }
 .button:active, .btn:active, .die:active { transform: translateY(1px); }
 
 .button.primary, .btn:not(.ghost) {
-  background: linear-gradient(170deg, var(--mgs-metal) 0%, var(--mgs-metal-deep) 100%);
-  color: #2a1a12;
+  /* The old gradient ran down into --mgs-metal-deep, and the dark label on that
+     bronze end measured about 2.7:1 — it failed at the foot of the button. This
+     stops at a lighter bronze, which keeps the struck-metal look and holds
+     above 4.5:1 across the whole face. */
+  background: linear-gradient(170deg, var(--mgs-metal-bright) 0%, var(--mgs-metal) 52%, #b8893c 100%);
+  color: #241610;
   font-weight: 700;
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mgs-metal-bright) 70%, transparent);
 }

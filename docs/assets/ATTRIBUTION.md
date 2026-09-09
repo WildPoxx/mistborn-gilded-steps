@@ -8,6 +8,7 @@ table. **An asset with no recorded provenance does not enter the repository.**
 | `portraits/dion-rook.jpg` | Private vault, `Dion-Token-001.jpeg` | The player of Dion Rook | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
 | `portraits/rhazed.jpg` | Private vault, `Rhazed-Token-002.jpeg` | The player of Rhazed | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
 | `portraits/julien-vance.jpg` | Private vault, `Vance-Token-001.jpeg` | The player of Julien Vance | AI-generated image, supplied by the player | Granted to the project; use authorised by Mario on 2026-09-07 | 2026-09-07 |
+| `bg/skyline-2400.webp`, `bg/skyline-1600.webp` | Private vault, `09_Midia e Assets/Theme - Mistborn Gilded Steps/SVG/BG-Web-Page.svg` | Mario | AI-generated then vectorised; the SVG's C2PA manifest names Gemini 3.0 (Nano Banana Pro), 2026-09-09. Exported here to WebP, cropped to the artwork's own panel — the 4.5 MB, 6,500-path source is not fit to load in a page header. The raster export does not carry the C2PA manifest; the vault SVG does. | Project's own work | 2026-09-09 |
 
 ## Two origins, two rules
 

@@ -56,6 +56,13 @@
             em Misting, Ferring ou Twinborn, siga para a tabela daquela arte, mais abaixo.
           </p>
           <p class="notice era-note e1">
+            <strong>Regra da casa, Primeira Era.</strong> O narrador daquela mesa alargou o Misting e
+            deixou os conjuntos completos raros: <b>5–18 Misting, 19 Mistborn, 20 Feruchemist</b>. A
+            distribuição do próprio Handbook é 5–14 Misting, 15–17 Mistborn, 18–20 Feruchemist — 15%
+            de chance de cada conjunto completo, contra 5% aqui. Não despertar nada continua em 1–4.
+            A coluna da Segunda Era é a do livro, sem alteração.
+          </p>
+          <p class="notice era-note e1">
             <strong>Primeira Era.</strong> Não existem Ferrings nem Twinborn — isso é coisa de depois
             do Catacendre. Aqui um resultado alto entrega o pacote inteiro: 15–17 é Mistborn de
             verdade, todos os metais alomânticos, e 18–20 é Feruchemist completo.
@@ -67,16 +74,24 @@
           </p>
 
           <table class="rolltable" id="tbl-path">
-            <caption>Metallic Art Discovery</caption>
+            <caption>Metallic Art Discovery <span class="tag e1">regra da casa</span></caption>
             <thead>
               <tr><th scope="col">d20</th><th scope="col" class="e1">Caminho na Era 1</th><th scope="col" class="e2">Caminho na Era 2</th></tr>
             </thead>
-            <tbody>
-              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e1">Nenhum</td><td class="name e2">Nenhum</td></tr>
-              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name e1">Caminho Misting</td><td class="name e2">Caminho Ferring</td></tr>
-              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name e1">Caminho Misting</td><td class="name e2">Caminho Misting</td></tr>
-              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name e1">Caminho Mistborn</td><td class="name e2">Caminho Ferring ou Misting</td></tr>
-              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name e1">Caminho Feruchemist</td><td class="name e2">Caminho Twinborn</td></tr>
+            <!-- Cada era tem a sua faixa de d20, entao cada uma tem o seu tbody.
+                 O de Era 1 e regra da casa; o de Era 2 e o do livro. -->
+            <tbody class="e1">
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e1">Nenhum</td></tr>
+              <tr data-lo="5"  data-hi="18"><td>5–18</td><td class="name e1">Caminho Misting</td></tr>
+              <tr data-lo="19" data-hi="19"><td>19</td><td class="name e1">Caminho Mistborn</td></tr>
+              <tr data-lo="20" data-hi="20"><td>20</td><td class="name e1">Caminho Feruchemist</td></tr>
+            </tbody>
+            <tbody class="e2">
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e2">Nenhum</td></tr>
+              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name e2">Caminho Ferring</td></tr>
+              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name e2">Caminho Misting</td></tr>
+              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name e2">Caminho Ferring ou Misting</td></tr>
+              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name e2">Caminho Twinborn</td></tr>
             </tbody>
           </table>
 
@@ -269,7 +284,10 @@
   function era() { return elEra.value; }
 
   function rowFor(tableId, n) {
-    var rows = document.querySelectorAll("#" + tableId + " tbody tr");
+    /* A tabela de caminho tem um tbody por era, com faixas de d20 diferentes. */
+    var scope = "#" + tableId + " tbody";
+    if (tableId === "tbl-path") scope += (era() === "1" ? ".e1" : ".e2");
+    var rows = document.querySelectorAll(scope + " tr");
     for (var i = 0; i < rows.length; i++) {
       if (n >= +rows[i].dataset.lo && n <= +rows[i].dataset.hi) return rows[i];
     }

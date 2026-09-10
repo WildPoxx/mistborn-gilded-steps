@@ -52,6 +52,13 @@
             If you land on Misting, Ferring or Twinborn, go on to the table for that art below.
           </p>
           <p class="notice era-note e1">
+            <strong>House rule, First Era.</strong> The GM of that table widened Misting and made the
+            full sets rare: <b>5–18 Misting, 19 Mistborn, 20 Feruchemist</b>. The Handbook's own
+            spread is 5–14 Misting, 15–17 Mistborn, 18–20 Feruchemist — a 15% chance of each full
+            set, against 5% here. Nothing not woken stays at 1–4. The Second Era column is the
+            book's, unchanged.
+          </p>
+          <p class="notice era-note e1">
             <strong>First Era.</strong> There are no Ferrings and no Twinborn — those come after the
             Catacendre. A high roll here gives the whole thing: 15–17 is a true Mistborn, every
             Allomantic metal, and 18–20 a full Feruchemist.
@@ -63,16 +70,24 @@
           </p>
 
           <table class="rolltable" id="tbl-path">
-            <caption>Metallic Art Discovery</caption>
+            <caption>Metallic Art Discovery <span class="tag e1">house rule</span></caption>
             <thead>
               <tr><th scope="col">d20</th><th scope="col" class="e1">Era 1 Path</th><th scope="col" class="e2">Era 2 Path</th></tr>
             </thead>
-            <tbody>
-              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e1">None</td><td class="name e2">None</td></tr>
-              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name e1">Misting path</td><td class="name e2">Ferring path</td></tr>
-              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name e1">Misting path</td><td class="name e2">Misting path</td></tr>
-              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name e1">Mistborn path</td><td class="name e2">Ferring or Misting path</td></tr>
-              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name e1">Feruchemist path</td><td class="name e2">Twinborn path</td></tr>
+            <!-- Cada era tem a sua faixa de d20, entao cada uma tem o seu tbody.
+                 O de Era 1 e regra da casa; o de Era 2 e o do livro. -->
+            <tbody class="e1">
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e1">None</td></tr>
+              <tr data-lo="5"  data-hi="18"><td>5–18</td><td class="name e1">Misting path</td></tr>
+              <tr data-lo="19" data-hi="19"><td>19</td><td class="name e1">Mistborn path</td></tr>
+              <tr data-lo="20" data-hi="20"><td>20</td><td class="name e1">Feruchemist path</td></tr>
+            </tbody>
+            <tbody class="e2">
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e2">None</td></tr>
+              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name e2">Ferring path</td></tr>
+              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name e2">Misting path</td></tr>
+              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name e2">Ferring or Misting path</td></tr>
+              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name e2">Twinborn path</td></tr>
             </tbody>
           </table>
 
@@ -265,7 +280,10 @@
   function era() { return elEra.value; }
 
   function rowFor(tableId, n) {
-    var rows = document.querySelectorAll("#" + tableId + " tbody tr");
+    /* A tabela de caminho tem um tbody por era, com faixas de d20 diferentes. */
+    var scope = "#" + tableId + " tbody";
+    if (tableId === "tbl-path") scope += (era() === "1" ? ".e1" : ".e2");
+    var rows = document.querySelectorAll(scope + " tr");
     for (var i = 0; i < rows.length; i++) {
       if (n >= +rows[i].dataset.lo && n <= +rows[i].dataset.hi) return rows[i];
     }

@@ -111,23 +111,35 @@
         </header>
         <div class="tool-body">
           <p class="muted" style="margin-top:0">
-            Role aqui o seu poder alomântico. Se o metal não existir na sua Era, role de novo — o
-            rolador faz isso por você e mostra as duas rolagens.
+            Role aqui o seu poder alomântico. A tabela que aparece depende da Era selecionada acima.
           </p>
           <p class="notice era-note e1">
-            <strong>Primeira Era.</strong> Cromo, nicrosil, cádmio e bendalloy ainda não foram
-            descobertos — aparecem riscados abaixo e o rolador passa por cima deles. Alumínio,
-            duralumínio, ouro e electrum são o segredo do Ministério de Aço: o livro diz ser muito
-            improvável que um personagem soubesse deles antes da morte do Lord Ruler. Os God Metals
-            desta era — átium, malatium, lerasium — não estão nesta tabela; não se rola por eles.
+            <strong>Regra da casa, Primeira Era.</strong> Aquela mesa joga só com os oito metais
+            básicos, num <b>d12</b>. Cromo, nicrosil, cádmio e bendalloy ficam de fora porque não
+            tinham sido descobertos nesta era. Alumínio, duralumínio, ouro e electrum ficam de fora
+            por decisão do narrador: eram o segredo do Ministério de Aço, e dão trabalho na mesa. Os
+            God Metals desta era — átium, malatium, lerasium — nunca estiveram nesta tabela; não se
+            rola por eles. A tabela da Segunda Era, abaixo, é a dos dezesseis do livro, sem alteração.
           </p>
 
           <table class="rolltable" id="tbl-allo">
-            <caption>Allomancy Discovery</caption>
+            <caption>Allomancy Discovery <span class="tag e1">regra da casa</span></caption>
             <thead>
-              <tr><th scope="col">d20</th><th scope="col">Poder</th><th scope="col">Nome Misting</th></tr>
+              <tr><th scope="col" class="e1">d12</th><th scope="col" class="e2">d20</th><th scope="col">Poder</th><th scope="col">Nome Misting</th></tr>
             </thead>
-            <tbody>
+            <!-- Era 1: apenas os metais basicos, por regra da casa, num d12.
+                 Era 2: a tabela do livro, no d20. -->
+            <tbody class="e1">
+              <tr data-lo="1" data-hi="2"><td>1–2</td><td class="name">Iron</td><td>Lurcher</td></tr>
+              <tr data-lo="3" data-hi="4"><td>3–4</td><td class="name">Steel</td><td>Coinshot</td></tr>
+              <tr data-lo="5" data-hi="6"><td>5–6</td><td class="name">Tin</td><td>Tineye</td></tr>
+              <tr data-lo="7" data-hi="8"><td>7–8</td><td class="name">Pewter</td><td>Pewterarm / Thug</td></tr>
+              <tr data-lo="9" data-hi="9"><td>9</td><td class="name">Zinc</td><td>Rioter</td></tr>
+              <tr data-lo="10" data-hi="10"><td>10</td><td class="name">Brass</td><td>Soother</td></tr>
+              <tr data-lo="11" data-hi="11"><td>11</td><td class="name">Copper</td><td>Smoker / Coppercloud</td></tr>
+              <tr data-lo="12" data-hi="12"><td>12</td><td class="name">Bronze</td><td>Seeker</td></tr>
+            </tbody>
+            <tbody class="e2">
               <tr data-lo="1"  data-hi="2"><td>1–2</td><td class="name">Iron</td><td>Lurcher</td></tr>
               <tr data-lo="3"  data-hi="4"><td>3–4</td><td class="name">Steel</td><td>Coinshot</td></tr>
               <tr data-lo="5"  data-hi="6"><td>5–6</td><td class="name">Tin</td><td>Tineye</td></tr>
@@ -146,13 +158,13 @@
               <tr data-lo="20" data-hi="20" data-late><td>20</td><td class="name">Electrum† <span class="tag e1">suprimido</span></td><td>Oracle</td></tr>
             </tbody>
           </table>
-          <p class="table-foot">
+          <p class="table-foot e2">
             <span>* Só existe na Era 2.</span>
             <span>† Só perto do fim da Era 1 ou durante a Era 2.</span>
           </p>
 
           <div class="roll-bar">
-            <button class="btn" data-roll="allo">Rolar d20</button>
+            <button class="btn" data-roll="allo"><span class="e1">Rolar d12</span><span class="e2">Rolar d20</span></button>
             <button class="btn ghost" data-clear="allo" type="button">Limpar</button>
           </div>
           <div class="outcome" id="out-allo" hidden aria-live="polite"></div>
@@ -166,14 +178,15 @@
           <span class="hint">Feruchemy</span>
         </header>
         <div class="tool-body">
-          <p class="muted" style="margin-top:0">Role aqui o seu poder feruquímico.</p>
+          <p class="muted e2" style="margin-top:0">Role aqui o seu poder feruquímico.</p>
           <p class="notice era-note e1">
-            <strong>Primeira Era.</strong> Esta tabela quase não se usa aqui: um feruquimista desta
-            era tem todos os metais feruquímicos, não um, e não rola. Só vale se a sua mesa combinou
-            alguma herança terrisana mais estreita.
+            <strong>Primeira Era — não há o que rolar.</strong> Um feruquimista desta era trabalha
+            todos os metais feruquímicos, não um deles. Não existe tabela aqui porque não existe
+            escolha a fazer: a rolagem de caminho lá em cima já entregou o conjunto inteiro. A tabela
+            aparece na Segunda Era, onde cada Ferring fica com um metal só.
           </p>
 
-          <table class="rolltable" id="tbl-feru">
+          <table class="rolltable e2" id="tbl-feru">
             <caption>Feruchemy Discovery</caption>
             <thead>
               <tr><th scope="col">d20</th><th scope="col">Poder</th><th scope="col">Nome Ferring</th></tr>
@@ -198,11 +211,11 @@
             </tbody>
           </table>
 
-          <div class="roll-bar">
+          <div class="roll-bar e2">
             <button class="btn" data-roll="feru">Rolar d20</button>
             <button class="btn ghost" data-clear="feru" type="button">Limpar</button>
           </div>
-          <div class="outcome" id="out-feru" hidden aria-live="polite"></div>
+          <div class="outcome e2" id="out-feru" hidden aria-live="polite"></div>
         </div>
       </section>
 
@@ -265,14 +278,17 @@
   var reNone = new RegExp(T.reNone), reOr = new RegExp(T.reOr);
   function fill(tpl, x) { return String(tpl).replace("{}", x); }
 
-  function d20() {
+  /* Na Primeira Era a Alomancia usa d12: a mesa joga so com os metais basicos. */
+  function sidesFor(kind) { return (kind === "allo" && era() === "1") ? 12 : 20; }
+
+  function die(sides) {
     var c = window.crypto || window.msCrypto;
     if (c && c.getRandomValues) {
-      var limit = Math.floor(4294967296 / 20) * 20, v = new Uint32Array(1);
+      var limit = Math.floor(4294967296 / sides) * sides, v = new Uint32Array(1);
       do { c.getRandomValues(v); } while (v[0] >= limit);
-      return (v[0] % 20) + 1;
+      return (v[0] % sides) + 1;
     }
-    return Math.floor(Math.random() * 20) + 1;
+    return Math.floor(Math.random() * sides) + 1;
   }
 
   var TABLES = {
@@ -286,7 +302,7 @@
   function rowFor(tableId, n) {
     /* A tabela de caminho tem um tbody por era, com faixas de d20 diferentes. */
     var scope = "#" + tableId + " tbody";
-    if (tableId === "tbl-path") scope += (era() === "1" ? ".e1" : ".e2");
+    if (tableId === "tbl-path" || tableId === "tbl-allo") scope += (era() === "1" ? ".e1" : ".e2");
     var rows = document.querySelectorAll(scope + " tr");
     for (var i = 0; i < rows.length; i++) {
       if (n >= +rows[i].dataset.lo && n <= +rows[i].dataset.hi) return rows[i];
@@ -370,7 +386,7 @@
 
   function record(kind, n, said, aside, rerolls) {
     entries.push({
-      line: "[" + eraShort() + "] " + TABLES[kind].label + " · d20 " + n + " · " + said,
+      line: "[" + eraShort() + "] " + TABLES[kind].label + " · d" + sidesFor(kind) + " " + n + " · " + said,
       aside: aside, rerolls: (rerolls || []).slice()
     });
     render();
@@ -401,9 +417,10 @@
   function roll(kind) {
     var cfg = TABLES[kind];
     clearHits(cfg.table);
+    var sides = sidesFor(kind);
     var n, row, rerolls = [], guard = 0;
     do {
-      n = d20();
+      n = die(sides);
       row = rowFor(cfg.table, n);
       if (kind === "allo" && era() === "1" && row.hasAttribute("data-era2")) {
         rerolls.push(n); guard++; continue;

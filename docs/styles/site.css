@@ -361,6 +361,32 @@ footer p { max-width: 80ch; }
 .rolltable tr.hit td:first-child { color: var(--accent); }
 .rolltable tr.hit td:first-child::before { content: "▸ "; }
 
+/* ── Era como estado ────────────────────────────────────
+   O seletor de era não pode ser uma bandeira invisível: os metais conhecidos
+   mudam muito entre a Primeira e a Segunda Era, e uma tabela que parece igual
+   nas duas convida ao erro. Aqui a coluna da outra era sai da tabela, e os
+   metais que ainda não existem ficam riscados no lugar, para o d20 continuar
+   batendo com a linha. */
+body.era-1 .e2, body.era-2 .e1 { display: none; }
+
+body.era-1 .rolltable tbody tr[data-era2] td {
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--alert) 70%, transparent);
+}
+body.era-1 .rolltable tbody tr[data-era2] td:first-child,
+body.era-1 .rolltable tbody tr[data-era2] .tag { text-decoration: none; opacity: 1; }
+body.era-1 .rolltable tbody tr[data-late] td.name { color: var(--alert); }
+
+.rolltable .tag {
+  display: inline-block; margin-left: 0.5rem; padding: 0.08rem 0.4rem;
+  border: 1px solid var(--edge-firm); color: var(--ink-sub);
+  font: 700 0.62rem/1.5 var(--mgs-font-ui); letter-spacing: 0.1em;
+  text-transform: uppercase; vertical-align: 0.06em; white-space: nowrap;
+}
+
+.era-note { margin: 0.9rem 0 0; }
+
 .table-foot { margin: 0.75rem 0 0; color: var(--ink-sub); font-family: var(--mgs-font-ui); font-size: 0.84rem; }
 .table-foot span { display: block; }
 

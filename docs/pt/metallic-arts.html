@@ -55,18 +55,28 @@
             Role nesta tabela e pegue o caminho na coluna da Era em que você está jogando. Se cair
             em Misting, Ferring ou Twinborn, siga para a tabela daquela arte, mais abaixo.
           </p>
+          <p class="notice era-note e1">
+            <strong>Primeira Era.</strong> Não existem Ferrings nem Twinborn — isso é coisa de depois
+            do Catacendre. Aqui um resultado alto entrega o pacote inteiro: 15–17 é Mistborn de
+            verdade, todos os metais alomânticos, e 18–20 é Feruchemist completo.
+          </p>
+          <p class="notice era-note e2">
+            <strong>Segunda Era.</strong> Os Ferrings apareceram e os conjuntos completos não
+            sobreviveram. Os resultados altos agora dão metades: uma escolha entre dois caminhos, ou
+            Twinborn — um poder de cada arte.
+          </p>
 
           <table class="rolltable" id="tbl-path">
             <caption>Metallic Art Discovery</caption>
             <thead>
-              <tr><th scope="col">d20</th><th scope="col">Caminho na Era 1</th><th scope="col">Caminho na Era 2</th></tr>
+              <tr><th scope="col">d20</th><th scope="col" class="e1">Caminho na Era 1</th><th scope="col" class="e2">Caminho na Era 2</th></tr>
             </thead>
             <tbody>
-              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name">Nenhum</td><td class="name">Nenhum</td></tr>
-              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name">Caminho Misting</td><td class="name">Caminho Ferring</td></tr>
-              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name">Caminho Misting</td><td class="name">Caminho Misting</td></tr>
-              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name">Caminho Mistborn</td><td class="name">Caminho Ferring ou Misting</td></tr>
-              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name">Caminho Feruchemist</td><td class="name">Caminho Twinborn</td></tr>
+              <tr data-lo="1"  data-hi="4"><td>1–4</td><td class="name e1">Nenhum</td><td class="name e2">Nenhum</td></tr>
+              <tr data-lo="5"  data-hi="9"><td>5–9</td><td class="name e1">Caminho Misting</td><td class="name e2">Caminho Ferring</td></tr>
+              <tr data-lo="10" data-hi="14"><td>10–14</td><td class="name e1">Caminho Misting</td><td class="name e2">Caminho Misting</td></tr>
+              <tr data-lo="15" data-hi="17"><td>15–17</td><td class="name e1">Caminho Mistborn</td><td class="name e2">Caminho Ferring ou Misting</td></tr>
+              <tr data-lo="18" data-hi="20"><td>18–20</td><td class="name e1">Caminho Feruchemist</td><td class="name e2">Caminho Twinborn</td></tr>
             </tbody>
           </table>
 
@@ -89,6 +99,13 @@
             Role aqui o seu poder alomântico. Se o metal não existir na sua Era, role de novo — o
             rolador faz isso por você e mostra as duas rolagens.
           </p>
+          <p class="notice era-note e1">
+            <strong>Primeira Era.</strong> Cromo, nicrosil, cádmio e bendalloy ainda não foram
+            descobertos — aparecem riscados abaixo e o rolador passa por cima deles. Alumínio,
+            duralumínio, ouro e electrum são o segredo do Ministério de Aço: o livro diz ser muito
+            improvável que um personagem soubesse deles antes da morte do Lord Ruler. Os God Metals
+            desta era — átium, malatium, lerasium — não estão nesta tabela; não se rola por eles.
+          </p>
 
           <table class="rolltable" id="tbl-allo">
             <caption>Allomancy Discovery</caption>
@@ -104,14 +121,14 @@
               <tr data-lo="10" data-hi="10"><td>10</td><td class="name">Brass</td><td>Soother</td></tr>
               <tr data-lo="11" data-hi="11"><td>11</td><td class="name">Copper</td><td>Smoker / Coppercloud</td></tr>
               <tr data-lo="12" data-hi="12"><td>12</td><td class="name">Bronze</td><td>Seeker</td></tr>
-              <tr data-lo="13" data-hi="13" data-era2><td>13</td><td class="name">Chromium*</td><td>Leecher</td></tr>
-              <tr data-lo="14" data-hi="14" data-era2><td>14</td><td class="name">Nicrosil*</td><td>Nicroburst</td></tr>
-              <tr data-lo="15" data-hi="15" data-late><td>15</td><td class="name">Aluminum†</td><td>Aluminum Gnat / Void</td></tr>
-              <tr data-lo="16" data-hi="16" data-late><td>16</td><td class="name">Duralumin†</td><td>Duralumin Gnat</td></tr>
-              <tr data-lo="17" data-hi="17" data-era2><td>17</td><td class="name">Cadmium*</td><td>Pulser</td></tr>
-              <tr data-lo="18" data-hi="18" data-era2><td>18</td><td class="name">Bendalloy*</td><td>Slider</td></tr>
-              <tr data-lo="19" data-hi="19" data-late><td>19</td><td class="name">Gold†</td><td>Augur</td></tr>
-              <tr data-lo="20" data-hi="20" data-late><td>20</td><td class="name">Electrum†</td><td>Oracle</td></tr>
+              <tr data-lo="13" data-hi="13" data-era2><td>13</td><td class="name">Chromium* <span class="tag e1">não existe na Era 1</span></td><td>Leecher</td></tr>
+              <tr data-lo="14" data-hi="14" data-era2><td>14</td><td class="name">Nicrosil* <span class="tag e1">não existe na Era 1</span></td><td>Nicroburst</td></tr>
+              <tr data-lo="15" data-hi="15" data-late><td>15</td><td class="name">Aluminum† <span class="tag e1">suprimido</span></td><td>Aluminum Gnat / Void</td></tr>
+              <tr data-lo="16" data-hi="16" data-late><td>16</td><td class="name">Duralumin† <span class="tag e1">suprimido</span></td><td>Duralumin Gnat</td></tr>
+              <tr data-lo="17" data-hi="17" data-era2><td>17</td><td class="name">Cadmium* <span class="tag e1">não existe na Era 1</span></td><td>Pulser</td></tr>
+              <tr data-lo="18" data-hi="18" data-era2><td>18</td><td class="name">Bendalloy* <span class="tag e1">não existe na Era 1</span></td><td>Slider</td></tr>
+              <tr data-lo="19" data-hi="19" data-late><td>19</td><td class="name">Gold† <span class="tag e1">suprimido</span></td><td>Augur</td></tr>
+              <tr data-lo="20" data-hi="20" data-late><td>20</td><td class="name">Electrum† <span class="tag e1">suprimido</span></td><td>Oracle</td></tr>
             </tbody>
           </table>
           <p class="table-foot">
@@ -135,6 +152,11 @@
         </header>
         <div class="tool-body">
           <p class="muted" style="margin-top:0">Role aqui o seu poder feruquímico.</p>
+          <p class="notice era-note e1">
+            <strong>Primeira Era.</strong> Esta tabela quase não se usa aqui: um feruquimista desta
+            era tem todos os metais feruquímicos, não um, e não rola. Só vale se a sua mesa combinou
+            alguma herança terrisana mais estreita.
+          </p>
 
           <table class="rolltable" id="tbl-feru">
             <caption>Feruchemy Discovery</caption>
@@ -169,6 +191,34 @@
         </div>
       </section>
 
+      <!-- ───────────────── REGISTRO DA SESSÃO ───────────────── -->
+      <section class="tool" aria-labelledby="t-log">
+        <header>
+          <h2 id="t-log">Registro da sessão</h2>
+          <span class="hint">Para mandar ao narrador</span>
+        </header>
+        <div class="tool-body">
+          <p class="muted" style="margin-top:0">
+            Toda rolagem acima fica anotada aqui, com a Era em que foi feita. Ponha um nome e mande
+            o conjunto para quem conduz a mesa — a ideia é que ninguém precise acreditar na sua
+            palavra sobre o número.
+          </p>
+          <div class="controls">
+            <div class="control">
+              <label for="who">Personagem ou jogador</label>
+              <input type="text" id="who" autocomplete="off" spellcheck="false">
+            </div>
+            <button class="btn" id="copy" type="button">Copiar</button>
+            <button class="btn ghost" id="dl" type="button">Baixar .txt</button>
+            <button class="btn ghost" id="wipe" type="button">Limpar</button>
+          </div>
+          <div class="log">
+            <h3>Rolagens</h3>
+            <ol id="log"><li class="empty">Nenhuma rolagem ainda.</li></ol>
+          </div>
+        </div>
+      </section>
+
       <p class="disclaimer">
         Este é conteúdo de fã não oficial, criado e compartilhado sem fim comercial. Não foi
         revisado pela Dragonsteel Entertainment, LLC nem pela Brotherwise Games, LLC. As tabelas
@@ -193,8 +243,12 @@
   </footer>
 
 <script>
+
 (function () {
   "use strict";
+  var T = {"kindPath": "Caminho", "kindAllo": "Alomancia", "kindFeru": "Feruquimia", "reNone": "^Nenhum", "reOr": " ou ", "aNone": "Nenhuma Arte Metálica despertou em você — o resultado mais comum na população.", "aOr": "Este resultado é uma escolha, não uma rolagem. Fique com o caminho que quiser e depois role na tabela dele, abaixo.", "aTwin": "Role nas duas tabelas abaixo: um poder alomântico e um feruquímico.", "aMistborn": "Todos os metais alomânticos, não apenas um. Não precisa de segunda rolagem.", "aFeruchemist": "Todos os metais feruquímicos, não apenas um. Não precisa de segunda rolagem.", "aNext": "Agora role na tabela {} Discovery, abaixo.", "aLate": "Marcado com † — descoberto e suprimido pelo Ministério de Aço, e conhecido só perto do fim da Era 1. Confirme com o narrador antes de ficar com ele.", "reroll": "Rolado de novo por cima de {} — não existe nesta Era.", "logEmpty": "Nenhuma rolagem ainda.", "fileTitle": "Mistborn — Artes Metálicas, determinação aleatória", "whoLabel": "Personagem ou jogador", "eraLabel": "Era", "fileFoot": "Rolado no navegador, no portal Mistborn Gilded Steps. Tabelas do Mistborn Handbook.", "fileName": "artes-metalicas", "copied": "Copiado", "copyFail": "Não deu para copiar"};
+  var reNone = new RegExp(T.reNone), reOr = new RegExp(T.reOr);
+  function fill(tpl, x) { return String(tpl).replace("{}", x); }
 
   function d20() {
     var c = window.crypto || window.msCrypto;
@@ -207,12 +261,12 @@
   }
 
   var TABLES = {
-    path: { table: "tbl-path", out: "out-path" },
-    allo: { table: "tbl-allo", out: "out-allo" },
-    feru: { table: "tbl-feru", out: "out-feru" }
+    path: { table: "tbl-path", out: "out-path", label: T.kindPath },
+    allo: { table: "tbl-allo", out: "out-allo", label: T.kindAllo },
+    feru: { table: "tbl-feru", out: "out-feru", label: T.kindFeru }
   };
-
-  function era() { return document.getElementById("era").value; }
+  var elEra = document.getElementById("era");
+  function era() { return elEra.value; }
 
   function rowFor(tableId, n) {
     var rows = document.querySelectorAll("#" + tableId + " tbody tr");
@@ -221,23 +275,47 @@
     }
     return null;
   }
-
   function clearHits(tableId) {
-    Array.prototype.forEach.call(
-      document.querySelectorAll("#" + tableId + " tbody tr.hit"),
-      function (r) { r.classList.remove("hit"); }
-    );
+    Array.prototype.forEach.call(document.querySelectorAll("#" + tableId + " tbody tr.hit"),
+      function (r) { r.classList.remove("hit"); });
+  }
+  function clear(kind) {
+    clearHits(TABLES[kind].table);
+    document.getElementById(TABLES[kind].out).hidden = true;
   }
 
-  /* What the row says, for the era in play. */
+  /* A era e um estado da pagina, nao uma bandeira escondida. Tudo o que ela
+     muda esta marcado no HTML e e trocado aqui. */
+  function applyEra() {
+    var e = era();
+    document.body.classList.toggle("era-1", e === "1");
+    document.body.classList.toggle("era-2", e === "2");
+    Object.keys(TABLES).forEach(clear);
+    try {
+      var u = new URL(window.location.href);
+      u.searchParams.set("era", e);
+      window.history.replaceState(null, "", u.toString());
+    } catch (err) { /* file:// */ }
+  }
+
+  /* O nome do metal sem as etiquetas de disponibilidade. */
+  function cleanName(td) {
+    var c = td.cloneNode(true);
+    Array.prototype.forEach.call(c.querySelectorAll(".tag"), function (t) { t.remove(); });
+    return c.textContent.replace(/[*†]/g, "").replace(/\s+/g, " ").trim();
+  }
+
   function readRow(kind, row) {
+    if (kind === "path") {
+      var c = row.querySelector(era() === "1" ? "td.e1" : "td.e2");
+      return c ? c.textContent.trim() : "";
+    }
     var cells = row.querySelectorAll("td");
-    if (kind === "path") return cells[era() === "1" ? 1 : 2].textContent.trim();
-    return cells[1].textContent.replace(/[*†]/g, "").trim() + " — " + cells[2].textContent.trim();
+    return cleanName(cells[1]) + " — " + cells[2].textContent.trim();
   }
 
   function show(kind, n, said, aside, rerolls) {
-    var cfg = TABLES[kind], out = document.getElementById(cfg.out);
+    var out = document.getElementById(TABLES[kind].out);
     out.innerHTML = "";
     var a = document.createElement("div"); a.className = "n"; a.textContent = n;
     var b = document.createElement("div");
@@ -245,23 +323,70 @@
     b.appendChild(s);
     if (rerolls && rerolls.length) {
       var r = document.createElement("span"); r.className = "aside";
-      r.textContent = "Rolado de novo por cima de " + rerolls.join(", ") + " — não existe nesta Era.";
-      b.appendChild(r);
+      r.textContent = fill(T.reroll, rerolls.join(", ")); b.appendChild(r);
     }
     if (aside) { var x = document.createElement("span"); x.className = "aside"; x.textContent = aside; b.appendChild(x); }
     out.appendChild(a); out.appendChild(b);
     out.hidden = false;
   }
 
+  /* ── Registro da sessao ─────────────────────────────────────────────── */
+  var entries = [];
+  var elLog = document.getElementById("log");
+
+  function render() {
+    elLog.innerHTML = "";
+    if (!entries.length) {
+      var li = document.createElement("li"); li.className = "empty";
+      li.textContent = T.logEmpty; elLog.appendChild(li); return;
+    }
+    entries.forEach(function (en, i) {
+      var li = document.createElement("li");
+      var b = document.createElement("b"); b.textContent = (i + 1) + ".";
+      li.appendChild(b); li.appendChild(document.createTextNode(" " + en.line));
+      elLog.appendChild(li);
+    });
+  }
+
+  function eraShort() { return elEra.options[elEra.selectedIndex].textContent.split("—")[0].trim(); }
+
+  function record(kind, n, said, aside, rerolls) {
+    entries.push({
+      line: "[" + eraShort() + "] " + TABLES[kind].label + " · d20 " + n + " · " + said,
+      aside: aside, rerolls: (rerolls || []).slice()
+    });
+    render();
+  }
+
+  function asText() {
+    var who = (document.getElementById("who").value || "").trim();
+    var out = [T.fileTitle, ""];
+    if (who) out.push(T.whoLabel + ": " + who);
+    out.push(T.eraLabel + ": " + elEra.options[elEra.selectedIndex].textContent.trim());
+    out.push(new Date().toLocaleString());
+    out.push("");
+    if (!entries.length) out.push(T.logEmpty);
+    entries.forEach(function (en, i) {
+      out.push((i + 1) + ". " + en.line);
+      if (en.rerolls.length) out.push("   " + fill(T.reroll, en.rerolls.join(", ")));
+      if (en.aside) out.push("   " + en.aside);
+    });
+    out.push("", T.fileFoot);
+    return out.join("\n");
+  }
+
+  function flash(btn, msg) {
+    var old = btn.textContent; btn.textContent = msg;
+    setTimeout(function () { btn.textContent = old; }, 1400);
+  }
+
   function roll(kind) {
     var cfg = TABLES[kind];
     clearHits(cfg.table);
-
     var n, row, rerolls = [], guard = 0;
     do {
       n = d20();
       row = rowFor(cfg.table, n);
-      /* Era 1 has no access to the metals marked with an asterisk. */
       if (kind === "allo" && era() === "1" && row.hasAttribute("data-era2")) {
         rerolls.push(n); guard++; continue;
       }
@@ -269,41 +394,67 @@
     } while (guard < 50);
 
     row.classList.add("hit");
-
     var said = readRow(kind, row), aside = "";
     if (kind === "path") {
-      if (/^Nenhum/.test(said)) aside = "Nenhuma Arte Metálica despertou em você — o resultado mais comum na população.";
-      else if (/ ou /.test(said)) aside = "Este resultado é uma escolha, não uma rolagem. Fique com o caminho que quiser e depois role na tabela dele, abaixo.";
-      else if (/Twinborn/.test(said)) aside = "Role nas duas tabelas abaixo: um poder alomântico e um feruquímico.";
-      else if (/Mistborn/.test(said)) aside = "Todos os metais alomânticos, não apenas um. Não precisa de segunda rolagem.";
-      else if (/Feruchemist/.test(said)) aside = "Todos os metais feruquímicos, não apenas um. Não precisa de segunda rolagem.";
-      else aside = "Agora role na tabela " + (/Ferring/.test(said) ? "Feruchemy" : "Allomancy") + " Discovery, abaixo.";
+      if (reNone.test(said)) aside = T.aNone;
+      else if (reOr.test(said)) aside = T.aOr;
+      else if (/Twinborn/.test(said)) aside = T.aTwin;
+      else if (/Mistborn/.test(said)) aside = T.aMistborn;
+      else if (/Feruchemist/.test(said)) aside = T.aFeruchemist;
+      else aside = fill(T.aNext, /Ferring/.test(said) ? "Feruchemy" : "Allomancy");
     } else if (kind === "allo" && era() === "1" && row.hasAttribute("data-late")) {
-      aside = "Marcado com † — só perto do fim da Era 1. Confirme com o narrador antes de ficar com ele.";
+      aside = T.aLate;
     }
-
     show(kind, n, said, aside, rerolls);
+    record(kind, n, said, aside, rerolls);
   }
 
   Array.prototype.forEach.call(document.querySelectorAll("[data-roll]"), function (b) {
     b.addEventListener("click", function () { roll(b.getAttribute("data-roll")); });
   });
   Array.prototype.forEach.call(document.querySelectorAll("[data-clear]"), function (b) {
-    b.addEventListener("click", function () {
-      var k = b.getAttribute("data-clear");
-      clearHits(TABLES[k].table);
-      document.getElementById(TABLES[k].out).hidden = true;
-    });
+    b.addEventListener("click", function () { clear(b.getAttribute("data-clear")); });
   });
 
-  /* Switching era invalidates anything already rolled. */
-  document.getElementById("era").addEventListener("change", function () {
-    Object.keys(TABLES).forEach(function (k) {
-      clearHits(TABLES[k].table);
-      document.getElementById(TABLES[k].out).hidden = true;
-    });
+  document.getElementById("copy").addEventListener("click", function () {
+    var txt = asText(), btn = this;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () { flash(btn, T.copied); },
+                                              function () { flash(btn, T.copyFail); });
+    } else {
+      var ta = document.createElement("textarea");
+      ta.value = txt; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); flash(btn, T.copied); } catch (e) { flash(btn, T.copyFail); }
+      document.body.removeChild(ta);
+    }
   });
+
+  document.getElementById("dl").addEventListener("click", function () {
+    var who = (document.getElementById("who").value || "").trim()
+      .replace(/[^\w\- ]+/g, "").replace(/\s+/g, "-").toLowerCase();
+    var blob = new Blob([asText()], { type: "text/plain;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = T.fileName + (who ? "-" + who : "") + ".txt";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  });
+
+  document.getElementById("wipe").addEventListener("click", function () {
+    entries = []; render(); Object.keys(TABLES).forEach(clear);
+  });
+
+  elEra.addEventListener("change", applyEra);
+
+  /* Um link pode carregar a era: ?era=1 abre direto na Primeira Era. */
+  try {
+    var q = new URL(window.location.href).searchParams.get("era");
+    if (q === "1" || q === "2") elEra.value = q;
+  } catch (err) { /* ignora */ }
+  applyEra();
+  render();
 })();
+
 </script>
 </body>
 </html>
